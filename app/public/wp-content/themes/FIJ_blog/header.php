@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SASLS/DMBSH accueil</title>
-  <link rel="stylesheet" href="style/bootstrap.min.css">
-  <link rel="stylesheet" href="style/all.min.css">
-  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>\style/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>\style/all.min.css">
+  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>\style/style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
         <div class="d-flex w40">
           <a class="navbar-brand ps-3 d-flex" href="index.html">
             <div class="w20">
-              <img class="w-100" src="pics/logo-sasls.png" alt="">
+              <img class="w-100" src="/pics/logo-sasls.png" alt="">
             </div>
             <p class="text-center titrelogo  ">Service d'accompagnement social aux locataires sociaux <br>Dienst voor
               maatschappelijke begeleiding van de sociale huurders</p>
