@@ -87,6 +87,8 @@
 </header>
 
 
+
+
 <main>
   <div class="container-fluid">
 
@@ -101,3 +103,9 @@
         <div class="w-100"><img class="w-100" src="pics/accuiel-banniere.png" alt=""></div>
       </div>
     </div>
+
+
+    <!-- get_the_title() recupere les slugs -->
+    <h1>
+      <?php echo get_the_title(); ?>
+    </h1>
