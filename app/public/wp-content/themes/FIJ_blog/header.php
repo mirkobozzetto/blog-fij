@@ -58,35 +58,19 @@
               'depth'           => 0,
             );
             $menu = wp_nav_menu($argsM);
+
+            // ici par exemple on ajoute une classe a nos liens,
+            //  ca rempplace le <a par <a class="nav-link" dans $menu
+
             $menu = str_replace('<a', '<a class="nav-link"', $menu);
+
+            //  ici on ajoute une classe a nos liens, par iteration sur les classes
             $menu = str_replace('class="menu-item', 'class="nav-item menu-item', $menu);
+
+            // puis on l'ecrit
             echo $menu;
             ?>
-            <!-- <li class="nav-item">
-              <a class="nav-link " aria-current="page" href="index.html">Accueil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="notreasbl.html">Notre ASBL</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="nos-services.html">Nos services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="travail-assistant.html">Le travail d'AS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="jobs-stage.html">Jobs/Stages</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="actualite.html">Actualités</a>
-            </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="partenaire.html">Partenaires</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li> -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
