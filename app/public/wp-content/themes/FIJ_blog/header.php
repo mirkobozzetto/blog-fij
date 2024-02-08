@@ -42,7 +42,9 @@
 
           <ul class="navbar-nav ms-auto  me-5 mb-2 mb-lg-0 mt-5 ">
 
-            <!-- afficher les menus depuis le backend -->
+            <!--  -->
+            <!--  afficher les menus depuis le backend -->
+            <!--  -->
 
             <?php
             $nomMenu = "top";
