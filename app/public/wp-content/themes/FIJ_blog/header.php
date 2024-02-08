@@ -41,7 +41,26 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
           <ul class="navbar-nav ms-auto  me-5 mb-2 mb-lg-0 mt-5 ">
-            <li class="nav-item">
+
+            <!-- afficher les menus depuis le backend -->
+
+            <?php
+            $nomMenu = "top";
+
+            $argsM = array(
+              'theme_location'  => $nomMenu,
+              'container'       => false,
+              'echo'            => false,
+              'fallback_cb'     => false,
+              'items_wrap'      => '%3$s',
+              'depth'           => 0,
+            );
+            $menu = wp_nav_menu($argsM);
+            $menu = str_replace('<a', '<a class="nav-link"', $menu);
+            $menu = str_replace('class="menu-item', 'class="nav-item menu-item', $menu);
+            echo $menu;
+            ?>
+            <!-- <li class="nav-item">
               <a class="nav-link " aria-current="page" href="index.html">Accueil</a>
             </li>
             <li class="nav-item">
@@ -65,7 +84,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
-            </li>
+            </li> -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
