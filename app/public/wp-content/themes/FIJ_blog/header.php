@@ -34,7 +34,8 @@
           </a>
         </div>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -66,7 +67,8 @@
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
                 langue
               </a>
               <ul class="dropdown-menu">
@@ -100,12 +102,27 @@
             social individuel et collectif des candidats et des locataires des Sociétés immobilières de service public
             (SISP).</p>
         </div>
-        <div class="w-100"><img class="w-100" src="pics/accuiel-banniere.png" alt=""></div>
+        <div class="w-100">
+          <!-- <img class="w-100" src="pics/accuiel-banniere.png" alt=""> -->
+
+
+          <!-- appel de l img dans le backend -->
+          <!-- Grace au plugin ACF: get_field() -->
+          <?php $hero_img = get_field("hero"); ?>
+          <img class="w-100" src="<?php echo $hero_img['url']; ?>" alt="">
+        </div>
+
+
       </div>
     </div>
 
 
     <!-- get_the_title() recupere les slugs -->
-    <h1>
-      <?php echo get_the_title(); ?>
-    </h1>
+    <!--
+    // echo get_the_title();
+    // echo "$hero_img";
+    // var_dump($hero_img); -->
+
+
+    <!-- recuperer l'image dans le back -->
+    <!-- <img src="<?php echo $hero_img['url']; ?>" alt=""> -->
