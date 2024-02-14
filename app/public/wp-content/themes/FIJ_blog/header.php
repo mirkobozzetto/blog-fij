@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>\style/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>\style/all.min.css">
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>\style/style.css">
+  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>\style/debug.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +20,20 @@
 
 </head>
 
+<?php
+  $headerID = get_page_by_path('header')->ID;
+?>
+
+<!-- Ce code PHP est utilisé dans le contexte de WordPress. Il utilise la fonction get_page_by_path() pour récupérer une page spécifique de votre site WordPress.
+
+Voici une explication détaillée :
+
+get_page_by_path('header') : Cette fonction recherche une page dans votre site WordPress qui a le slug 'header'. Le slug est la dernière partie de l'URL qui identifie une page spécifique. Par exemple, dans www.example.com/header, 'header' est le slug.
+
+->ID : C'est une propriété de l'objet de page retourné par get_page_by_path(). Chaque page dans WordPress a un identifiant unique, ou ID. Ce code récupère cet ID.
+
+$headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
+
 <header class="container-fluid bg-bleu-tur">
   <div class="row">
     <div class="col-12">
@@ -27,10 +42,23 @@
         <div class="d-flex w40">
           <a class="navbar-brand ps-3 d-flex" href="index.html">
             <div class="w20">
-              <img class="w-100" src="/pics/logo-sasls.png" alt="">
+              <!-- <img class="w-100" src="/pics/logo-sasls.png" alt=""> -->
+              <img class="w-100" src="<?php echo get_field('logo', $headerID)['url']; ?>" alt="">
+
+              <!--  -->
             </div>
-            <p class="text-center titrelogo  ">Service d'accompagnement social aux locataires sociaux <br>Dienst voor
-              maatschappelijke begeleiding van de sociale huurders</p>
+
+            <!--  -->
+
+            <!-- <p class="text-center titrelogo  ">Service d'accompagnement social aux locataires sociaux <br>Dienst voor
+              maatschappelijke begeleiding van de sociale huurders</p> -->
+            <p class="text-center titrelogo  ">
+
+              <?php echo get_field('text_asbl', $headerID); ?>
+
+            </p>
+
+            <!---->
           </a>
         </div>
 
@@ -102,10 +130,26 @@
     <div class="row relative">
       <div class="col-12 mb-5 p-0">
         <div class="absolute w30 txt-1 fontwhite ">
-          <h1>Bienvenue chez SASLS/DMBSH</h1>
-          <p class="fs-5">L’asbl SASLS (Service d’accompagnement social aux locataires sociaux) assure un accompagnement
+          <!-- <h1>Bienvenue chez SASLS/DMBSH</h1> -->
+
+          <!-- import dynamique depuis wordpress -->
+          <h1>
+            <? echo get_field('title_header'); ?>
+          </h1>
+
+          <!-- meme chose ... -->
+
+          <!-- <p class="fs-5">L’asbl SASLS (Service d’accompagnement social aux locataires sociaux) assure un accompagnement
             social individuel et collectif des candidats et des locataires des Sociétés immobilières de service public
-            (SISP).</p>
+            (SISP).</p> -->
+
+          <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+          <!-- <? echo get_field('le_nom_de_ton_champ_ACF'); ?> -->
+          <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+          <p class="fs-5">
+            <? echo get_field('text_header'); ?>
+          </p>
         </div>
         <div class="w-100">
           <!-- <img class="w-100" src="pics/accuiel-banniere.png" alt=""> -->
