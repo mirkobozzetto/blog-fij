@@ -114,7 +114,7 @@
           <!-- appel de l img dans le backend -->
           <!-- Grace au plugin ACF: get_field() -->
           <?php $hero_img = get_field("hero"); ?>
-          <img class="w-100" src="<?php echo $hero_img['url']; ?>" alt="">
+          <img class="w-100" src="<?php echo $hero_img['url']; ?>" alt="<?php echo $hero_img['alt']; ?>">
         </div>
 
 
