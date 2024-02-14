@@ -1,56 +1,64 @@
+<?php
+include(locate_template('myvars.php'));
+?>
+
+<!-- La fonction locate_template() est une fonction WordPress qui cherche un fichier de modèle dans le thème actuel ou dans le thème parent ( si le thème actuel est un thème enfant ).
+Si le fichier myvars.php est trouvé, son chemin complet est retourné et le fichier est inclus dans le fichier header.php grâce à la fonction include().
+Cela signifie que toutes les variables et fonctions définies dans myvars.php seront disponibles dans header.php. -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <title>SASLS/DMBSH accueil</title>
-  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>\style/bootstrap.min.css">
-  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>\style/all.min.css">
-  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>\style/style.css">
-  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>\style/debug.css">
+  <link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>\style/bootstrap.min.css'>
+  <link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>\style/all.min.css'>
+  <link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>\style/style.css'>
+  <link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>\style/debug.css'>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap" rel="stylesheet">
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap' rel='stylesheet'>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500&display=swap' rel='stylesheet'>
 
 </head>
 
 <?php
-  $headerID = get_page_by_path('header')->ID;
+$headerID = get_page_by_path('header')->ID;
 ?>
 
 <!-- Ce code PHP est utilisé dans le contexte de WordPress. Il utilise la fonction get_page_by_path() pour récupérer une page spécifique de votre site WordPress.
 
 Voici une explication détaillée :
 
-get_page_by_path('header') : Cette fonction recherche une page dans votre site WordPress qui a le slug 'header'. Le slug est la dernière partie de l'URL qui identifie une page spécifique. Par exemple, dans www.example.com/header, 'header' est le slug.
+get_page_by_path( 'header' ) : Cette fonction recherche une page dans votre site WordPress qui a le slug 'header'. Le slug est la dernière partie de l'URL qui identifie une page spécifique. Par exemple, dans www.example.com/header, 'header' est le slug.
 
 ->ID : C'est une propriété de l'objet de page retourné par get_page_by_path(). Chaque page dans WordPress a un identifiant unique, ou ID. Ce code récupère cet ID.
 
 $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
 
-<header class="container-fluid bg-bleu-tur">
-  <div class="row">
-    <div class="col-12">
-      <nav class="navbar navbar-expand-lg navbar-light ps-5 pe-5  ">
+<header class='container-fluid bg-bleu-tur'>
+  <div class='row'>
+    <div class='col-12'>
+      <nav class='navbar navbar-expand-lg navbar-light ps-5 pe-5  '>
 
-        <div class="d-flex w40">
-          <a class="navbar-brand ps-3 d-flex" href="index.html">
-            <div class="w20">
-              <!-- <img class="w-100" src="/pics/logo-sasls.png" alt=""> -->
-              <img class="w-100" src="<?php echo get_field('logo', $headerID)['url']; ?>" alt="">
+        <div class='d-flex w40'>
+          <a class='navbar-brand ps-3 d-flex' href='index.html'>
+            <div class='w20'>
+              <!-- <img class = 'w-100' src = '/pics/logo-sasls.png' alt = ''> -->
+              <img class='w-100' src="<?php echo get_field('logo', $headerID)['url']; ?>" alt=''>
 
               <!--  -->
             </div>
 
             <!--  -->
 
-            <!-- <p class="text-center titrelogo  ">Service d'accompagnement social aux locataires sociaux <br>Dienst voor
+            <!-- <p class = 'text-center titrelogo  '>Service d'accompagnement social aux locataires sociaux <br>Dienst voor
               maatschappelijke begeleiding van de sociale huurders</p> -->
             <p class="text-center titrelogo  ">
 
@@ -78,36 +86,35 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
             $nomMenu = "top";
 
             $argsM = array(
-              'theme_location'  => $nomMenu,
-              'container'       => false,
-              'echo'            => false,
-              'fallback_cb'     => false,
-              'items_wrap'      => '%3$s',
-              'depth'           => 0,
+              'theme_location' => $nomMenu,
+              'container' => false,
+              'echo' => false,
+              'fallback_cb' => false,
+              'items_wrap' => '%3$s',
+              'depth' => 0,
             );
             $menu = wp_nav_menu($argsM);
 
             // ici par exemple on ajoute une classe a nos liens,
             //  ca rempplace le <a par <a class="nav-link" dans $menu
+            
+            $menu = str_replace('<a', '<a class = "nav-link"', $menu);
 
-            $menu = str_replace('<a', '<a class="nav-link"', $menu);
-
-            //  ici on ajoute une classe a nos liens, par iteration sur les classes
             $menu = str_replace('class="menu-item', 'class="nav-item menu-item', $menu);
 
-            // puis on l'ecrit
+
             echo $menu;
             ?>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
+            <li class='nav-item dropdown'>
+              <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown'
+                aria-expanded='false'>
                 langue
               </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Français</a></li>
-                <li><a class="dropdown-item" href="#">Nederland</a></li>
-                <li><a class="dropdown-item" href="#">English</a></li>
+              <ul class='dropdown-menu'>
+                <li><a class='dropdown-item' href='#'>Français</a></li>
+                <li><a class='dropdown-item' href='#'>Nederland</a></li>
+                <li><a class='dropdown-item' href='#'>English</a></li>
               </ul>
             </li>
 
@@ -121,57 +128,56 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
 
 </header>
 
-
-
-
 <main>
-  <div class="container-fluid">
+  <div class='container-fluid'>
 
-    <div class="row relative">
-      <div class="col-12 mb-5 p-0">
-        <div class="absolute w30 txt-1 fontwhite ">
+    <div class='row relative'>
+      <div class='col-12 mb-5 p-0'>
+        <div class='absolute w30 txt-1 fontwhite '>
           <!-- <h1>Bienvenue chez SASLS/DMBSH</h1> -->
 
           <!-- import dynamique depuis wordpress -->
           <h1>
-            <? echo get_field('title_header'); ?>
+            <? echo get_field('title_header');
+            ?>
           </h1>
 
           <!-- meme chose ... -->
 
-          <!-- <p class="fs-5">L’asbl SASLS (Service d’accompagnement social aux locataires sociaux) assure un accompagnement
-            social individuel et collectif des candidats et des locataires des Sociétés immobilières de service public
-            (SISP).</p> -->
+          <!-- <p class = 'fs-5'>L’asbl SASLS ( Service d’accompagnement social aux locataires sociaux ) assure un accompagnement
+social individuel et collectif des candidats et des locataires des Sociétés immobilières de service public
+( SISP ).</p> -->
 
           <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-          <!-- <? echo get_field('le_nom_de_ton_champ_ACF'); ?> -->
+          <!-- <? echo get_field('le_nom_de_ton_champ_ACF');
+          ?> -->
           <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
-          <p class="fs-5">
-            <? echo get_field('text_header'); ?>
+          <p class='fs-5'>
+            <? echo get_field('text_header');
+            ?>
           </p>
         </div>
-        <div class="w-100">
-          <!-- <img class="w-100" src="pics/accuiel-banniere.png" alt=""> -->
-
+        <div class='w-100'>
+          <!-- <img class = 'w-100' src = 'pics/accuiel-banniere.png' alt = ''> -->
 
           <!-- appel de l img dans le backend -->
           <!-- Grace au plugin ACF: get_field() -->
-          <?php $hero_img = get_field("hero"); ?>
-          <img class="w-100" src="<?php echo $hero_img['url']; ?>" alt="<?php echo $hero_img['alt']; ?>">
+          <?php $hero_img = get_field('hero');
+          ?>
+          <img class='w-100' src="<?php echo $hero_img['url']; ?>" alt="<?php echo $hero_img['alt']; ?>">
         </div>
-
 
       </div>
     </div>
 
-
     <!-- get_the_title() recupere les slugs -->
     <!--
-    // echo get_the_title();
-    // echo "$hero_img";
-    // var_dump($hero_img); -->
-
+// echo get_the_title();
+// echo "$hero_img";
+// var_dump( $hero_img );
+-->
 
     <!-- recuperer l'image dans le back -->
-    <!-- <img src="<?php echo $hero_img['url']; ?>" alt=""> -->
+    <!-- <img src = "<?php echo $hero_img['url'];
+    ?>' alt = '"> -->
