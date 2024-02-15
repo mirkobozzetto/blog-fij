@@ -7,7 +7,7 @@
     <h3>
       <!-- ACF champ avec le field Label -->
 
-      <?php echo get_field('text1'); ?>
+      <?php echo get_field('txt_mission'); ?>
 
     </h3>
   </div>
