@@ -126,9 +126,13 @@
 
           <p>
 
-            <?php echo get_field('txt_carousel1'); ?>
+            //
+            <?php echo get_field('carousel'); ?> //
           </p>
-          <h2>"Coralie Dupont"</h2>
+          <!-- <h2>"Coralie Dupont"</h2> -->
+          <h2>
+
+          </h2>
         </div>
 
       </div>
