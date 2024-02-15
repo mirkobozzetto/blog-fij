@@ -9,7 +9,10 @@ include(locate_template('myvars.php'));
       <div class='col-3  pt-4 d-flex justify-content-center align-items-center'>
         <div class='w-50 '>
 
+
+
           <!-- <img class = 'w-100' src = 'pics/logo-sasls.png' alt = ''> -->
+
           <img class='w-100' src='<?php echo get_field('logo', $headerID)['url']; ?>' alt=''>
 
         </div>
