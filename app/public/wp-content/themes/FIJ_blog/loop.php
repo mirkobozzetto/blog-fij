@@ -24,15 +24,15 @@
     // var_dumpj($missions);
     foreach ($missions as $key => $value) {
       ?>
-    <div class="w20 mx-3">
-      <a href="  <?php echo $value['link']['url']; ?>">
-        <img class="w-100" src="  <?php echo $value['image']['url'] ?>  " alt="">
-      </a>
-      <h5 class="text-center">
-        <?php echo $value['text']; ?>
-      </h5>
-    </div>
-    <?php
+      <div class="w20 mx-3">
+        <a href="  <?php echo $value['link']['url']; ?>">
+          <img class="w-100" src="  <?php echo $value['image']['url'] ?>  " alt="">
+        </a>
+        <h5 class="text-center">
+          <?php echo $value['text']; ?>
+        </h5>
+      </div>
+      <?php
     }
     ?>
 
@@ -67,7 +67,6 @@
   </div>
 </div>
 
-
 <div class="row mt-5 ">
   <div class="col-10 offset-1 d-flex justify-content-between">
 
@@ -93,13 +92,20 @@
 
   </div>
 </div>
-
+-->
 
 <div class="row mt10 mb-5">
   <div class="col-1 bg-bleu-tur"></div>
   <div class="col-7 bg-bleu-tur   pt-1 pb-1 fontwhite">
-    <h3>Le travail en tant qu'assistant(e) social(e) en société de logement social est riche est varié comme en
-      temoignent les suivants récits:</h3>
+    <!-- <h3>Le travail en tant qu'assistant(e) social(e) en société de logement social est riche est varié comme en
+      temoignent les suivants récits:</h3> -->
+
+
+    <h3>
+      <!-- ACF champ avec le field Label -->
+
+      <?php echo get_field('txt_travail'); ?>
+    </h3>
   </div>
 </div>
 
@@ -110,11 +116,17 @@
     <div id="carouselExample" class="carousel slide pt-5  w-100 ">
       <div class="carousel-inner">
         <div class="carousel-item active bg-bleu-tur fontwhite text-center  carousel1 ">
-          <p>
+          <!-- <p>
             “Trois types d’accompagnement social sont proposés aux locataires sociaux :
             le travail individuel, collectif et communautaire. Les travailleurs sociaux
             de la SASLS détachés en SISP réalisent les entretiens individuels et les actions
             collectives. Ils ont principalement les huit” missions suivantes :
+          </p> -->
+
+
+          <p>
+
+            <?php echo get_field('txt_carousel1'); ?>
           </p>
           <h2>"Coralie Dupont"</h2>
         </div>
@@ -140,7 +152,7 @@
   </div>
 
 
-</div> -->
+</div>
 
 </div>
 
