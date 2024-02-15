@@ -15,22 +15,24 @@
 
 
 <div class="row">
-  <div class="col-10 offset-1 d-flex justify-content-between mt-5">
-    <!--  -->
+  <div class="col-10 offset-1 d-flex justify-content-between mt-5 flex-wrap">
+
+
+    <!-- BOUCLE foreach qui permet de passer a l'interieur du repeater de ACF qui s'appelle 'missions' -->
     <?php
     $missions = get_field('missions');
     // var_dumpj($missions);
     foreach ($missions as $key => $value) {
       ?>
-      <div class="w20 mx-3">
-        <a href="  <?php echo $value['link']['url']; ?>">
-          <img class="w-100" src="  <?php echo $value['image']['url'] ?>  " alt="">
-        </a>
-        <h5 class="text-center">
-          <?php echo $value['title']; ?>
-        </h5>
-      </div>
-      <?php
+    <div class="w20 mx-3">
+      <a href="  <?php echo $value['link']['url']; ?>">
+        <img class="w-100" src="  <?php echo $value['image']['url'] ?>  " alt="">
+      </a>
+      <h5 class="text-center">
+        <?php echo $value['text']; ?>
+      </h5>
+    </div>
+    <?php
     }
     ?>
 
