@@ -24,15 +24,15 @@
     // var_dumpj($missions);
     foreach ($missions as $key => $value) {
       ?>
-      <div class="w20 mx-3">
-        <a href="  <?php echo $value['link']['url']; ?>">
-          <img class="w-100" src="  <?php echo $value['image']['url'] ?>  " alt="">
-        </a>
-        <h5 class="text-center">
-          <?php echo $value['text']; ?>
-        </h5>
-      </div>
-      <?php
+    <div class="w20 mx-3">
+      <a href="  <?php echo $value['link']['url']; ?>">
+        <img class="w-100" src="  <?php echo $value['image']['url'] ?>  " alt="">
+      </a>
+      <h5 class="text-center">
+        <?php echo $value['text']; ?>
+      </h5>
+    </div>
+    <?php
     }
     ?>
 
@@ -126,8 +126,7 @@
 
           <p>
 
-            //
-            <?php echo get_field('carousel'); ?> //
+            // <?php echo get_field('carousel'); ?> //
           </p>
           <!-- <h2>"Coralie Dupont"</h2> -->
           <h2>
