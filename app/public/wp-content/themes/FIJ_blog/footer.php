@@ -1,5 +1,5 @@
 <?php
-include( locate_template( 'myvars.php' ) );
+include(locate_template('myvars.php'));
 ?>
 
 <footer>

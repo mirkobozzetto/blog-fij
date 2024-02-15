@@ -1,7 +1,15 @@
 <div class="row mt10 mb-5">
   <div class="col-1 bg-bleu-tur"></div>
   <div class="col-5 bg-bleu-tur   pt-1 pb-1 fontwhite">
-    <h3>Les 8 missions d’assistant(e) social(e) en SISP</h3>
+
+
+    <!-- <h3>Les 8 missions d’assistant(e) social(e) en SISP</h3> -->
+    <h3>
+      <!-- ACF champ avec le field Label -->
+
+      <?php echo get_field('text1'); ?>
+
+    </h3>
   </div>
 </div>
 
