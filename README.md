@@ -92,7 +92,7 @@ image: par exemple
 
 ensuite voici le code qu'on pourra utiliser
 
-````php
+```php
 <div class="d-flex flex-wrap my-5">
   <?php
   $missions = get_field('missions');
@@ -113,6 +113,18 @@ ensuite voici le code qu'on pourra utiliser
       }
 
     ?>
-    ```
+```
 
-````
+ensuite dans le rendu on va appeler la fonctiodu foreach à l'intérieur des balises html
+
+```php
+      <div class="border border-black w10 p-2 <?php echo $greenClass ?> "> <?php echo ($key + 1) . '.'; ?> </div>
+  <div class="border border-black w30 p-2 <?php echo $greenClass ?> ">
+    <img class="w10" src=" <?php echo $value['image']['url']; ?>" alt="">
+  </div>
+  <div class="border border-black w30 p-2 <?php echo $greenClass ?> "> <?php echo $value['text']; ?> </div>
+  <div class="border border-black w30 p-2 <?php echo $greenClass ?> "> <?php echo $value['link']['url']; ?> </div>
+  <?php
+  }
+?>
+```
