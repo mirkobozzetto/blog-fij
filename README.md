@@ -4,9 +4,9 @@
 
 j'ajouterai probablement des liens avec les code snippets récurrents sur cette page, n'hésitez pas à me le proposer si vous souhaitez autre chose.
 
-mirkouch@gmail.com
+`mirkouch@gmail.com`
 
-voir dans le dossier correspondant au thene pour les fichiers du projet !
+À voir dans le dossier correspondant au thème pour les fichiers du projet ...
 
 `app => public => wp-content => themes => FIJ_blog`
 
@@ -20,7 +20,7 @@ voir dans le dossier correspondant au thene pour les fichiers du projet !
 <img class="w-100" src="<?php echo $hero_img['url']; ?>" alt="">
 ```
 
-on va pouvoir ecrire des choses du backend wordpress dans mon editeur de code
+on va pouvoir écrire des choses du backend wordpress dans mon editeur de code
 
 ça a permis de fetch les `<li> et <a>` des éléments de la nav depuis wordpress
 avec le plugin #ACF
@@ -31,7 +31,7 @@ il faudra aller voir dans `function.php` dans l'editeur de code pour utiliser ce
 
 ## le foreach avec ACF
 
-### recupere les infos du backend
+### récupère les infos du backend
 
 1. utiliser get_field()
 2. utiliser une boucle foreach() pourparcourir le repeater
