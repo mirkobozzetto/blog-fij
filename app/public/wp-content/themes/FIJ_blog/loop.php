@@ -277,6 +277,10 @@
 <div class="d-flex flex-wrap my-5">
   <?php
   $missions = get_field('missions');
+  //
+  // permet de voir le nombre d'élements dans le tableau
+  // var_dumpj(count($missions));
+
   foreach ($missions as $key => $value) {
     // condition pour ajouter une classe css
       if ($key == 0) {
@@ -284,6 +288,11 @@
       } else {
         $greenClass = '';
       }
+
+      if ($key == count($missions) - 1) {
+        $greenClass = 'bg-green';
+      }
+
     ?>
 
   <div class="border border-black w10 p-2 <?php echo $greenClass ?> "> <?php echo ($key + 1) . '.'; ?> </div>

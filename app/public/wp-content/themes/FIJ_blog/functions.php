@@ -10,7 +10,6 @@ function jsingle_template() {
 add_filter( 'single_template', 'jsingle_template' );
 
 //joli var dump
-
 function var_dumpj( $d, $e = null ) {
     echo '<pre><code>';
     if ( $e == 'e' ) {
