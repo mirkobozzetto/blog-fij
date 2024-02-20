@@ -272,19 +272,18 @@
 <!-- recupere les infos du backend
     1. utiliser get_field()
     2. utiliser une boucle foreach() pour parcourir le repeater
-    3. afficher avec echo de ce qui est dans $value, en l'occurence $value['']
+    3. afficher avec echo de ce qui est dans $value, en l'occurence $value['nom_du_champ_dans_acf']
 -->
 <div class="d-flex flex-wrap align-items-stretch">
   <?php
   $missions = get_field('missions');
   foreach ($missions as $key => $value) {
     ?>
-  <!--  -->
   <div class="border border-black col-4"> <?php echo $value['link']['url']; ?> </div>
   <div class="border border-black col-4"> <?php echo $value['image']['url']; ?> </div>
   <div class="border border-black col-4"> <?php echo $value['text']; ?> </div>
   <?php
   }
 ?>
-
+  <!--  -->
   </main>
