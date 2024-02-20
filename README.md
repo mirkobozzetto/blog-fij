@@ -83,14 +83,12 @@ foreach ($missions as $key => $value) {
 pour celà il faut crér des subfields dans le `repeater` qui correspondront aux elements de tabeau qu'on souhaite affiche avec le fonction foreach précedemment citée
 
 ![alt text](image-1.png)
-￼
 
 une fois les élements affichés dans le backend de Wordpress, on peut utiliser ce genre de fonction dans
 le fichier loop.php comme ceci par exemple en utilisant bien le nom des champs qu'on aura crée,
 image: par exemple
 
 ![alt text](image-2.png)
-￼
 
 ensuite voici le code qu'on pourra utiliser
 
