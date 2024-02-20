@@ -28,3 +28,31 @@ avec le plugin #ACF
 [[ACF - advance custom fields]] est super pratique pour pouvoir récupérer des élements du backend pour les envoyer vers le front il utilise des fonctiont php qui sont propres à wordpress
 
 il faudra aller voir dans `function.php` dans l'editeur de code pour utiliser cette function wordpress qui permet de recuperer les titles du menu depuis le backend
+
+## le foreach avec ACF
+
+### recupere les infos du backend
+
+1. utiliser get_field()
+2. utiliser une boucle foreach() pourparcourir le repeater
+3. afficher avec echo de ce qui est dans $value, en l'occurence ceci:
+
+```
+$value['nom_du_champ_dans_acf']
+```
+
+et dans le code ca donne ceci...
+
+```php
+<div class="d-flex flex-wrap align-items-stretch">
+  <?php
+  $missions = get_field('missions');
+  foreach ($missions as $key => $value) {
+    ?>
+  <div class="border border-black col-4"> <?php echo $value['link']['url']; ?> </div>
+  <div class="border border-black col-4"> <?php echo $value['image']['url']; ?> </div>
+  <div class="border border-black col-4"> <?php echo $value['text']; ?> </div>
+  <?php
+  }
+?>
+```
