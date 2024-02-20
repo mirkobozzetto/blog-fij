@@ -44,14 +44,17 @@ $value['nom_du_champ_dans_acf']
 et dans le code ca donne ceci...
 
 ```php
-<div class="d-flex flex-wrap align-items-stretch">
+<div class="d-flex flex-wrap my-5">
   <?php
   $missions = get_field('missions');
   foreach ($missions as $key => $value) {
     ?>
-  <div class="border border-black col-4"> <?php echo $value['link']['url']; ?> </div>
-  <div class="border border-black col-4"> <?php echo $value['image']['url']; ?> </div>
-  <div class="border border-black col-4"> <?php echo $value['text']; ?> </div>
+  <div class="border border-black w10 p-2"> <?php echo ($key + 1) . '.'; ?> </div>
+  <div class="border border-black w30 p-2">
+    <img class="w10" src=" <?php echo $value['image']['url']; ?>  " alt="">
+  </div>
+  <div class="border border-black w30 p-2"> <?php echo $value['text']; ?> </div>
+  <div class="border border-black w30 p-2"> <?php echo $value['link']['url']; ?> </div>
   <?php
   }
 ?>
