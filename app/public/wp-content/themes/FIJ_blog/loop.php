@@ -26,7 +26,7 @@
       ?>
     <div class="w20 mx-3">
       <a href="  <?php echo $value['link']['url']; ?>">
-        <img class="w-100" src="  <?php echo $value['image']['url'] ?>  " alt="">
+        <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
       </a>
       <h5 class="text-center">
         <?php echo $value['text']; ?>
@@ -35,75 +35,15 @@
     <?php
     }
     ?>
-
-
     <!--  -->
   </div>
 </div>
 
-<!-- <div class="row ">
-  <div class="col-10 offset-1 d-flex justify-content-between mt-5">
-
-    <div class="w20 ">
-      <a href="travail-assistant.html#voisin"><img class="w-100" src="pics/patille-voisingae.png" alt=""></a>
-      <h5 class="text-center">Prévention et tentative de désamorçage des conflits de voisinage</h5>
-    </div>
-
-    <div class="w20">
-      <a href="travail-assistant.html#precarite"><img class="w-100" src="pics/pastille-enquete.png" alt=""></a>
-      <h5 class="text-center">Enquêtes de précarité</h5>
-    </div>
-
-    <div class="w20">
-      <a href="travail-assistant.html#demarche"><img class="w-100" src="pics/pastille-accompagnement.png" alt=""></a>
-      <h5 class="text-center">Accompagnement dans les démarche sociales</h5>
-    </div>
-
-    <div class="w20">
-      <a href="travail-assistant.html#dette"><img class="w-100" src="pics/pastille-dette.png" alt=""></a>
-      <h5 class="text-center">surendettement et arriérés locatifs</h5>
-    </div>
-
-  </div>
-</div>
-
-<div class="row mt-5 ">
-  <div class="col-10 offset-1 d-flex justify-content-between">
-
-    <div class="w20">
-      <a href="travail-assistant.html#guidance"><img class="w-100" src="pics/pastille-guidance.png" alt=""></a>
-      <h5 class="text-center">Guidance pédagogique sur les régles d'entretien du logement</h5>
-    </div>
-
-    <div class="w20">
-      <a href="travail-assistant.html#aide"><img class="w-100" src="pics/pastille-aide.png" alt=""></a>
-      <h5 class="text-center">Aide à la recolte de documents pour les locataires</h5>
-    </div>
-
-    <div class="w20">
-      <a href="travail-assistant.html#accueil"><img class="w-100" src="pics/pastille-accueil.png" alt=""></a>
-      <h5 class="text-center">Premier accueil et réorientation des locataires</h5>
-    </div>
-
-    <div class="w20">
-      <a href="travail-assistant.html#reseau"><img class="w-100" src="pics/pastille-dev.png" alt=""></a>
-      <h5 class="text-center">Dévloppement d'un réseau de partenariat</h5>
-    </div>
-
-  </div>
-</div>
--->
-
 <div class="row mt10 mb-5">
   <div class="col-1 bg-bleu-tur"></div>
   <div class="col-7 bg-bleu-tur   pt-1 pb-1 fontwhite">
-    <!-- <h3>Le travail en tant qu'assistant(e) social(e) en société de logement social est riche est varié comme en
-      temoignent les suivants récits:</h3> -->
-
-
     <h3>
       <!-- ACF champ avec le field Label -->
-
       <?php echo get_field('txt_travail'); ?>
     </h3>
   </div>
@@ -122,13 +62,10 @@
             de la SASLS détachés en SISP réalisent les entretiens individuels et les actions
             collectives. Ils ont principalement les huit” missions suivantes :
           </p> -->
-
-
           <p>
 
             // <?php echo get_field('carousel'); ?> //
           </p>
-          <!-- <h2>"Coralie Dupont"</h2> -->
           <h2>
 
           </h2>
@@ -324,7 +261,6 @@
     <div class="col-5 fontwhite ">
       <div class="w-100">
         <img class="w-100" src="pics/job-stage.png" alt="">
-
       </div>
     </div>
 
@@ -333,4 +269,22 @@
 
 
 
-</main>
+<!-- recupere les infos du backend
+    1. utiliser get_field()
+    2. utiliser une boucle foreach() pour parcourir le repeater
+    3. afficher avec echo de ce qui est dans $value, en l'occurence $value['']
+-->
+<div class="d-flex flex-wrap align-items-stretch">
+  <?php
+  $missions = get_field('missions');
+  foreach ($missions as $key => $value) {
+    ?>
+  <!--  -->
+  <div class="border border-black col-4"> <?php echo $value['link']['url']; ?> </div>
+  <div class="border border-black col-4"> <?php echo $value['image']['url']; ?> </div>
+  <div class="border border-black col-4"> <?php echo $value['text']; ?> </div>
+  <?php
+  }
+?>
+
+  </main>
