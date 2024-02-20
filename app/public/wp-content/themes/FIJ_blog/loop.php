@@ -278,13 +278,22 @@
   <?php
   $missions = get_field('missions');
   foreach ($missions as $key => $value) {
+    // condition pour ajouter une classe css
+      if ($key == 0) {
+        $greenClass = 'bg-green';
+      } else {
+        $greenClass = '';
+      }
     ?>
-  <div class="border border-black w10 p-2"> <?php echo ($key + 1) . '.'; ?> </div>
-  <div class="border border-black w30 p-2">
-    <img class="w10" src=" <?php echo $value['image']['url']; ?>  " alt="">
+
+  <?php ?>
+
+  <div class="border border-black w10 p-2 <?php echo $greenClass ?> "> <?php echo ($key + 1) . '.'; ?> </div>
+  <div class="border border-black w30 p-2 <?php echo $greenClass ?> ">
+    <img class="w10" src=" <?php echo $value['image']['url']; ?>" alt="">
   </div>
-  <div class="border border-black w30 p-2"> <?php echo $value['text']; ?> </div>
-  <div class="border border-black w30 p-2"> <?php echo $value['link']['url']; ?> </div>
+  <div class="border border-black w30 p-2 <?php echo $greenClass ?> "> <?php echo $value['text']; ?> </div>
+  <div class="border border-black w30 p-2 <?php echo $greenClass ?> "> <?php echo $value['link']['url']; ?> </div>
   <?php
   }
 ?>
