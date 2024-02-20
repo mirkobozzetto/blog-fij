@@ -286,8 +286,6 @@
       }
     ?>
 
-  <?php ?>
-
   <div class="border border-black w10 p-2 <?php echo $greenClass ?> "> <?php echo ($key + 1) . '.'; ?> </div>
   <div class="border border-black w30 p-2 <?php echo $greenClass ?> ">
     <img class="w10" src=" <?php echo $value['image']['url']; ?>" alt="">
