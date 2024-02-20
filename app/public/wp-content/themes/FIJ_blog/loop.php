@@ -289,7 +289,7 @@
         $greenClass = '';
       }
 
-      if ($key == count($missions) - 1) {
+      if ($key === count($missions) - 1) {
         $greenClass = 'bg-green';
       }
 
