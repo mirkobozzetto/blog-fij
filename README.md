@@ -59,3 +59,61 @@ et dans le code ca donne ceci...
   }
 ?>
 ```
+
+## Explication de l'encodage des champs ACF dans Worxpress
+
+Créer des valeurs dans ACF
+![alt text](image.png)
+￼
+ici tu vas pouvoir créer un champ `repeater` qui correspondra en php
+
+à ce type de variable qu'on appellera
+
+```php
+<?php
+  $missions = get_field('missions');
+```
+
+dans un foreach comme ceci pour aller afficher les élements du tableau [array] auquel il corrspond
+
+```php
+foreach ($missions as $key => $value) {
+```
+
+pour celà il faut crér des subfields dans le `repeater` qui correspondront aux elements de tabeau qu'on souhaite affiche avec le fonction foreach précedemment citée
+
+![alt text](image-1.png)
+￼
+
+une fois les élements affichés dans le backend de Wordpress, on peut utiliser ce genre de fonction dans
+le fichier loop.php comme ceci par exemple en utilisant bien le nom des champs qu'on aura crée,
+image: par exemple
+
+![alt text](image-2.png)
+￼
+
+ensuite voici le code qu'on pourra utiliser
+
+````php
+<div class="d-flex flex-wrap my-5">
+  <?php
+  $missions = get_field('missions');
+  //
+  // permet de voir le nombre d'élements dans le tableau
+  // var_dumpj(count($missions));
+
+  foreach ($missions as $key => $value) {
+    // condition pour ajouter une classe css
+      if ($key == 0) {
+        $greenClass = 'bg-green';
+      } else {
+        $greenClass = '';
+      }
+
+      if ($key === count($missions) - 1) {
+        $greenClass = 'bg-green';
+      }
+
+    ?>
+    ```
+````
