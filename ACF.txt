@@ -1,0 +1,167 @@
+accueil
+
+image header (image)
+titre header (text)
+texte header (text area)
+
+groupe nos services (group)
+	titre (text)
+	textes (repeater - text/text-area)
+	bouton (link)
+	schéma (image)
+
+--
+
+page header
+
+logo (image)
+phrases (text area)
+langue (text)
+icone (font awesome)
+langues (repeater - text)
+
+--
+
+notre asbl
+
+image header (image)
+
+groupe (group) x3
+	titre (text)
+	texte (text-area)
+	image (image)
+
+bouton organigramme (link)
+
+equipe (repeater - text/image)
+
+directeur (groupe)
+	photo (image)
+	nom (text)
+	citation (text)
+
+--
+
+nos services
+image header (image)
+
+groupe nos services (group) x5
+	titre (text)
+	sous-titre (text)
+	texte (text-area)
+	image (image)
+
+--
+
+le travail d'as
+image header (image)
+
+groupe 8 missions (group)
+	titre (text)
+	liste (repeater - image/texte/link)
+
+groupe le travail (group) x9
+	titre (text)
+	sous-titre (text)
+	texte (text-area)
+	image (image)
+
+groupe temoignages (group)
+	titre (text)
+	temoignages (repeater - text area/text)
+	photo (image)
+
+groupe jobs et stages (group)
+	jobs et stages (repeater - image/link/text)
+	phrase candidatures (text)
+	email direction (contact)
+	photo (image)
+
+--
+
+jobs et stages
+image header (image)
+
+titre jobs (text)
+bouton postuler (text)
+
+job (post catégorie job)
+	titre (title)
+	lieu (text)
+	régime (text/select?)
+	durée (text/select?)
+	description (text-area)
+	reference (text)
+
+titre stages (text)
+
+stage (post catégorie stage)
+	titre (title)
+	lieu (text)
+	régime (text/select?)
+	durée (text/select?)
+	reference (text)
+
+--
+
+actualités
+image header (image)
+
+titre actualité (text)
+
+actualités (post catégorie actualité ou repeater)
+	texte (title)
+	date (text/date?)
+	photo (image)
+	sous-titre (text)
+	texte de la news (text area)
+
+--
+
+partenaires
+image header (image)
+
+liste (repeater - image*2/text/text area)
+
+groupe le conseil d'adm (group)
+	titre (text)
+	sous-titre (text)
+	texte (text-area)
+	liens (repeater - link)
+	logo (image)
+
+--
+
+partenaires
+image header (image)
+
+titre (text)
+sous-titre (text)
+
+groupe adresse (group)
+	adresse (text)
+	tel (text)
+	mail (text)
+	reseaux (repeater - font awesome/link)
+
+heures d'ouvertures+accès (text area)
+
+carte (open street map)
+
+groupe formulaire (group)
+	nom (text) *7
+	envoyer (text)
+
+logo (header)
+
+--
+
+footer
+
+logo (page header)
+sasls... (text)
+adresse/tel/mail (page contact)
+
+rapport (text) + (file)
+contactez nous (link)
+reseaux (page contact)
