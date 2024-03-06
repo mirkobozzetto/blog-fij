@@ -128,3 +128,11 @@ ensuite dans le rendu on va appeler la fonctiodu foreach à l'intérieur des bal
   }
 ?>
 ```
+
+### Attention quand il y a des liens
+
+il faut toujours mettre cette balise a l'intérieur
+
+```php
+<script src='<?php echo get_stylesheet_directory_uri(); ?>/js/jquery-3.7.0.min.js'></script>
+```

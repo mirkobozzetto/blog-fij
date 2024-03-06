@@ -50,10 +50,9 @@
 </div>
 
 <?php
-$temoignages = get_field('carousel');
+$carousel_temoignages = get_field('carousel');
+// var_dump($carousel_temoignages);
 ?>
-
-
 
 <div class="row">
   <div class="col-7 offset-1">
@@ -61,14 +60,13 @@ $temoignages = get_field('carousel');
       <div class="carousel-inner">
 
         <?php
-        // var_dump($temoignages['temoignages']);
-        foreach ($temoignages['temoignages'] as $key => $value) {
+        foreach ($carousel_temoignages['temoignages'] as $key => $value) {
           if ($key == 0) {
             $active = 'active';
           } else {
             $active = '';
           }
-          //   ?>
+          //           ?>
         <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
 
           <p>
@@ -95,6 +93,8 @@ $temoignages = get_field('carousel');
   </div>
 
 
+
+  <!-- yo c'est pas fini ... -->
   <div class="col-3">
     <div>
       <img class="w-100" src="pics/pastille-guidance.png" alt="">
@@ -204,28 +204,6 @@ $temoignages = get_field('carousel');
     </div>
   </div>
 
-  <!--   <div class="row mb-5">
-    <div class="col-10 offset-1 d-flex justify-content-around">
-
-      <div class="w30 text-center">
-        <a href="actualite.html#soins"><img class="w-100" src="pics/soins.png" alt=""></a>
-        <h5>Tous les soins santé remboursés</h5>
-      </div>
-
-        <div class="w30 text-center">
-        <a href="actualite.html#aide"><img class="w-100"  src="pics/aide_actu.png" alt=""></a>
-        <h5>Une aide plus importante</h5>
-      </div>
-
-
-      <div class="w30 text-center">
-        <a href="actualite.html#smart"><img class="w-100"  src="pics/smartphone.png" alt=""></a>
-        <h5>Les smartphone pas avant 13 ans</h5>
-      </div>
-
-
-    </div>
-  </div> -->
 </div>
 
 
