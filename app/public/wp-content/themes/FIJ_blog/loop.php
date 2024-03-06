@@ -23,7 +23,7 @@
     $missions = get_field('missions');
     // var_dumpj($missions);
     foreach ($missions as $key => $value) {
-      ?>
+    ?>
     <div class="w20 mx-3">
       <a href="  <?php echo $value['link']['url']; ?>">
         <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
@@ -49,28 +49,38 @@
   </div>
 </div>
 
+<?php
+$temoignages = get_field('carousel');
+?>
+
+
 
 <div class="row">
   <div class="col-7 offset-1">
-
     <div id="carouselExample" class="carousel slide pt-5  w-100 ">
       <div class="carousel-inner">
-        <div class="carousel-item active bg-bleu-tur fontwhite text-center  carousel1 ">
-          <!-- <p>
-            “Trois types d’accompagnement social sont proposés aux locataires sociaux :
-            le travail individuel, collectif et communautaire. Les travailleurs sociaux
-            de la SASLS détachés en SISP réalisent les entretiens individuels et les actions
-            collectives. Ils ont principalement les huit” missions suivantes :
-          </p> -->
-          <p>
 
-            <?php echo get_field('carousel'); ?>
+        <?php
+        var_dump($temoignages['temoignages']);
+        foreach ($temoignages['temoignages'] as $key => $value) {
+          // if ($key == 0) {
+          //   $active = 'active';
+          // } else {
+          //   $active = '';
+          // }
+        ?>
+        <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
+          <p>hey</p>
+          <p>
+            <?php echo $value['text']; ?>
           </p>
           <h2>
-
+            <?php echo $value['name']; ?>
           </h2>
         </div>
-
+        <?php
+        }
+        ?>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -128,7 +138,7 @@
 
       <div class="mb-5">
         <h4>Le centre de ressourcement du travail social logement et habitat</h4>
-        <p>LLe centre a pour but de renforcer les ressources mises à la disposition des professionnels et futurs
+        <p>Le centre a pour but de renforcer les ressources mises à la disposition des professionnels et futurs
           professionnels de terrain du secteur social et plus particulièrement du logement et santé mentale.</p>
       </div>
 
@@ -283,17 +293,17 @@
 
   foreach ($missions as $key => $value) {
     // condition pour ajouter une classe css
-      if ($key == 0) {
-        $greenClass = 'bg-green';
-      } else {
-        $greenClass = '';
-      }
+    if ($key == 0) {
+      $greenClass = 'bg-green';
+    } else {
+      $greenClass = '';
+    }
 
-      if ($key === count($missions) - 1) {
-        $greenClass = 'bg-green';
-      }
+    if ($key === count($missions) - 1) {
+      $greenClass = 'bg-green';
+    }
 
-    ?>
+  ?>
 
   <div class="border border-black w10 p-2 <?php echo $greenClass ?> "> <?php echo ($key + 1) . '.'; ?> </div>
   <div class="border border-black w30 p-2 <?php echo $greenClass ?> ">
@@ -303,6 +313,6 @@
   <div class="border border-black w30 p-2 <?php echo $greenClass ?> "> <?php echo $value['link']['url']; ?> </div>
   <?php
   }
-?>
+  ?>
   <!--  -->
   </main>
