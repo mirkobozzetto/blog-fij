@@ -64,7 +64,7 @@
           </p> -->
           <p>
 
-            // <?php echo get_field('carousel'); ?> //
+            <?php echo get_field('carousel'); ?>
           </p>
           <h2>
 
