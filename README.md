@@ -1,6 +1,6 @@
 # Projet FIJ
 
-Le projet se trouve [ici](./app/public/wp-content/themes/FIJ_blog)
+## Le projet se trouve [ici](./app/public/wp-content/themes/FIJ_blog)
 
 à l'intention de ceux qui souhaiteraient voir le code complet qui fonctionne et et est bien sûr commenté afin de bien se souvenir des étapes vues en cours de Wordpress/php
 
