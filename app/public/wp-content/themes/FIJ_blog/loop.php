@@ -24,15 +24,15 @@
     // var_dumpj($missions);
     foreach ($missions as $key => $value) {
       ?>
-    <div class="w20 mx-3">
-      <a href="  <?php echo $value['link']['url']; ?>">
-        <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
-      </a>
-      <h5 class="text-center">
-        <?php echo $value['text']; ?>
-      </h5>
-    </div>
-    <?php
+      <div class="w20 mx-3">
+        <a href="  <?php echo $value['link']['url']; ?>">
+          <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
+        </a>
+        <h5 class="text-center">
+          <?php echo $value['text']; ?>
+        </h5>
+      </div>
+      <?php
     }
     ?>
     <!--  -->
@@ -66,17 +66,17 @@ $carousel_temoignages = get_field('carousel');
           } else {
             $active = '';
           }
-          //           ?>
-        <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
+          //            ?>
+          <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
 
-          <p>
-            <?php echo $value['text']; ?>
-          </p>
-          <h2>
-            <?php echo $value['name']; ?>
-          </h2>
-        </div>
-        <?php
+            <p>
+              <?php echo $value['text']; ?>
+            </p>
+            <h2>
+              <?php echo $value['name']; ?>
+            </h2>
+          </div>
+          <?php
         }
         ?>
       </div>
@@ -268,7 +268,7 @@ $carousel_temoignages = get_field('carousel');
   //
   // permet de voir le nombre d'élements dans le tableau
   // var_dumpj(count($missions));
-
+  
   foreach ($missions as $key => $value) {
     // condition pour ajouter une classe css
     if ($key == 0) {
@@ -283,19 +283,19 @@ $carousel_temoignages = get_field('carousel');
 
     ?>
 
-  <div class="border border-black w10 p-2 <?php echo $greenClass ?> ">
-    <?php echo ($key + 1) . '.'; ?>
-  </div>
-  <div class="border border-black w30 p-2 <?php echo $greenClass ?> ">
-    <img class="w10" src=" <?php echo $value['image']['url']; ?>" alt="">
-  </div>
-  <div class="border border-black w30 p-2 <?php echo $greenClass ?> ">
-    <?php echo $value['text']; ?>
-  </div>
-  <div class="border border-black w30 p-2 <?php echo $greenClass ?> ">
-    <?php echo $value['link']['url']; ?>
-  </div>
-  <?php
+    <div class="border border-black w10 p-2 <?php echo $greenClass ?> ">
+      <?php echo ($key + 1) . '.'; ?>
+    </div>
+    <div class="border border-black w30 p-2 <?php echo $greenClass ?> ">
+      <img class="w10" src=" <?php echo $value['image']['url']; ?>" alt="">
+    </div>
+    <div class="border border-black w30 p-2 <?php echo $greenClass ?> ">
+      <?php echo $value['text']; ?>
+    </div>
+    <div class="border border-black w30 p-2 <?php echo $greenClass ?> ">
+      <?php echo $value['link']['url']; ?>
+    </div>
+    <?php
   }
   ?>
   <!--  -->
