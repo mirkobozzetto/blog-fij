@@ -23,7 +23,7 @@
     $missions = get_field('missions');
     // var_dumpj($missions);
     foreach ($missions as $key => $value) {
-    ?>
+      ?>
     <div class="w20 mx-3">
       <a href="  <?php echo $value['link']['url']; ?>">
         <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
@@ -61,16 +61,16 @@ $temoignages = get_field('carousel');
       <div class="carousel-inner">
 
         <?php
-        var_dump($temoignages['temoignages']);
+        // var_dump($temoignages['temoignages']);
         foreach ($temoignages['temoignages'] as $key => $value) {
-          // if ($key == 0) {
-          //   $active = 'active';
-          // } else {
-          //   $active = '';
-          // }
-        ?>
+          if ($key == 0) {
+            $active = 'active';
+          } else {
+            $active = '';
+          }
+          //   ?>
         <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
-          <p>hey</p>
+
           <p>
             <?php echo $value['text']; ?>
           </p>
@@ -303,14 +303,20 @@ $temoignages = get_field('carousel');
       $greenClass = 'bg-green';
     }
 
-  ?>
+    ?>
 
-  <div class="border border-black w10 p-2 <?php echo $greenClass ?> "> <?php echo ($key + 1) . '.'; ?> </div>
+  <div class="border border-black w10 p-2 <?php echo $greenClass ?> ">
+    <?php echo ($key + 1) . '.'; ?>
+  </div>
   <div class="border border-black w30 p-2 <?php echo $greenClass ?> ">
     <img class="w10" src=" <?php echo $value['image']['url']; ?>" alt="">
   </div>
-  <div class="border border-black w30 p-2 <?php echo $greenClass ?> "> <?php echo $value['text']; ?> </div>
-  <div class="border border-black w30 p-2 <?php echo $greenClass ?> "> <?php echo $value['link']['url']; ?> </div>
+  <div class="border border-black w30 p-2 <?php echo $greenClass ?> ">
+    <?php echo $value['text']; ?>
+  </div>
+  <div class="border border-black w30 p-2 <?php echo $greenClass ?> ">
+    <?php echo $value['link']['url']; ?>
+  </div>
   <?php
   }
   ?>
