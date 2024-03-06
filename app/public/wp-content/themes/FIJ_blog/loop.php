@@ -24,15 +24,15 @@
     // var_dumpj($missions);
     foreach ($missions as $key => $value) {
       ?>
-      <div class="w20 mx-3">
-        <a href="  <?php echo $value['link']['url']; ?>">
-          <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
-        </a>
-        <h5 class="text-center">
-          <?php echo $value['text']; ?>
-        </h5>
-      </div>
-      <?php
+    <div class="w20 mx-3">
+      <a href="  <?php echo $value['link']['url']; ?>">
+        <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
+      </a>
+      <h5 class="text-center">
+        <?php echo $value['text']; ?>
+      </h5>
+    </div>
+    <?php
     }
     ?>
     <!--  -->
@@ -66,17 +66,17 @@ $carousel_temoignages = get_field('carousel');
           } else {
             $active = '';
           }
-          //            ?>
-          <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
+          //                   ?>
+        <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
 
-            <p>
-              <?php echo $value['text']; ?>
-            </p>
-            <h2>
-              <?php echo $value['name']; ?>
-            </h2>
-          </div>
-          <?php
+          <p>
+            <?php echo $value['text']; ?>
+          </p>
+          <h2>
+            <?php echo $value['name']; ?>
+          </h2>
+        </div>
+        <?php
         }
         ?>
       </div>
@@ -96,8 +96,12 @@ $carousel_temoignages = get_field('carousel');
 
   <!-- yo c'est pas fini ... -->
   <div class="col-3">
+    <?php
+    $img_travail = get_field('img_travail');
+    ?>
     <div>
-      <img class="w-100" src="pics/pastille-guidance.png" alt="">
+      <img class="w-100" src="<?php echo $img_travail["url"];
+      ; ?>" alt="">
     </div>
   </div>
 
@@ -262,13 +266,14 @@ $carousel_temoignages = get_field('carousel');
     2. utiliser une boucle foreach() pour parcourir le repeater
     3. afficher avec echo de ce qui est dans $value, en l'occurence $value['nom_du_champ_dans_acf']
 -->
+<!--
 <div class="d-flex flex-wrap my-5">
   <?php
   $missions = get_field('missions');
   //
   // permet de voir le nombre d'élements dans le tableau
   // var_dumpj(count($missions));
-  
+
   foreach ($missions as $key => $value) {
     // condition pour ajouter une classe css
     if ($key == 0) {
@@ -297,6 +302,6 @@ $carousel_temoignages = get_field('carousel');
     </div>
     <?php
   }
-  ?>
-  <!--  -->
-  </main>
+  ?> -->
+<!--  -->
+</main>
