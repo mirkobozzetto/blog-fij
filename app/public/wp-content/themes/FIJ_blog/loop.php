@@ -66,7 +66,7 @@ $carousel_temoignages = get_field('carousel');
           } else {
             $active = '';
           }
-          //                                    ?>
+          //                                                                                                         ?>
         <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
 
           <p>
@@ -120,7 +120,7 @@ $carousel_temoignages = get_field('carousel');
 
   <?php
   $section_services = get_field('section_services');
-  var_dumpj($section_services);
+  // var_dumpj($section_services);
   ?>
 
   <div class="row  mb-5">
@@ -158,7 +158,17 @@ $carousel_temoignages = get_field('carousel');
       <!--  -->
       <!--  -->
 
-      <a href="nos-services.html"><button class="btn bg-bluef fontwhite fs-5"> Lire la suite</button></a>
+      <div>
+        <?php
+        // var_dumpj($section_services);
+        ?>
+      </div>
+
+      <a href="<?php echo $section_services['button']['url'] ?> "><button class="btn bg-bluef fontwhite fs-5">
+          <?php
+          echo $section_services['button']['title']
+            ?>
+        </button></a>
 
 
 
@@ -166,7 +176,8 @@ $carousel_temoignages = get_field('carousel');
 
     <div class="col-5 offset-1 d-flex align-items-center justify-content-center">
       <div class="w80">
-        <a href="nos-services.html"><img class="w-100" src="pics/shema-services.png" alt=""></a>
+        <a href="nos-services.html"><img class="w-100" src="<?php echo $section_services['schema_img']['url']; ?>"
+            alt=""></a>
       </div>
     </div>
 
