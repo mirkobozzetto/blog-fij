@@ -66,7 +66,7 @@ $carousel_temoignages = get_field('carousel');
           } else {
             $active = '';
           }
-          //                   ?>
+          //                               ?>
         <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
 
           <p>
@@ -79,7 +79,10 @@ $carousel_temoignages = get_field('carousel');
         <?php
         }
         ?>
+
       </div>
+
+
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -113,17 +116,30 @@ $carousel_temoignages = get_field('carousel');
 
 <div class="container-fluid bg-bleu-tur padtop mt10 padbot">
 
+  <!-- section_services -->
+
+  <?php
+  $section_services = get_field('section_services');
+  var_dumpj($section_services);
+  ?>
 
   <div class="row  mb-5">
+
     <div class="col-1 bg-white"></div>
     <div class="col-2 bg-white   pt-1 pb-1 ">
-      <h3>Nos services</h3>
+      <h3>
+        <!-- ACF champ avec le field Label -->
+        <?php echo $section_services['title']; ?>
+      </h3>
     </div>
   </div>
 
 
   <div class="row">
     <div class="col-4 offset-1 fontwhite">
+      <?php
+      foreach ($section_services[content] as $key => $value) {
+        ?>
 
       <div class="mb-5">
         <h4>L’équipe Mobile Santé Mentale</h4>
@@ -145,6 +161,10 @@ $carousel_temoignages = get_field('carousel');
         <p>Le centre a pour but de renforcer les ressources mises à la disposition des professionnels et futurs
           professionnels de terrain du secteur social et plus particulièrement du logement et santé mentale.</p>
       </div>
+      <!--  -->
+      <?php
+      }
+      ?>
 
 
       <a href="nos-services.html"><button class="btn bg-bluef fontwhite fs-5"> Lire la suite</button></a>
@@ -273,7 +293,7 @@ $carousel_temoignages = get_field('carousel');
   //
   // permet de voir le nombre d'élements dans le tableau
   // var_dumpj(count($missions));
-
+  
   foreach ($missions as $key => $value) {
     // condition pour ajouter une classe css
     if ($key == 0) {
