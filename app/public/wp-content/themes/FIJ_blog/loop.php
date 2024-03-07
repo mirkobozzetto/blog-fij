@@ -66,7 +66,7 @@ $carousel_temoignages = get_field('carousel');
           } else {
             $active = '';
           }
-          //                               ?>
+          //                                    ?>
         <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
 
           <p>
@@ -138,34 +138,25 @@ $carousel_temoignages = get_field('carousel');
   <div class="row">
     <div class="col-4 offset-1 fontwhite">
       <?php
-      foreach ($section_services[content] as $key => $value) {
+      foreach ($section_services['content'] as $key => $value) {
         ?>
 
       <div class="mb-5">
-        <h4>L’équipe Mobile Santé Mentale</h4>
-        <p>L'Équipe Mobile au sein du Service d’Accompagnement aux Locataires Sociaux a été créée par
-          la Secrétaire d’État du Logement, Mme Ben Hamou. Cette équipe aide les travailleurs sociaux des
-          16 Sociétés de Logement Public à Bruxelles quand ils sont confrontés à des locataires ayant des
-          problèmes de santé mentale</p>
-      </div>
-
-      <div class="mb-5">
-        <h4>Pôle formation</h4>
-        <p>La SASLS propose des formations aux assistants sociaux détachées en SISP par elle et aux assistants
-          sociaux des SISP bruxelloises, aux référents sociaux wallons, aux assistants sociaux de la Région
-          Flamande et tout autre professionnel intéressé par les sujets traités.</p>
-      </div>
-
-      <div class="mb-5">
-        <h4>Le centre de ressourcement du travail social logement et habitat</h4>
-        <p>Le centre a pour but de renforcer les ressources mises à la disposition des professionnels et futurs
-          professionnels de terrain du secteur social et plus particulièrement du logement et santé mentale.</p>
+        <h4>
+          <?php echo $value['sub_title']; ?>
+        </h4>
+        <p>
+          <?php echo $value['text']; ?>
+        </p>
       </div>
       <!--  -->
       <?php
       }
       ?>
 
+      <!--  -->
+      <!--  -->
+      <!--  -->
 
       <a href="nos-services.html"><button class="btn bg-bluef fontwhite fs-5"> Lire la suite</button></a>
 
