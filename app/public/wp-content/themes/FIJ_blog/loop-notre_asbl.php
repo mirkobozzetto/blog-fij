@@ -115,12 +115,13 @@
 
 <div class="container-fluid bg-bleu-tur padtop mt10 mb-5 padbot">
 
-  <div class="row">
-    <div class="col-10 offset-1 d-flex justify-content-between fontwhite">
 
-      <?php
+  <?php
       $team_pics = get_field('team_pics');
       ?>
+
+  <div class="row">
+    <div class="col-10 offset-1 d-flex justify-content-between fontwhite">
 
       <?php
     foreach ($team_pics as $key => $value) {
