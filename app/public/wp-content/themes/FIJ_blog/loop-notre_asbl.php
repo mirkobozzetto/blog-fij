@@ -1,4 +1,4 @@
-<!-- se referencer au html de medhi et mettre les bons lins php et bons dforeact lies a ACF -->
+<!-- se referencer au html de medhi et mettre les bons lins php et bons foreach liés a ACF -->
 <div class="row mb-5 mt10">
   <?php
   $welcome = get_field('welcome');
