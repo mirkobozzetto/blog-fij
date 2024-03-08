@@ -124,13 +124,13 @@ var_dumpj($team_pics)
       for ($i = 0; $i <= 3; $i++) {
         ?>
 
-      <div class="w20 text-center">
-        <img class="w-100" src="<?php echo $team_pics[$i]['img']['url']; ?>" alt="">
-        <h4 class="">
-          <?php echo $team_pics[$i]['name']; ?>
-        </h4>
-      </div>
-      <?php
+        <div class="w20 text-center">
+          <img class="w-100" src="<?php echo $team_pics[$i]['img']['url']; ?>" alt="">
+          <h4 class="">
+            <?php echo $team_pics[$i]['name']; ?>
+          </h4>
+        </div>
+        <?php
       }
       ?>
     </div>
@@ -142,13 +142,13 @@ var_dumpj($team_pics)
       <?php
       for ($i = 4; $i <= 7; $i++) {
         ?>
-      <div class="w20 text-center">
-        <img class="w-100" src="<?php echo $team_pics[$i]['img']['url']; ?>" alt="">
-        <h4 class="">
-          <?php echo $team_pics[$i]['name']; ?>
-        </h4>
-      </div>
-      <?php
+        <div class="w20 text-center">
+          <img class="w-100" src="<?php echo $team_pics[$i]['img']['url']; ?>" alt="">
+          <h4 class="">
+            <?php echo $team_pics[$i]['name']; ?>
+          </h4>
+        </div>
+        <?php
       }
       ?>
 
@@ -158,17 +158,23 @@ var_dumpj($team_pics)
 
 
   <!-- directeur -->
+  <?php
+  $director = get_field('director');
+  ?>
   <div class="row mt-5">
     <div class="col-2 offset-1 d-flex p-0">
       <div class="w-100 ps-3">
-        <img class="w-100" src="pics/boss.png" alt="">
+        <img class="w-100" src="<?php echo $director['img']['url']; ?>" alt="">
       </div>
     </div>
 
     <div class="col-6 pt-5 fontwhite">
-      <h4>Tony Loze <br>Directeur</h4>
-      <p>Les valeurs qui guident nos missions sont le respect, neutralité, passion, intégrité, flexibilité,
-        autonomie, solidarité et respect. </p>
+      <h4>
+        <?php echo $director['name']; ?>
+      </h4>
+      <p>
+        <?php echo $director['text']; ?>
+      </p>
     </div>
   </div>
 
