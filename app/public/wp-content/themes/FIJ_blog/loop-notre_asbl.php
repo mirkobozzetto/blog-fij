@@ -2,7 +2,6 @@
 <div class="row mb-5 mt10">
   <?php
   $welcome = get_field('welcome');
-  // var_dumpj($welcome)
   ?>
   <div class="col-5 offset-1 padtop">
     <div>
@@ -26,31 +25,36 @@
 
 <div class="container-fluid bg-bleu-tur padtop mt10 padbot">
 
-
+  <?php
+  $welcome = get_field('mission');
+  ?>
   <div class="row  mb-5">
     <div class="col-1 bg-white"></div>
     <div class="col-2 bg-white   pt-1 pb-1 ">
-      <h3>Notre mission</h3>
+      <h3>
+        <?php echo $welcome['title']; ?>
+      </h3>
     </div>
   </div>
 
-
+  <?php
+  $mission = get_field('mission');
+?>
   <div class="row">
 
     <div class="col-5 offset-1">
       <div class="w-100">
-        <img class="w-100" src="pics/mission.png" alt="">
+        <img class="w-100" src="<?php echo $mission['image']['url']; ?>" alt="">
       </div>
     </div>
 
     <div class="col-5 padtop d-flex align-items-center ">
       <div class="fontwhite">
-        <p>La SASLS a pour mission d’assurer un accompagnement social individuel des candidats-locataires et des
-          locataires des sociétés immobilières de service public, ainsi qu’un accompagnement social collectif de ces
-          locataires.
-          Pour répondre aux besoins des locataires sociaux et ainsi réaliser son objet social, l’asbl détache 60
-          travailleurs sociaux auprès des 16 SISP de la Région de Bruxelles-Capitale pour. <a href=""> (Lien vers
-            https://slrb-bghm.brussels/fr/societes-immobilieres-de-service-public/toutes-les-sisp)</a>
+        <p>
+          <?php echo $mission['text']; ?>
+          <!-- ! ATTENTION -->
+          <!-- <a href=""> (Lien vers
+            https://slrb-bghm.brussels/fr/societes-immobilieres-de-service-public/toutes-les-sisp)</a> -->
         </p>
       </div>
     </div>
