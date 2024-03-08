@@ -39,7 +39,7 @@
 
   <?php
   $mission = get_field('mission');
-?>
+  ?>
   <div class="row">
 
     <div class="col-5 offset-1">
@@ -66,26 +66,46 @@
 
 
 <div class="container-fluid">
-
+  <?php
+  $teams = get_field('teams');
+  ?>
   <div class="row mt10 mb-5">
     <div class="col-1 bg-bleu-tur"></div>
     <div class="col-2 bg-bleu-tur   pt-1 pb-1 fontwhite">
-      <h3>L'equipes</h3>
+      <h3>
+        <?php echo $teams['title']; ?>
+      </h3>
     </div>
   </div>
 
   <div class="row ">
 
     <div class="col-5 offset-1 padtop">
-      <p>L’équipe au siège est constituée de 4 départements sous la responsabilité de la direction tenu par Tony
-        Loze</p>
-      <div class="w-100 d-flex justify-content-end padtop"><button class="btn bg-bleu-tur fontwhite fs-5 mb-2 w-25 ">
-          organigramme</button></div>
+      <p>
+        <?php echo $teams['text']; ?>
+      </p>
+      <?php
+      $button_organigramme = get_field('button_organigramme');
+      ?>
+      <?php
+      var_dumpj($button_organigramme)
+        ?>
+
+      <div class="w-100 d-flex justify-content-end padtop">
+        <button class="btn bg-bleu-tur fontwhite fs-5 mb-2 w-25"
+          onclick="window.open('<?php echo $button_organigramme['url']; ?>', '<?php echo $button_organigramme['target']; ?>')">
+          <?php echo $button_organigramme['title']; ?>
+        </button>
+      </div>
     </div>
+
+    <!-- <?php
+    var_dumpj($teams)
+      ?> -->
 
     <div class="col-5 d-flex justify-content-center align-items-center">
       <div class="w80">
-        <img class="w-100" src="pics/equipe.png" alt="">
+        <img class="w-100" src="<?php echo $teams['image']['url']; ?>" alt="">
       </div>
     </div>
   </div>
