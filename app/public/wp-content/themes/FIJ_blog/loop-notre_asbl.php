@@ -2,9 +2,9 @@
 <div class="row mb-5 mt10">
   <?php
   $welcome = get_field('welcome');
-  var_dumpj($welcome)
-    ?>
-  <div class="col-5 offset-1 padtop  ">
+  // var_dumpj($welcome)
+  ?>
+  <div class="col-5 offset-1 padtop">
     <div>
       <h2 class="">
         <?php echo $welcome['title']; ?>
@@ -17,11 +17,11 @@
 
   <div class="col-5">
     <div>
-      <img class="w-100" src="pics/welcom.png" alt="">
+      <img class="w-100" src="<?php echo $welcome['image']['url']; ?>" alt="">
     </div>
   </div>
-</div>
 
+</div>
 
 
 <div class="container-fluid bg-bleu-tur padtop mt10 padbot">
