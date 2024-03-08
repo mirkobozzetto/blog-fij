@@ -124,13 +124,13 @@ var_dumpj($team_pics)
       for ($i = 0; $i <= 3; $i++) {
         ?>
 
-        <div class="w20 text-center">
-          <img class="w-100" src="<?php echo $team_pics[$i]['img']['url']; ?>" alt="">
-          <h4 class="">
-            <?php echo $team_pics[$i]['name']; ?>
-          </h4>
-        </div>
-        <?php
+      <div class="w20 text-center">
+        <img class="w-100" src="<?php echo $team_pics[$i]['img']['url']; ?>" alt="">
+        <h4 class="">
+          <?php echo $team_pics[$i]['name']; ?>
+        </h4>
+      </div>
+      <?php
       }
       ?>
     </div>
@@ -142,13 +142,13 @@ var_dumpj($team_pics)
       <?php
       for ($i = 4; $i <= 7; $i++) {
         ?>
-        <div class="w20 text-center">
-          <img class="w-100" src="<?php echo $team_pics[$i]['img']['url']; ?>" alt="">
-          <h4 class="">
-            <?php echo $team_pics[$i]['name']; ?>
-          </h4>
-        </div>
-        <?php
+      <div class="w20 text-center">
+        <img class="w-100" src="<?php echo $team_pics[$i]['img']['url']; ?>" alt="">
+        <h4 class="">
+          <?php echo $team_pics[$i]['name']; ?>
+        </h4>
+      </div>
+      <?php
       }
       ?>
 
@@ -175,10 +175,6 @@ var_dumpj($team_pics)
 
 
 </div>
-
-
-
-
 
 
 </main>
