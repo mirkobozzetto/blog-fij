@@ -118,10 +118,19 @@
   <div class="row">
     <div class="col-10 offset-1 d-flex justify-content-between fontwhite">
 
+      <?php
+      $team_pics = get_field('team_pics');
+      ?>
+
+      <?php
+    foreach ($team_pics as $key => $value) {
+      ?>
+
       <div class="w20 text-center">
         <img class="w-100" src="pics/fille1.png" alt="">
         <h4 class="">Antonieta Virtosu Nardin <br> Assistante </h4>
       </div>
+
 
       <div class="w20 text-center">
         <img class="w-100" src="pics/fille2.png" alt="">
