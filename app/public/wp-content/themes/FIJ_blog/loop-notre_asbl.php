@@ -87,9 +87,7 @@
       <?php
       $button_organigramme = get_field('button_organigramme');
       ?>
-      <?php
-      var_dumpj($button_organigramme)
-        ?>
+
 
       <div class="w-100 d-flex justify-content-end padtop">
         <button class="btn bg-bleu-tur fontwhite fs-5 mb-2 w-25"
@@ -98,10 +96,6 @@
         </button>
       </div>
     </div>
-
-    <!-- <?php
-    var_dumpj($teams)
-      ?> -->
 
     <div class="col-5 d-flex justify-content-center align-items-center">
       <div class="w80">
@@ -112,74 +106,59 @@
 </div>
 
 
+<!-- <?php
+var_dumpj($team_pics)
+  ?> -->
 
+<!-- Repeater ACF de la team -->
+<!-- ...J'ai du un peux flexer car il y a un seul repeater pour que seuls les bons blocs se répètent ;) ... -->
 <div class="container-fluid bg-bleu-tur padtop mt10 mb-5 padbot">
-
-
   <?php
-      $team_pics = get_field('team_pics');
-      ?>
-
+  $team_pics = get_field('team_pics');
+  ?>
+  <!-- partie 1 -->
   <div class="row">
     <div class="col-10 offset-1 d-flex justify-content-between fontwhite">
 
       <?php
-    foreach ($team_pics as $key => $value) {
+      for ($i = 0; $i <= 3; $i++) {
+        ?>
+
+        <div class="w20 text-center">
+          <img class="w-100" src="<?php echo $team_pics[$i]['img']['url']; ?>" alt="">
+          <h4 class="">
+            <?php echo $team_pics[$i]['name']; ?>
+          </h4>
+        </div>
+        <?php
+      }
       ?>
-
-      <div class="w20 text-center">
-        <img class="w-100" src="pics/fille1.png" alt="">
-        <h4 class="">Antonieta Virtosu Nardin <br> Assistante </h4>
-      </div>
-
-
-      <div class="w20 text-center">
-        <img class="w-100" src="pics/fille2.png" alt="">
-        <h4>Béatrice Massart <br> Responsable RH </h4>
-      </div>
-
-      <div class="w20 text-center">
-        <img class="w-100" src="pics/garcons1.png" alt="">
-        <h4>Kuzomono Espoir <br> Docteur </h4>
-      </div>
-
-      <div class="w20 text-center">
-        <img class="w-100" src="pics/fille3.png" alt="">
-        <h4>Clémence Delcourte <br> Assistante RH  </h4>
-      </div>
-
     </div>
   </div>
 
+  <!-- partie  2 -->
   <div class="row">
     <div class="col-10 offset-1 d-flex justify-content-between fontwhite">
-
-      <div class="w20 text-center">
-        <img class="w-100" src="pics/fille4.png" alt="">
-        <h4 class="">Antonieta Virtosu Nardin <br> Assistante </h4>
-      </div>
-
-      <div class="w20 text-center">
-        <img class="w-100" src="pics/fille5.png" alt="">
-        <h4>Béatrice Massart <br> Responsable RH </h4>
-      </div>
-
-      <div class="w20 text-center">
-        <img class="w-100" src="pics/fille6.png" alt="">
-        <h4>Kuzomono Espoir <br> Docteur </h4>
-      </div>
-
-      <div class="w20 text-center">
-        <img class="w-100" src="pics/fille7.png" alt="">
-        <h4>Clémence Delcourte <br> Assistante RH  </h4>
-      </div>
+      <?php
+      for ($i = 4; $i <= 7; $i++) {
+        ?>
+        <div class="w20 text-center">
+          <img class="w-100" src="<?php echo $team_pics[$i]['img']['url']; ?>" alt="">
+          <h4 class="">
+            <?php echo $team_pics[$i]['name']; ?>
+          </h4>
+        </div>
+        <?php
+      }
+      ?>
 
     </div>
   </div>
 
 
-  <div class="row mt-5">
 
+  <!-- directeur -->
+  <div class="row mt-5">
     <div class="col-2 offset-1 d-flex p-0">
       <div class="w-100 ps-3">
         <img class="w-100" src="pics/boss.png" alt="">
