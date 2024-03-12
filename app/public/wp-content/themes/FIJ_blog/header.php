@@ -97,7 +97,7 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
 
             // ici par exemple on ajoute une classe a nos liens,
             //  ca rempplace le <a par <a class="nav-link" dans $menu
-            
+
             $menu = str_replace('<a', '<a class = "nav-link"', $menu);
 
             $menu = str_replace('class="menu-item', 'class="nav-item menu-item', $menu);
