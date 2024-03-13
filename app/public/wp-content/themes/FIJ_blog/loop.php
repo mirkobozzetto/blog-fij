@@ -203,59 +203,69 @@ $carousel_temoignages = get_field('carousel');
       <!-- repetitions de posts -->
       <?php
       $args = array(
-        'category_name' => 'characters',
-        'order' => 'ASC',
-        'orderby' => 'title',
+        'category_name' => 'actualite',
+        'order' => 'ASC', // or DSC
+        'orderby' => 'date',
         'nopaging' => false,
         'posts_per_page' => 4,
         //'paged' => 1,
       );
 
+      // The Query
       $query = new WP_Query($args);
       if ($query->have_posts()) {
         while ($query->have_posts()) {
           $query->the_post();
+          // formatage de la date
+
+          // ! ATTENTION
+          $date = DateTime::createFromFormat('Ymd', get_field('post_actu')['date']);
       ?>
 
           <!--  -->
           <?php
-          $post_actu = get_field("post_actu")
-
+          $post_actu = get_field("post_actu");
           ?>
 
+          <div class="w-25 text-centser">
+            <a href="#journée"><img class="w-100" src="
+        <?php
+          echo $post_actu["thumbnail"]["url"];
+        ?>
+        " alt=""></a>
+            <h5>
+              <?php
+              echo $post_actu["title"]
+              ?>
+            </h5>
 
-          <div class="w-25 text-center">
-            <a href="#journée"><img class="w-100" src="pics/actu-formation.png" alt=""></a>
-            <h5>Journées formations </h5>
-            <p class="date">Juin 2022 </p>
+            <p class="date">
+              <?php
+              echo $date->format('m Y');
+              ?>
+            </p>
+
           </div>
       <?php
         }
       }
+      wp_reset_postdata()
       ?>
+
     </div>
   </div>
-
 </div>
 
 
 <div class="container-fluid bg-bleu-tur padtop mt10 mb-5 padbot">
-
-
   <div class="row  mb-5">
     <div class="col-1 bg-white"></div>
     <div class="col-2 bg-white  pt-1 pb-1 ">
       <h3>Jobs et Stages</h3>
     </div>
   </div>
-
-
-
   <div class="row ">
-
-
     <div class="col-6 offset-1 d-flex flex-column ">
-
       <div class="d-flex">
         <div class="fontwhite  w40 me-3 pt-1">
           <a href="jobs-stage.html"><img class="w-100" src="pics/jobs.png" alt=""></a>
