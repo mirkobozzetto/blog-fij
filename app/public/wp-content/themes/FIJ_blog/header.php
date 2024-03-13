@@ -70,8 +70,7 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
           </a>
         </div>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -107,8 +106,7 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
             ?>
 
             <li class='nav-item dropdown'>
-              <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown'
-                aria-expanded='false'>
+              <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
                 langue
               </a>
               <ul class='dropdown-menu'>
@@ -150,7 +148,7 @@ social individuel et collectif des candidats et des locataires des Sociétés im
 
           <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
           <!-- <? echo get_field('le_nom_de_ton_champ_ACF');
-          ?> -->
+                ?> -->
           <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
           <p class='fs-5'>
@@ -180,4 +178,4 @@ social individuel et collectif des candidats et des locataires des Sociétés im
 
     <!-- recuperer l'image dans le back -->
     <!-- <img src = "<?php echo $hero_img['url'];
-    ?>' alt = '"> -->
+                      ?>' alt = '"> -->

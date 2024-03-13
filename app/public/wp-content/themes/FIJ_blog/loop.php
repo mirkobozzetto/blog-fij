@@ -23,15 +23,15 @@
     $missions = get_field('missions');
     // var_dumpj($missions);
     foreach ($missions as $key => $value) {
-      ?>
-    <div class="w20 mx-3">
-      <a href="  <?php echo $value['link']['url']; ?>">
-        <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
-      </a>
-      <h5 class="text-center">
-        <?php echo $value['text']; ?>
-      </h5>
-    </div>
+    ?>
+      <div class="w20 mx-3">
+        <a href="  <?php echo $value['link']['url']; ?>">
+          <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
+        </a>
+        <h5 class="text-center">
+          <?php echo $value['text']; ?>
+        </h5>
+      </div>
     <?php
     }
     ?>
@@ -66,16 +66,17 @@ $carousel_temoignages = get_field('carousel');
           } else {
             $active = '';
           }
-          //                                                                                                         ?>
-        <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
+          //
+        ?>
+          <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
 
-          <p>
-            <?php echo $value['text']; ?>
-          </p>
-          <h2>
-            <?php echo $value['name']; ?>
-          </h2>
-        </div>
+            <p>
+              <?php echo $value['text']; ?>
+            </p>
+            <h2>
+              <?php echo $value['name']; ?>
+            </h2>
+          </div>
         <?php
         }
         ?>
@@ -103,8 +104,7 @@ $carousel_temoignages = get_field('carousel');
     $img_travail = get_field('img_travail');
     ?>
     <div>
-      <img class="w-100" src="<?php echo $img_travail["url"];
-      ; ?>" alt="">
+      <img class="w-100" src="<?php echo $img_travail["url"];; ?>" alt="">
     </div>
   </div>
 
@@ -139,17 +139,17 @@ $carousel_temoignages = get_field('carousel');
     <div class="col-4 offset-1 fontwhite">
       <?php
       foreach ($section_services['content'] as $key => $value) {
-        ?>
+      ?>
 
-      <div class="mb-5">
-        <h4>
-          <?php echo $value['sub_title']; ?>
-        </h4>
-        <p>
-          <?php echo $value['text']; ?>
-        </p>
-      </div>
-      <!--  -->
+        <div class="mb-5">
+          <h4>
+            <?php echo $value['sub_title']; ?>
+          </h4>
+          <p>
+            <?php echo $value['text']; ?>
+          </p>
+        </div>
+        <!--  -->
       <?php
       }
       ?>
@@ -167,7 +167,7 @@ $carousel_temoignages = get_field('carousel');
       <a href="<?php echo $section_services['button']['url'] ?> "><button class="btn bg-bluef fontwhite fs-5">
           <?php
           echo $section_services['button']['title']
-            ?>
+          ?>
         </button></a>
 
 
@@ -176,8 +176,7 @@ $carousel_temoignages = get_field('carousel');
 
     <div class="col-5 offset-1 d-flex align-items-center justify-content-center">
       <div class="w80">
-        <a href="nos-services.html"><img class="w-100" src="<?php echo $section_services['schema_img']['url']; ?>"
-            alt=""></a>
+        <a href="nos-services.html"><img class="w-100" src="<?php echo $section_services['schema_img']['url']; ?>" alt=""></a>
       </div>
     </div>
 
@@ -197,36 +196,43 @@ $carousel_temoignages = get_field('carousel');
     </div>
   </div>
 
+
+  <!--  -->
   <div class="row mb-5">
     <div class="col-10 offset-1 d-flex justify-content-around">
+      <!-- repetitions de posts -->
+      <?php
+      $args = array(
+        'category_name' => 'characters',
+        'order' => 'ASC',
+        'orderby' => 'title',
+        'nopaging' => false,
+        'posts_per_page' => 4,
+        //'paged' => 1,
+      );
 
-      <div class="w-25 text-center">
-        <a href="#journée"><img class="w-100" src="pics/actu-formation.png" alt=""></a>
-        <h5>Journées formations </h5>
-        <p class="date">Juin 2022 </p>
-      </div>
+      $query = new WP_Query($args);
+      if ($query->have_posts()) {
+        while ($query->have_posts()) {
+          $query->the_post();
+      ?>
 
-      <div class="w-25 text-center">
-        <a href="#info"><img class="w-100" src="pics/actu-info.png" alt=""></a>
-        <h5>Journées info </h5>
-        <p class="date">Avril 2022 </p>
-      </div>
+          <!--  -->
+          <?php
+          $post_actu = get_field("post_actu")
 
-
-      <div class="w-25 text-center">
-        <a href="#déjeuner"><img class="w-100" src="pics/actu-dejeuner.png" alt=""></a>
-        <h5>Petit déjeuner SASLS </h5>
-        <p class="date">Mars 2022 </p>
-      </div>
-
-
-      <div class="w-25 text-center">
-        <a href="#projet"><img class="w-100" src="pics/actu-projet.png" alt=""></a>
-        <h5>Projets en cours  </h5>
-        <p class="date">Arnaud dupont juin 2022 </p>
-      </div>
+          ?>
 
 
+          <div class="w-25 text-center">
+            <a href="#journée"><img class="w-100" src="pics/actu-formation.png" alt=""></a>
+            <h5>Journées formations </h5>
+            <p class="date">Juin 2022 </p>
+          </div>
+      <?php
+        }
+      }
+      ?>
     </div>
   </div>
 
@@ -295,7 +301,7 @@ $carousel_temoignages = get_field('carousel');
   //
   // permet de voir le nombre d'élements dans le tableau
   // var_dumpj(count($missions));
-  
+
   foreach ($missions as $key => $value) {
     // condition pour ajouter une classe css
     if ($key == 0) {
@@ -308,7 +314,7 @@ $carousel_temoignages = get_field('carousel');
       $greenClass = 'bg-green';
     }
 
-    ?>
+  ?>
 
     <div class="border border-black w10 p-2 <?php echo $greenClass ?> ">
       <?php echo ($key + 1) . '.'; ?>
@@ -324,6 +330,6 @@ $carousel_temoignages = get_field('carousel');
     </div>
     <?php
   }
-  ?> -->
+    ?> -->
 <!--  -->
 </main>
