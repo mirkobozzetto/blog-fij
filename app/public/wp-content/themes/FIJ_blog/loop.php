@@ -219,7 +219,7 @@ $carousel_temoignages = get_field('carousel');
           $query->the_post();
           // formatage de la date
 
-          // ! ATTENTION
+
           $date = DateTime::createFromFormat('Ymd', get_field('post_actu')['date']);
       ?>
 
@@ -267,31 +267,61 @@ $carousel_temoignages = get_field('carousel');
 
       <?php
       $job_stages = get_field('job_stages');
-      foreach ($job_stages as $key => $value) {
-      // var_dumpj($job_stages);
+      // foreach ($job_stages as $key => $value) {
+      var_dumpj($job_stages);
       ?>
       <!-- pas fini ATTENTION -->
 
-      <h3>Jobs et Stages</h3>
+      <h3>
+        <?php
+        echo $job_stages['text'];
+        ?>
+      </h3>
     </div>
   </div>
   <div class="row ">
+
+
     <div class="col-6 offset-1 d-flex flex-column ">
       <div class="d-flex">
+
+        <?php
+        foreach ($job_stages['img_field'] as $key => $value) {
+        ?>
         <div class="fontwhite  w40 me-3 pt-1">
-          <a href="jobs-stage.html"><img class="w-100" src="pics/jobs.png" alt=""></a>
-          <h3 class="text-center">Poste à pourvoir</h3>
+          <a href="jobs-stage.html"><img class="w-100" src="
+          <?php echo $value['img']['url']; ?>
+          " alt=""></a>
+          <h3 class="text-center">
+            <?php
+              echo $value['subtitle'];
+              ?>
+          </h3>
         </div>
 
-        <div class="fontwhite  w40">
-          <a href="jobs-stage.html"><img class="w-100" src="pics/stages.png" alt=""></a>
-          <h3 class="text-center ps-5">Stage à pourvoir</h3>
-        </div>
+        <!--  -->
+        <?php
+        }
+        ?>
       </div>
 
       <div class="fontwhite ">
-        <p>Pour les candidatures spontanées vous pouvez nous écrire à l’adresse mail suivante:
-          infodirection@sasls.irisnet.be </p>
+        <p>
+          <?php
+          echo $job_stages['annonce'];
+          ?>
+          <!--  -->
+
+          <!--  -->
+
+          <?php
+          //
+          ?>
+
+          <span>
+            <a href="mailto:coucou@salut.io">coucou@salut.io</a>
+          </span>
+        </p>
       </div>
 
     </div>
@@ -301,7 +331,11 @@ $carousel_temoignages = get_field('carousel');
 
     <div class="col-5 fontwhite ">
       <div class="w-100">
-        <img class="w-100" src="pics/job-stage.png" alt="">
+        <img class="w-100" src="
+        <?php
+        echo $job_stages['img']['url'];
+        ?>
+        " alt="">
       </div>
     </div>
 
