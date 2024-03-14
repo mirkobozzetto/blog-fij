@@ -24,14 +24,14 @@
     // var_dumpj($missions);
     foreach ($missions as $key => $value) {
     ?>
-      <div class="w20 mx-3">
-        <a href="  <?php echo $value['link']['url']; ?>">
-          <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
-        </a>
-        <h5 class="text-center">
-          <?php echo $value['text']; ?>
-        </h5>
-      </div>
+    <div class="w20 mx-3">
+      <a href="  <?php echo $value['link']['url']; ?>">
+        <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
+      </a>
+      <h5 class="text-center">
+        <?php echo $value['text']; ?>
+      </h5>
+    </div>
     <?php
     }
     ?>
@@ -68,15 +68,15 @@ $carousel_temoignages = get_field('carousel');
           }
           //
         ?>
-          <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
+        <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
 
-            <p>
-              <?php echo $value['text']; ?>
-            </p>
-            <h2>
-              <?php echo $value['name']; ?>
-            </h2>
-          </div>
+          <p>
+            <?php echo $value['text']; ?>
+          </p>
+          <h2>
+            <?php echo $value['name']; ?>
+          </h2>
+        </div>
         <?php
         }
         ?>
@@ -141,15 +141,15 @@ $carousel_temoignages = get_field('carousel');
       foreach ($section_services['content'] as $key => $value) {
       ?>
 
-        <div class="mb-5">
-          <h4>
-            <?php echo $value['sub_title']; ?>
-          </h4>
-          <p>
-            <?php echo $value['text']; ?>
-          </p>
-        </div>
-        <!--  -->
+      <div class="mb-5">
+        <h4>
+          <?php echo $value['sub_title']; ?>
+        </h4>
+        <p>
+          <?php echo $value['text']; ?>
+        </p>
+      </div>
+      <!--  -->
       <?php
       }
       ?>
@@ -176,7 +176,8 @@ $carousel_temoignages = get_field('carousel');
 
     <div class="col-5 offset-1 d-flex align-items-center justify-content-center">
       <div class="w80">
-        <a href="nos-services.html"><img class="w-100" src="<?php echo $section_services['schema_img']['url']; ?>" alt=""></a>
+        <a href="nos-services.html"><img class="w-100" src="<?php echo $section_services['schema_img']['url']; ?>"
+            alt=""></a>
       </div>
     </div>
 
@@ -222,30 +223,30 @@ $carousel_temoignages = get_field('carousel');
           $date = DateTime::createFromFormat('Ymd', get_field('post_actu')['date']);
       ?>
 
-          <!--  -->
-          <?php
+      <!--  -->
+      <?php
           $post_actu = get_field("post_actu");
           ?>
 
-          <div class="w-25 text-centser">
-            <a href="#journée"><img class="w-100" src="
+      <div class="w-25 text-centser">
+        <a href="#journée"><img class="w-100" src="
         <?php
           echo $post_actu["thumbnail"]["url"];
         ?>
         " alt=""></a>
-            <h5>
-              <?php
+        <h5>
+          <?php
               echo $post_actu["title"]
               ?>
-            </h5>
+        </h5>
 
-            <p class="date">
-              <?php
+        <p class="date">
+          <?php
               echo dateFR($date);
               ?>
-            </p>
+        </p>
 
-          </div>
+      </div>
       <?php
         }
       }
@@ -257,10 +258,19 @@ $carousel_temoignages = get_field('carousel');
 </div>
 
 
+
+
 <div class="container-fluid bg-bleu-tur padtop mt10 mb-5 padbot">
   <div class="row  mb-5">
     <div class="col-1 bg-white"></div>
     <div class="col-2 bg-white  pt-1 pb-1 ">
+
+      <?php
+      $job_stages = get_field('job_stages');
+      foreach ($job_stages as $key => $value) {
+      // var_dumpj($job_stages);
+      ?>
+
       <h3>Jobs et Stages</h3>
     </div>
   </div>

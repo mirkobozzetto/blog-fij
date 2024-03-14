@@ -113,6 +113,7 @@ actualités (post catégorie actualité ou repeater)
 	texte (title)
 	date (text/date?)
 	photo (image)
+	photo liste (image)
 	sous-titre (text)
 	texte de la news (text area)
 
@@ -132,7 +133,7 @@ groupe le conseil d'adm (group)
 
 --
 
-partenaires
+contact
 image header (image)
 
 titre (text)
@@ -159,9 +160,9 @@ logo (header)
 footer
 
 logo (page header)
-sasls... (text)
+	sasls... (text)
 adresse/tel/mail (page contact)
 
-rapport (text) + (file)
-contactez nous (link)
+	rapport (text) + (file)
+	contactez nous (link)
 reseaux (page contact)
