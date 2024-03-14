@@ -315,7 +315,7 @@ $carousel_temoignages = get_field('carousel');
           ?>
 
           <!--  -->
-          <!-- pas fini, ATTENTION -->
+          <!-- récupération dynamique depuis une autre page avec la balise du dessus qui appelle myvars -->
           <!--  -->
 
           <?php
@@ -354,6 +354,8 @@ $carousel_temoignages = get_field('carousel');
 <!--  -->
 <!--  -->
 <!--  -->
+<!--  -->
+
 <!-- recupere les infos du backend
     1. utiliser get_field()
     2. utiliser une boucle foreach() pour parcourir le repeater
