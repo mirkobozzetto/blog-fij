@@ -270,6 +270,7 @@ $carousel_temoignages = get_field('carousel');
       foreach ($job_stages as $key => $value) {
       // var_dumpj($job_stages);
       ?>
+      <!-- pas fini ATTENTION -->
 
       <h3>Jobs et Stages</h3>
     </div>
