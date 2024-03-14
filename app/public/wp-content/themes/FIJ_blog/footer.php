@@ -14,13 +14,19 @@ include(locate_template('myvars.php'));
       </div>
       <div class='col-2  pt-5 fontwhite'>
         <ul>
-          <li> <a href='index.html'> Accueil</a></li>
-          <li><a href='notreasbl.html'>Notre ASBL</a></li>
-          <li><a href='travail-assistant.html'>Le travail d'assistant(e) social(e)</a></li>
-          <li><a href="jobs-stage.html"> Jobs/Stages</a></li>
-          <li><a href="actualite.html"> Actualité</a></li>
-          <li><a href="contact.html"> Contact</a></li>
-          <li><a href="partenaire.html"> Partenaire</li></a>
+          <?php
+          $nomMenu = "top";
+          $argsM = array(
+            'theme_location' => $nomMenu,
+            'container' => false,
+            'echo' => false,
+            'fallback_cb' => false,
+            'items_wrap' => '%3$s',
+            'depth' => 0,
+          );
+          $menu = wp_nav_menu($argsM);
+          echo $menu;
+          ?>
         </ul>
       </div>
 

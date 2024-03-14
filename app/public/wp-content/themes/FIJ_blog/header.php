@@ -1,5 +1,7 @@
 <?php
 include(locate_template('myvars.php'));
+$footerID = get_page_by_path('footer')->ID;
+
 ?>
 
 <!-- La fonction locate_template() est une fonction WordPress qui cherche un fichier de modèle dans le thème actuel ou dans le thème parent ( si le thème actuel est un thème enfant ).
@@ -76,12 +78,9 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
           <ul class="navbar-nav ms-auto  me-5 mb-2 mb-lg-0 mt-5 ">
-
             <!--  -->
             <!--  afficher les menus depuis le backend -->
             <!--  -->
-
-
             <!-- MENU DECLARATION -->
             <?php
             $nomMenu = "top";
@@ -94,10 +93,8 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
               'depth' => 0,
             );
             $menu = wp_nav_menu($argsM);
-
             // ici par exemple on ajoute une classe a nos liens,
             //  ca rempplace le <a par <a class="nav-link" dans $menu
-
             $menu = str_replace('<a', '<a class = "nav-link"', $menu);
             $menu = str_replace('class="menu-item', 'class="nav-item menu-item', $menu);
             echo $menu;

@@ -1,6 +1,6 @@
 <?php
 $headerID = get_page_by_path('header')->ID;
-$headerID = get_page_by_path('footer')->ID;
+$footerID = get_page_by_path('footer')->ID;
 $notreasblID = get_page_by_path('notre-asbl')->ID;
 $contactID = get_page_by_path('contact')->ID;
 
