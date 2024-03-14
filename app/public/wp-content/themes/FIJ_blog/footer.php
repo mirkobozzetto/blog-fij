@@ -5,10 +5,8 @@ include(locate_template('myvars.php'));
 <footer>
   <div class='container-fluid'>
     <div class='row bg-bleu-tur'>
-
       <div class='col-3  pt-4 d-flex justify-content-center align-items-center'>
         <div class='w-50 '>
-          <!-- <img class = 'w-100' src = 'pics/logo-sasls.png' alt = ''> -->
           <img class='w-100' src='<?php echo get_field('logo', $headerID)['url']; ?>' alt=''>
         </div>
       </div>
@@ -25,6 +23,7 @@ include(locate_template('myvars.php'));
             'depth' => 0,
           );
           $menu = wp_nav_menu($argsM);
+          // var_dumpj($menu);
           echo $menu;
           ?>
         </ul>
@@ -32,12 +31,18 @@ include(locate_template('myvars.php'));
 
       <div class="col-4 pt-5 fontwhite d-flex flex-column footer">
         <h3 class="pb-3">SASLS DMBSH</h3>
-        <P>Adresse: Maison du Logement - Avenue de la Toison d'Or, 72
-          1060 Saint-Gilles</P>
-        <P>
-          Tel: 02/502 88 15 <br>
-
-          Mail:infodirection@sasls.irisnet.be
+        <p>
+          <?php
+          $adress = (get_field('adress', $contactID));
+          $mail = $adress['mail'];
+          $phone = $adress['phone'];
+          echo get_field('adress', $contactID)['adress'];
+          ?>
+        </p>
+        <p>
+          <?php echo $phone; ?>
+          <br>
+          Mail: <span><a href="mailto:<?php echo $mail; ?>"><?php echo $mail; ?></a></span>
         </p>
       </div>
 
