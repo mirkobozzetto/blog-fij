@@ -70,7 +70,8 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
           </a>
         </div>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -81,9 +82,10 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
             <!--  afficher les menus depuis le backend -->
             <!--  -->
 
+
+            <!-- MENU DECLARATION -->
             <?php
             $nomMenu = "top";
-
             $argsM = array(
               'theme_location' => $nomMenu,
               'container' => false,
@@ -98,15 +100,13 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
             //  ca rempplace le <a par <a class="nav-link" dans $menu
 
             $menu = str_replace('<a', '<a class = "nav-link"', $menu);
-
             $menu = str_replace('class="menu-item', 'class="nav-item menu-item', $menu);
-
-
             echo $menu;
             ?>
 
             <li class='nav-item dropdown'>
-              <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+              <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown'
+                aria-expanded='false'>
                 langue
               </a>
               <ul class='dropdown-menu'>
