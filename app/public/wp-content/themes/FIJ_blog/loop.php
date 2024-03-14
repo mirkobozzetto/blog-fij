@@ -28,14 +28,14 @@ include(locate_template('myvars.php'));
     // var_dumpj($missions);
     foreach ($missions as $key => $value) {
     ?>
-    <div class="w20 mx-3">
-      <a href="  <?php echo $value['link']['url']; ?>">
-        <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
-      </a>
-      <h5 class="text-center">
-        <?php echo $value['text']; ?>
-      </h5>
-    </div>
+      <div class="w20 mx-3">
+        <a href="  <?php echo $value['link']['url']; ?>">
+          <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
+        </a>
+        <h5 class="text-center">
+          <?php echo $value['text']; ?>
+        </h5>
+      </div>
     <?php
     }
     ?>
@@ -72,15 +72,15 @@ $carousel_temoignages = get_field('carousel');
           }
           //
         ?>
-        <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
+          <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 ">
 
-          <p>
-            <?php echo $value['text']; ?>
-          </p>
-          <h2>
-            <?php echo $value['name']; ?>
-          </h2>
-        </div>
+            <p>
+              <?php echo $value['text']; ?>
+            </p>
+            <h2>
+              <?php echo $value['name']; ?>
+            </h2>
+          </div>
         <?php
         }
         ?>
@@ -145,15 +145,15 @@ $carousel_temoignages = get_field('carousel');
       foreach ($section_services['content'] as $key => $value) {
       ?>
 
-      <div class="mb-5">
-        <h4>
-          <?php echo $value['sub_title']; ?>
-        </h4>
-        <p>
-          <?php echo $value['text']; ?>
-        </p>
-      </div>
-      <!--  -->
+        <div class="mb-5">
+          <h4>
+            <?php echo $value['sub_title']; ?>
+          </h4>
+          <p>
+            <?php echo $value['text']; ?>
+          </p>
+        </div>
+        <!--  -->
       <?php
       }
       ?>
@@ -180,8 +180,7 @@ $carousel_temoignages = get_field('carousel');
 
     <div class="col-5 offset-1 d-flex align-items-center justify-content-center">
       <div class="w80">
-        <a href="nos-services.html"><img class="w-100" src="<?php echo $section_services['schema_img']['url']; ?>"
-            alt=""></a>
+        <a href="nos-services.html"><img class="w-100" src="<?php echo $section_services['schema_img']['url']; ?>" alt=""></a>
       </div>
     </div>
 
@@ -227,30 +226,30 @@ $carousel_temoignages = get_field('carousel');
           $date = DateTime::createFromFormat('Ymd', get_field('post_actu')['date']);
       ?>
 
-      <!--  -->
-      <?php
+          <!--  -->
+          <?php
           $post_actu = get_field("post_actu");
           ?>
 
-      <div class="w-25 text-centser">
-        <a href="#journée"><img class="w-100" src="
+          <div class="w-25 text-centser">
+            <a href="#journée"><img class="w-100" src="
         <?php
           echo $post_actu["thumbnail"]["url"];
         ?>
         " alt=""></a>
-        <h5>
-          <?php
+            <h5>
+              <?php
               echo $post_actu["title"]
               ?>
-        </h5>
+            </h5>
 
-        <p class="date">
-          <?php
+            <p class="date">
+              <?php
               echo dateFR($date);
               ?>
-        </p>
+            </p>
 
-      </div>
+          </div>
       <?php
         }
       }
@@ -292,18 +291,18 @@ $carousel_temoignages = get_field('carousel');
         <?php
         foreach ($job_stages['img_field'] as $key => $value) {
         ?>
-        <div class="fontwhite  w40 me-3 pt-1">
-          <a href="jobs-stage.html"><img class="w-100" src="
+          <div class="fontwhite  w40 me-3 pt-1">
+            <a href="jobs-stage.html"><img class="w-100" src="
           <?php echo $value['img']['url']; ?>
           " alt=""></a>
-          <h3 class="text-center">
-            <?php
+            <h3 class="text-center">
+              <?php
               echo $value['subtitle'];
               ?>
-          </h3>
-        </div>
+            </h3>
+          </div>
 
-        <!--  -->
+          <!--  -->
         <?php
         }
         ?>
