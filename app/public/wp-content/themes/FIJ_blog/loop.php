@@ -198,7 +198,7 @@ $carousel_temoignages = get_field('carousel');
 
 
   <!--  -->
-  <div class="row mb-5">
+  <div class="row mb-5 text-center">
     <div class="col-10 offset-1 d-flex justify-content-around">
       <!-- repetitions de posts -->
       <?php
@@ -241,7 +241,7 @@ $carousel_temoignages = get_field('carousel');
 
             <p class="date">
               <?php
-              echo $date->format('m Y');
+              echo dateFR($date);
               ?>
             </p>
 
