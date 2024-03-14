@@ -329,8 +329,9 @@ $carousel_temoignages = get_field('carousel');
           </span>
         </p>
       </div>
-
     </div>
+
+    <!--  -->
 
     <div class="col-5 fontwhite ">
       <div class="w-100">
@@ -345,6 +346,14 @@ $carousel_temoignages = get_field('carousel');
   </div>
 </div>
 
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- petit tuto ci-dessous -->
+<!--  -->
+<!--  -->
+<!--  -->
 <!-- recupere les infos du backend
     1. utiliser get_field()
     2. utiliser une boucle foreach() pour parcourir le repeater
@@ -387,5 +396,9 @@ $carousel_temoignages = get_field('carousel');
     <?php
   }
     ?> -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
 <!--  -->
 </main>
