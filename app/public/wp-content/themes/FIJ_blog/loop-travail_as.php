@@ -59,16 +59,16 @@ $title = get_field('txt_mission', $accueil);
   <div class="col-5 offset-1">
     <div class="w-100">
       <?php
-      var_dumpj($as_sisp)
+      // var_dumpj($as_sisp['img']['url'] );
+      // echo $as_sisp['img'];
       ?>
-      <img class="w-100" src="<?php echo $as_sisp['img']['url']; ?> alt="">
+      <img class="w-100" src="<?php echo $as_sisp['img']['url']; ?>" alt="">
     </div>
   </div>
 
   <div class=" col-5 offset-1 padtop ">
     <div class=" w80">
       <h2 class="">
-
         <?php
         echo $as_sisp['subtitle'];
         ?>
@@ -85,7 +85,7 @@ $title = get_field('txt_mission', $accueil);
 
 <?php
 $conflits = get_field('conflits');
-// var_dumpj($conflits);
+
 ?>
 <div id="voisin" class="container-fluid bg-bleu-tur padtop mt10 padbot">
   <div class="row">
@@ -117,7 +117,7 @@ $conflits = get_field('conflits');
 
     <div class="col-5 d-flex align-items-center justify-content-center">
       <div class="w-100 d-flex flex-column align-items-end justify-content-end">
-        <img class="w-100" src="pics/conflit-voisinage.png" alt="">
+        <img class="w-100" src="<?php echo $conflits['img']['url']; ?>" alt="">
         <a href="#travail"><i class="fa-solid fa-turn-up fontwhite"></i></a>
       </div>
     </div>
@@ -130,28 +130,39 @@ $conflits = get_field('conflits');
   <div class="row">
     <div class="col-1 bg-bleu-tur"></div>
     <div class="col-3 bg-bleu-tur  fontwhite pt-1 pb-1 ">
-      <h3>Enquêtes de précarité </h3>
+      <?php
+      $precarite = get_field('precarite');
+      ?>
+      <h3>
+        <?php
+        echo $precarite['title'];
+        ?>
+      </h3>
     </div>
   </div>
 
   <div class="row mb-5 mt10">
     <div class="col-5 offset-1 font-black ">
       <div class="w-100 flex-column align-items-end justify-content-end">
-        <img class="w-100" src="pics/precarite.png" alt="">
+        <img class="w-100" src="
+        <?php echo
+        $precarite['img']['url'];
+        ?>  " alt="">
         <a href="#travail"><i class="fa-solid fa-turn-up fa-flip-horizontal  "></i></a>
       </div>
     </div>
 
     <div class="col-5 offset-1 d-flex align-items-center   ">
       <div class="w80">
-        <h4 class="">Enquêtes de précarité</h4>
-        <p>suite aux demandes de réductions sociales spécifiques </p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus voluptas nostrum enim ex facere quasi
-          autem. Cumque fuga nam tempora earum quas consequuntur, esse veritatis, mollitia sint minima quisquam, qui.
-        </p>
-        <P>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Quod et laboriosam necessitatibus dicta rerum
-          quaerat error. Animi assumenda tempora vel placeat aperiam laborum necessitatibus, voluptates, cum odit,
-          dignissimos dolores eligendi.</P>
+        <h4 class="">
+          <?php
+          echo $precarite['subtitle'];
+          ?>
+        </h4>
+        <p>
+          <?php
+          echo $precarite['text'];
+          ?>
       </div>
     </div>
   </div>
@@ -159,11 +170,18 @@ $conflits = get_field('conflits');
 
 
 <div id="demarche" class="container-fluid bg-bleu-tur padtop mt10 padbot">
-
+  <?php
+  $accompagnement = get_field('accompagnement');
+  // var_dumpj($accompagnement);
+  ?>
   <div class="row">
     <div class="col-1 bg-white"></div>
     <div class="col-3 bg-white   pt-1 pb-1 ">
-      <h3>Accompagnement sociales</h3>
+      <h3>
+        <?php
+        echo $accompagnement['title'];
+        ?>
+      </h3>
     </div>
   </div>
 
@@ -171,23 +189,23 @@ $conflits = get_field('conflits');
 
     <div class="col-5 offset-1  fontwhite d-flex align-items-center  ">
       <div class="w80">
-        <h4 class="">Accompagnement dans les démarches sociales</h4>
-        <p>Accompagnement dans les démarches sociales, y compris les démarches administratives </p>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Dolorem provident cum debitis dignissimos optio
-          praesentium iure eos nisi sint sequi, alias voluptatem, blanditiis consectetur, ullam facilis. Incidunt,
-          modi exercitationem cupiditate.</p>
-
-        <p>Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Porro pariatur veritatis vero incidunt.
-          Inventore, quibusdam, ea mollitia saepe eius rerum minus atque voluptatem. Nam quis aspernatur quibusdam
-          nisi cupiditate veritatis?</p>
-
+        <h4 class="">
+          <?php
+          echo $accompagnement['subtitle'];
+          ?>
+        </h4>
+        <p>
+          <?php
+          echo $accompagnement['text'];
+          ?>
       </div>
     </div>
 
     <div class="col-5 d-flex align-items-center justify-content-center">
       <div class="w-100 d-flex flex-column align-items-end justify-content-end">
-        <img class="w-100" src="pics/accompagnement.png" alt="">
+        <img class="w-100" src="
+        <?php echo $accompagnement['img']['url']; ?>
+        " alt="">
         <a href="#travail"><i class="fa-solid fa-turn-up fontwhite"></i></a>
       </div>
     </div>
