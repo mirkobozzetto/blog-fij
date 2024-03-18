@@ -22,14 +22,14 @@ $title = get_field('txt_mission', $accueil);
     // var_dumpj($missions);
     foreach ($missions as $key => $value) {
     ?>
-      <div class="w20 mx-3">
-        <a href="  <?php echo $value['link']['url']; ?>">
-          <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
-        </a>
-        <h5 class="text-center">
-          <?php echo $value['text']; ?>
-        </h5>
-      </div>
+    <div class="w20 mx-3">
+      <a href="  <?php echo $value['link']['url']; ?>">
+        <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
+      </a>
+      <h5 class="text-center">
+        <?php echo $value['text']; ?>
+      </h5>
+    </div>
     <?php
     }
     ?>
@@ -44,56 +44,74 @@ $title = get_field('txt_mission', $accueil);
 <div class="row mt10 mb-5">
   <div class="col-1 bg-bleu-tur"></div>
   <div class="col-4 bg-bleu-tur   pt-1 pb-1 fontwhite">
-    <h3>Le travail d’assistant.e social en SISP </h3>
+    <h3>
+      <?php
+      $as_sisp = get_field('as-sisp');
+      echo $as_sisp['title'];
+      ?>
+    </h3>
   </div>
 </div>
 
 <div class="row">
-
+  <?php
+  ?>
   <div class="col-5 offset-1">
     <div class="w-100">
-      <img class="w-100" src="pics/travail-assistant.png" alt="">
+      <?php
+      var_dumpj($as_sisp)
+      ?>
+      <img class="w-100" src="<?php echo $as_sisp['img']['url']; ?> alt="">
     </div>
   </div>
 
-  <div class="col-5 offset-1 padtop ">
-    <div class="w80">
-      <h2 class="">Le travail d'assistant(e) social(e)</h2>
-      <p>
-        Trois types d’accompagnement social sont proposés aux locataires sociaux : le travail individuel, collectif
-        et communautaire.  
-        Les travailleurs sociaux de la SASLS détachés en SISP réalisent les entretiens individuels et les actions
-        collectives. Ils ont principalement les huit missions suivantes :  
+  <div class=" col-5 offset-1 padtop ">
+    <div class=" w80">
+      <h2 class="">
 
+        <?php
+        echo $as_sisp['subtitle'];
+        ?>
+      </h2>
+      <p>
+        <?php
+        echo $as_sisp['text'];
+        ?>
       </p>
     </div>
   </div>
 </div>
-
-
 </div>
 
-
+<?php
+$conflits = get_field('conflits');
+// var_dumpj($conflits);
+?>
 <div id="voisin" class="container-fluid bg-bleu-tur padtop mt10 padbot">
   <div class="row">
     <div class="col-1 bg-white"></div>
     <div class="col-2 bg-white   pt-1 pb-1 ">
-      <h3>Conflits de voisinage</h3>
+      <h3>
+        <?php
+        echo $conflits['title'];
+        ?>
+      </h3>
     </div>
   </div>
 
   <div class="row mb-5 mt10">
-
     <div class="col-5 offset-1  fontwhite d-flex align-items-center  ">
       <div class="w80">
-        <h4 class="">Prévention et tentative de désamorçage des conflits de voisinage</h4>
-        <p>dans le respect du contrat de bail, et réorientation si nécessaire </p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Dolorem provident cum debitis dignissimos optio
-          praesentium iure eos nisi sint sequi, alias voluptatem, blanditiis consectetur, ullam facilis. Incidunt,
-          modi exercitationem cupiditate.</p>
-        <p>Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Porro pariatur veritatis vero incidunt.
-          Inventore, quibusdam, ea mollitia saepe eius rerum minus atque voluptatem. Nam quis aspernatur quibusdam
-          nisi cupiditate veritatis?</p>
+        <h4 class="">
+          <?php
+          echo $conflits['subtitle'];
+          ?>
+        </h4>
+
+        <?php
+        echo $conflits['text'];
+        ?>
+
       </div>
     </div>
 
