@@ -1,7 +1,6 @@
 <?php
 include(locate_template('myvars.php'));
 $footerID = get_page_by_path('footer')->ID;
-
 ?>
 
 <!-- La fonction locate_template() est une fonction WordPress qui cherche un fichier de modèle dans le thème actuel ou dans le thème parent ( si le thème actuel est un thème enfant ).

@@ -1,5 +1,7 @@
 <?php
 include(locate_template('myvars.php'));
+$contactID = get_page_by_path('contact')->ID;
+$social = get_field('adress', $contactID)['social'];
 ?>
 
 <footer>
@@ -23,7 +25,7 @@ include(locate_template('myvars.php'));
             'depth' => 0,
           );
           $menu = wp_nav_menu($argsM);
-          // var_dumpj($menu);
+          // var_dumpj($social);
           echo $menu;
           ?>
         </ul>
@@ -46,13 +48,25 @@ include(locate_template('myvars.php'));
         </p>
       </div>
 
+
+
       <div class='col-3 pt-5 d-flex flex-column'>
         <button class='btn bg-bluef fontwhite fs-5 mb-2 w-50'> Rapport</button>
         <a href='contact.html'><button class='btn bg-bluef fontwhite fs-5 mb-2 w-50'> Contactez-nous</button></a>
         <div class='fontwhite w-50 fs-1 d-flex justify-content-around  '>
-          <i class='fa-brands fa-facebook'></i>
+          <?php
+          // var_dumpj($social);
+          foreach ($social as $key => $value) {
+          ?>
+          <a href=" <?php echo $value['link']['url']; ?>" target="_blank">
+            <i class="<?php echo $value['social_icons']; ?>"></i>
+          </a>
+          <?php
+          }
+          ?>
+          <!-- <i class='fa-brands fa-facebook'></i>
           <i class='fa-brands fa-linkedin'></i>
-          <i class='fa-brands fa-square-instagram'></i>
+          <i class='fa-brands fa-square-instagram'></i> -->
         </div>
       </div>
     </div>
