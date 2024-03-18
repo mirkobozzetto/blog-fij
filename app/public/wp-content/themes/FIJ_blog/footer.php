@@ -59,7 +59,7 @@ $social = get_field('adress', $contactID)['social'];
           foreach ($social as $key => $value) {
           ?>
           <a href=" <?php echo $value['link']['url']; ?>" target="_blank">
-            <i class="<?php echo $value['social_icons']; ?>"></i>
+            <?php echo $value['social_icons']; ?>
           </a>
           <?php
           }
