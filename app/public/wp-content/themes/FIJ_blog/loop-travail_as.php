@@ -452,7 +452,7 @@ $premier_accueil = get_field('accueil');
   <div class="row">
     <div class="col-7 offset-1">
 
-      <div id="carouselExample" class="carousel slide pt-5  w-100 h-100">
+      <div id="carouselExample" class="carousel slide pt-5  w-100">
         <div class="carousel-inner">
           <?php
           foreach ($carousel as $key => $value) {
@@ -462,8 +462,8 @@ $premier_accueil = get_field('accueil');
               $active = '';
             }
           ?>
-          <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 h-100">
-            <p>
+          <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1">
+            <p class="">
               <?php echo $value['text']; ?>
             </p>
             <h2>
