@@ -1,5 +1,5 @@
 <?php
-// include(locate_template('myvars.php'));
+include(locate_template('myvars.php'));
 $accueil = get_option('page_on_front');
 $title = get_field('txt_mission', $accueil);
 ?>
@@ -22,14 +22,14 @@ $title = get_field('txt_mission', $accueil);
     // var_dumpj($missions);
     foreach ($missions as $key => $value) {
     ?>
-    <div class="w20 mx-3">
-      <a href="  <?php echo $value['link']['url']; ?>">
-        <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
-      </a>
-      <h5 class="text-center">
-        <?php echo $value['text']; ?>
-      </h5>
-    </div>
+      <div class="w20 mx-3">
+        <a href="  <?php echo $value['link']['url']; ?>">
+          <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
+        </a>
+        <h5 class="text-center">
+          <?php echo $value['text']; ?>
+        </h5>
+      </div>
     <?php
     }
     ?>
@@ -231,7 +231,9 @@ $conflits = get_field('conflits');
   <div class="row mb-5 mt10">
     <div class="col-5 offset-1 font-black">
       <div class="w-100">
-        <img class="w-100" src="pics/dette-locatif.png" alt="">
+        <img class="w-100" src="
+        <?php echo $dettes['img']['url']; ?>
+        " alt="">
         <a href="#travail"><i class="fa-solid fa-turn-up fa-flip-horizontal  "></i></a>
       </div>
     </div>
@@ -462,14 +464,14 @@ $premier_accueil = get_field('accueil');
               $active = '';
             }
           ?>
-          <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1">
-            <p class="">
-              <?php echo $value['text']; ?>
-            </p>
-            <h2>
-              <?php echo $value['nom']; ?>
-            </h2>
-          </div>
+            <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1">
+              <p class="">
+                <?php echo $value['text']; ?>
+              </p>
+              <h2>
+                <?php echo $value['nom']; ?>
+              </h2>
+            </div>
           <?php
           }
           ?>
@@ -499,42 +501,75 @@ $premier_accueil = get_field('accueil');
 
 
 
-
+<?php
+$job_stages = get_field('job_stages', $accueil);
+// var_dumpj($job_stages);
+?>
 <div class="container-fluid bg-bleu-tur padtop mt10 mb-5 padbot">
   <div class="row  mb-5">
     <div class="col-1 bg-white"></div>
     <div class="col-2 bg-white  pt-1 pb-1 ">
-      <h3>Jobs et Stages</h3>
+      <h3>
+        <?php
+        echo $job_stages['text'];
+        ?>
+      </h3>
     </div>
   </div>
 
-
-
   <div class="row ">
-
-
     <div class="col-6 offset-1 d-flex flex-column ">
-
       <div class="d-flex">
-        <div class="fontwhite  w40 me-3 pt-1">
-          <a href="jobs-stage.html"><img class="w-100" src="pics/jobs.png" alt=""></a>
-          <h3 class="text-center">Poste à pourvoir</h3>
-        </div>
 
-        <div class="fontwhite  w40">
-          <a href="jobs-stage.html"><img class="w-100" src="pics/stages.png" alt=""></a>
-          <h3 class="text-center ps-5">Stage à pourvoir</h3>
-        </div>
+        <?php
+        foreach ($job_stages['img_field'] as $key => $value) {
+        ?>
+          <div class="fontwhite  w40 me-3 pt-1">
+            <a href="jobs-stage.html"><img class="w-100" src="
+          <?php echo $value['img']['url']; ?>
+          " alt=""></a>
+            <h3 class="text-center">
+              <?php
+              echo $value['subtitle'];
+              ?>
+            </h3>
+          </div>
+
+          <!--  -->
+        <?php
+        }
+        ?>
       </div>
 
       <div class="fontwhite ">
-        <p class="fs-5">Pour les candidatures spontanées vous pouvez nous écrire à l’adresse mail suivante:
-          infodirection@sasls.irisnet.be </p>
+        <p>
+          <?php
+          echo $job_stages['annonce'];
+          ?>
+
+          <!--  -->
+          <!-- récupération dynamique depuis une autre page avec la balise du dessus qui appelle myvars -->
+          <!--  -->
+
+          <?php
+          $adress = get_field('adress', $contactID);
+          $mail = $adress['mail'];
+          ?>
+          <!-- mail link -->
+          <span>
+            <a href="mailto:<?php echo $mail; ?>"><?php echo $mail; ?></a>
+          </span>
+        </p>
       </div>
     </div>
+    <!--  -->
     <div class="col-5 fontwhite ">
       <div class="w-100">
-        <img class="w-100" src="pics/job-stage.png" alt="">
+        <img class="w-100" src="
+        <?php
+        echo $job_stages['img']['url'];
+        ?>
+        " alt="">
       </div>
     </div>
   </div>

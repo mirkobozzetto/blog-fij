@@ -1,5 +1,11 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 h1,
@@ -194,7 +200,7 @@ a:active {
 /* .carousel {
 } */
 .carousel1 {
-  padding: 3.5rem 7rem 11.5rem;
+  padding: 6rem 7rem 12.5rem;
   max-height: 15vh;
   overflow: hidden;
 }

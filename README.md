@@ -19,6 +19,16 @@ j'ajouterai probablement des liens avec les code snippets récurrents sur cette 
 ### le plugin [[ACF - advance custom fields]]
 
 ```php
+<?php
+include(locate_template('myvars.php'));
+$accueil = get_option('page_on_front');
+$title = get_field('txt_mission', $accueil);
+?>
+```
+
+ça peut être utile si tu veux récupérer les infos lde la page d'index sur une autre page il faudra alors passer par : `locate_template`
+
+```php
 <img class="w-100" src="<?php echo $hero_img['url']; ?>" alt="">
 ```
 
