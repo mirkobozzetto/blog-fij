@@ -22,14 +22,14 @@ $title = get_field('txt_mission', $accueil);
     // var_dumpj($missions);
     foreach ($missions as $key => $value) {
     ?>
-    <div class="w20 mx-3">
-      <a href="  <?php echo $value['link']['url']; ?>">
-        <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
-      </a>
-      <h5 class="text-center">
-        <?php echo $value['text']; ?>
-      </h5>
-    </div>
+      <div class="w20 mx-3">
+        <a href="  <?php echo $value['link']['url']; ?>">
+          <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
+        </a>
+        <h5 class="text-center">
+          <?php echo $value['text']; ?>
+        </h5>
+      </div>
     <?php
     }
     ?>
@@ -214,11 +214,17 @@ $conflits = get_field('conflits');
 </div>
 
 <div id="dette" class="container-fluid padtop mt10 padbot">
-
+  <?php
+  $dettes = get_field('dettes');
+  ?>
   <div class="row">
     <div class="col-1 bg-bleu-tur"></div>
     <div class="col-3 bg-bleu-tur  fontwhite pt-1 pb-1 ">
-      <h3>Surendettement et arriérés </h3>
+      <h3>
+        <?php
+        echo $dettes['title'];
+        ?>
+      </h3>
     </div>
   </div>
 
@@ -235,18 +241,15 @@ $conflits = get_field('conflits');
 
     <div class="col-5 offset-1 d-flex align-items-center   ">
       <div class="w80">
-        <h4 class="">Surendettement et arriérés locatifs </h4>
-        <p>accompagnement social budgétaire et élaboration d'un plan d'apurement de dettes, dans le cadre d'une
-          démarche destinée à prévenir d'éventuelles actions administratives et judiciaires à l'encontre du locataire
-        </p>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus voluptas nostrum enim ex facere quasi
-          autem. Cumque fuga nam tempora earum quas consequuntur, esse veritatis, mollitia sint minima quisquam, qui.
-        </p>
-
-        <P>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Quod et laboriosam necessitatibus dicta rerum
-          quaerat error. Animi assumenda tempora vel placeat aperiam laborum necessitatibus, voluptates, cum odit,
-          dignissimos dolores eligendi.</P>
+        <h4 class="">
+          <?php
+          echo $dettes['subtitle'];
+          ?>
+        </h4>
+        <p>
+          <?php
+          echo $dettes['text'];
+          ?>
       </div>
     </div>
   </div>
@@ -254,11 +257,17 @@ $conflits = get_field('conflits');
 
 
 <div id="guidance" class="container-fluid bg-bleu-tur padtop mt10 padbot">
-
+  <?php
+  $guidance = get_field('guidance');
+  ?>
   <div class="row">
     <div class="col-1 bg-white"></div>
     <div class="col-3 bg-white   pt-1 pb-1 ">
-      <h3>Guidance pédagogique </h3>
+      <h3>
+        <?php
+        echo $guidance['title'];
+        ?>
+      </h3>
     </div>
   </div>
 
@@ -266,23 +275,23 @@ $conflits = get_field('conflits');
 
     <div class="col-5 offset-1  fontwhite d-flex align-items-center  ">
       <div class="w80">
-        <h4 class="">Guidance pédagogique sur les règles d'entretien du logement </h4>
-        <p>Guidance pédagogique sur les règles d'entretien du logement et du respect des obligations du locataire </p>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Dolorem provident cum debitis dignissimos optio
-          praesentium iure eos nisi sint sequi, alias voluptatem, blanditiis consectetur, ullam facilis. Incidunt,
-          modi exercitationem cupiditate.</p>
-
-        <p>Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Porro pariatur veritatis vero incidunt.
-          Inventore, quibusdam, ea mollitia saepe eius rerum minus atque voluptatem. Nam quis aspernatur quibusdam
-          nisi cupiditate veritatis?</p>
-
+        <h4 class="">
+          <?php
+          echo $guidance['subtitle'];
+          ?>
+        </h4>
+        <p>
+          <?php
+          echo $guidance['text'];
+          ?> </p>
       </div>
     </div>
 
     <div class="col-5 d-flex align-items-center justify-content-center">
       <div class="w-100 d-flex flex-column align-items-end justify-content-end">
-        <img class="w-100" src="pics/guidance.png" alt="">
+        <img class="w-100" src="
+        <?php echo $guidance['img']['url']; ?>
+        " alt="">
         <a href="#travail"><i class="fa-solid fa-turn-up fontwhite"></i></a>
       </div>
     </div>
