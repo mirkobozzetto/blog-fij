@@ -22,14 +22,14 @@ $title = get_field('txt_mission', $accueil);
     // var_dumpj($missions);
     foreach ($missions as $key => $value) {
     ?>
-      <div class="w20 mx-3">
-        <a href="  <?php echo $value['link']['url']; ?>">
-          <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
-        </a>
-        <h5 class="text-center">
-          <?php echo $value['text']; ?>
-        </h5>
-      </div>
+    <div class="w20 mx-3">
+      <a href="  <?php echo $value['link']['url']; ?>">
+        <img class="w-100" src="  <?php echo $value['image']['url']; ?>  " alt="">
+      </a>
+      <h5 class="text-center">
+        <?php echo $value['text']; ?>
+      </h5>
+    </div>
     <?php
     }
     ?>
@@ -433,38 +433,46 @@ $premier_accueil = get_field('accueil');
 
   <?php
   $temoignages = get_field('temoignages');
-  // var_dumpj($temoignages);
+  $carousel = $temoignages['temoignages'];
+  // var_dumpj($carousel);
+  // text & nom
   ?>
 
   <div class="row mt10 mb-5">
     <div class="col-1 bg-bleu-tur"></div>
     <div class="col-7 bg-bleu-tur   pt-1 pb-1 fontwhite">
-      <h3>Le travail en tant qu'assistant(e) social(e) en société de logement social est riche est varié comme en
-        temoignent les suivants récits:</h3>
+      <h3>
+        <?php
+        echo $temoignages['title'];
+        ?>
+      </h3>
     </div>
   </div>
-
 
   <div class="row">
     <div class="col-7 offset-1">
 
-      <div id="carouselExample" class="carousel slide pt-5  ">
+      <div id="carouselExample" class="carousel slide pt-5  w-100 h-100">
         <div class="carousel-inner">
-          <div class="carousel-item active bg-bleu-tur fontwhite text-center  carousel1 ">
+          <?php
+          foreach ($carousel as $key => $value) {
+            if ($key == 0) {
+              $active = 'active';
+            } else {
+              $active = '';
+            }
+          ?>
+          <div class="carousel-item <?php echo $active; ?> bg-bleu-tur fontwhite text-center  carousel1 h-100">
             <p>
-              “Trois types d’accompagnement social sont proposés aux locataires sociaux :
-              le travail individuel, collectif et communautaire. Les travailleurs sociaux
-              de la SASLS détachés en SISP réalisent les entretiens individuels et les actions
-              collectives. Ils ont principalement les huit” missions suivantes :
+              <?php echo $value['text']; ?>
             </p>
-            <h2>"Coralie Dupont"</h2>
+            <h2>
+              <?php echo $value['nom']; ?>
+            </h2>
           </div>
-          <!-- <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div> -->
+          <?php
+          }
+          ?>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -481,7 +489,9 @@ $premier_accueil = get_field('accueil');
 
     <div class="col-3">
       <div>
-        <img class="w-100" src="pics/pastille-temoignage.png" alt="">
+        <img class="w-100" src="
+        <?php echo $temoignages['img']['url']; ?>
+        " alt="">
       </div>
     </div>
   </div>
