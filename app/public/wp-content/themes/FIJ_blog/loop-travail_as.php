@@ -302,9 +302,16 @@ $conflits = get_field('conflits');
 <div id="aide" class="container-fluid padtop mt10 padbot">
 
   <div class="row">
+    <?php
+    $documents = get_field('documents');
+    ?>
     <div class="col-1 bg-bleu-tur"></div>
     <div class="col-3 bg-bleu-tur  fontwhite pt-1 pb-1 ">
-      <h3>Aide à la récolte de documents  </h3>
+      <h3>
+        <?php
+        echo $documents['title'];
+        ?>
+      </h3>
     </div>
   </div>
 
@@ -312,36 +319,43 @@ $conflits = get_field('conflits');
 
     <div class="col-5 offset-1 font-black">
       <div class="w-100">
-        <img class="w-100" src="pics/aide-document.png" alt="">
+        <img class="w-100" src="
+        <?php echo $documents['img']['url']; ?>
+        " alt="">
         <a href="#travail"><i class="fa-solid fa-turn-up fa-flip-horizontal  "></i></a>
       </div>
     </div>
 
     <div class="col-5 offset-1 d-flex align-items-center   ">
       <div class="w80">
-        <h4 class="">Aide à la récolte de documents pour les locataires </h4>
-        <p>Aide à la récolte de documents pour les locataires en difficulté dans le cadre de la révision annuelle des
-          loyers </p>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus voluptas nostrum enim ex facere quasi
-          autem. Cumque fuga nam tempora earum quas consequuntur, esse veritatis, mollitia sint minima quisquam, qui.
+        <h4 class="">
+          <?php
+          echo $documents['subtitle'];
+          ?>
+        </h4>
+        <p>
+          <?php
+          echo $documents['text'];
+          ?>
         </p>
-
-        <P>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Quod et laboriosam necessitatibus dicta rerum
-          quaerat error. Animi assumenda tempora vel placeat aperiam laborum necessitatibus, voluptates, cum odit,
-          dignissimos dolores eligendi.</P>
-
-
       </div>
     </div>
   </div>
 </div>
 
+
+<?php
+$premier_accueil = get_field('accueil');
+?>
 <div id="accueil" class="container-fluid bg-bleu-tur padtop mt10 padbot">
   <div class="row">
     <div class="col-1 bg-white"></div>
     <div class="col-2 bg-white   pt-1 pb-1 ">
-      <h3>Premier accueil </h3>
+      <h3>
+        <?php
+        echo $premier_accueil['title'];
+        ?>
+      </h3>
     </div>
   </div>
 
@@ -349,24 +363,23 @@ $conflits = get_field('conflits');
 
     <div class="col-5 offset-1  fontwhite d-flex align-items-center  ">
       <div class="w80">
-        <h4 class="">Premier accueil et réorientation des locataires </h4>
-        <p>Premier accueil et réorientation des locataires vers les services ad hoc capables d'assurer un suivi
-          efficace </p>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Dolorem provident cum debitis dignissimos optio
-          praesentium iure eos nisi sint sequi, alias voluptatem, blanditiis consectetur, ullam facilis. Incidunt,
-          modi exercitationem cupiditate.</p>
-
-        <p>Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Porro pariatur veritatis vero incidunt.
-          Inventore, quibusdam, ea mollitia saepe eius rerum minus atque voluptatem. Nam quis aspernatur quibusdam
-          nisi cupiditate veritatis?</p>
-
+        <h4 class="">
+          <?php
+          echo $premier_accueil['subtitle'];
+          ?>
+        </h4>
+        <p>
+          <?php
+          echo $premier_accueil['text'];
+          ?>
       </div>
     </div>
 
     <div class="col-5 d-flex align-items-center justify-content-center">
       <div class="w-100 d-flex flex-column align-items-end justify-content-end">
-        <img class="w-100" src="pics/premier-accueil.png" alt="">
+        <img class="w-100" src="
+        <?php echo $premier_accueil['img']['url']; ?>
+        " alt="">
         <a href="#travail"><i class="fa-solid fa-turn-up fontwhite"></i></a>
       </div>
     </div>
@@ -376,38 +389,52 @@ $conflits = get_field('conflits');
 
 
 <div id="reseau" class="container-fluid padtop mt10 padbot">
-
+  <?php
+  $partenariat = get_field('partenariat');
+  ?>
   <div class="row">
     <div class="col-1 bg-bleu-tur"></div>
     <div class="col-3 bg-bleu-tur  fontwhite pt-1 pb-1 ">
-      <h3>réseau de partenariat</h3>
+      <h3>
+        <?php
+        echo $partenariat['title'];
+        ?>
+      </h3>
     </div>
   </div>
 
   <div class="row mb-5 mt10">
     <div class="col-5 offset-1 font-black ">
       <div class="w-100">
-        <img class="w-100" src="pics/dev-partenariat.png" alt="">
+        <img class="w-100" src="
+        <?php echo $partenariat['img']['url']; ?>
+        " alt="">
         <a href="#travail"><i class="fa-solid fa-turn-up fa-flip-horizontal  "></i></a>
       </div>
     </div>
 
     <div class="col-5 offset-1 d-flex align-items-center   ">
       <div class="w80">
-        <h4 class="">Développement d'un réseau de partenariat</h4>
-        <p>Développement d'un réseau de partenariat autour de la SISP ou renforcement du réseau existant.</p>
+        <h4 class="">
+          <?php
+          echo $partenariat['subtitle'];
+          ?>
+        </h4>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus voluptas nostrum enim ex facere quasi
-          autem. Cumque fuga nam tempora earum quas consequuntur, esse veritatis, mollitia sint minima quisquam, qui.
+        <p>
+          <?php
+          echo $partenariat['text'];
+          ?>
         </p>
-
-        <P>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Quod et laboriosam necessitatibus dicta rerum
-          quaerat error. Animi assumenda tempora vel placeat aperiam laborum necessitatibus, voluptates, cum odit,
-          dignissimos dolores eligendi.</P>
       </div>
     </div>
   </div>
 
+
+  <?php
+  $temoignages = get_field('temoignages');
+  // var_dumpj($temoignages);
+  ?>
 
   <div class="row mt10 mb-5">
     <div class="col-1 bg-bleu-tur"></div>
