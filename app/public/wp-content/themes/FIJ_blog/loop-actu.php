@@ -1,51 +1,73 @@
-<?php
-
-?>
-
 <div id="actu" class="container-fluid">
   <div class="row mt10 mb-5">
     <div class="col-1 bg-bleu-tur"></div>
     <div class="col-2 bg-bleu-tur   pt-1 pb-1 fontwhite">
-      <h3>Actualité</h3>
+      <h3>
+        <?php
+        echo get_field('title');
+        ?>
+      </h3>
     </div>
   </div>
-
 
   <div class="row mb-5">
     <div class="col-10 offset-1 d-flex justify-content-around">
 
-      <div class="w-25 text-center">
-        <a href="#journée"><img class="w-100" src="pics/actu-formation.png" alt=""></a>
-        <h5>Journées formations </h5>
-        <p class="date">Juin 2022 </p>
-      </div>
+      <!-- repetitions de posts -->
+      <?php
+      $args = array(
+        'category_name' => 'actualite',
+        'order' => 'ASC', // or DSC
+        'orderby' => 'date',
+        'nopaging' => false,
+        'posts_per_page' => 4,
+        //'paged' => 1,
+      );
 
-      <div class="w-25 text-center">
-        <a href="#info"><img class="w-100" src="pics/actu-info.png" alt=""></a>
-        <h5>Journées info </h5>
-        <p class="date">Avril 2022 </p>
-      </div>
+      // The Query
+      $query = new WP_Query($args);
+      if ($query->have_posts()) {
+        while ($query->have_posts()) {
+          $query->the_post();
+          // formatage de la date
+          $date = DateTime::createFromFormat('Ymd', get_field('post_actu')['date']);
+      ?>
+          <!--  -->
+          <?php
+          $post_actu = get_field("post_actu");
+          ?>
 
+          <div class="w-25 text-centser">
+            <a href="#journée"><img class="w-100" src="
+        <?php
+          echo $post_actu["thumbnail"]["url"];
+        ?>
+        " alt=""></a>
+            <h5>
+              <?php
+              echo $post_actu["title"]
+              ?>
+            </h5>
 
-      <div class="w-25 text-center">
-        <a href="#déjeuner"><img class="w-100" src="pics/actu-dejeuner.png" alt=""></a>
-        <h5>Petit déjeuner SASLS </h5>
-        <p class="date">Mars 2022 </p>
-      </div>
+            <p class="date">
+              <?php
+              echo dateFR($date);
+              ?>
+            </p>
 
-
-      <div class="w-25 text-center">
-        <a href="#projet"><img class="w-100" src="pics/actu-projet.png" alt=""></a>
-        <h5>Projets en cours  </h5>
-        <p class="date">Arnaud dupont juin 2022 </p>
-      </div>
-
+          </div>
+      <?php
+        }
+      }
+      wp_reset_postdata()
+      ?>
 
     </div>
   </div>
 </div>
 
 <div id="journée" class="container-fluid bg-bleu-tur padtop mt10 padbot">
+
 
   <div class="row">
     <div class="col-1 bg-white"></div>
@@ -215,3 +237,4 @@
     </div>
   </div>
 </div>
+</main>
