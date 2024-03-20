@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <div id="actu" class="container-fluid">
   <div class="row mt10 mb-5">
     <div class="col-1 bg-bleu-tur"></div>
