@@ -353,3 +353,31 @@ a:active {
 .bg-green {
   background-color: #009999;
 }
+
+/* ------ loop-actu.css--------- */
+.bloc-vert,
+.bloc-vert a i {
+  color: white;
+  background-color: #009999;
+}
+
+.bloc-blanc,
+.bloc-blanc a i {
+  color: black;
+  background-color: white;
+}
+
+.bloc-blanc .fond {
+  color: white;
+  background-color: #009999;
+}
+
+.bloc-vert .fond {
+  color: black;
+  background-color: white;
+}
+
+.bloc-vert h3,
+.bloc-blanc h3 {
+  padding-right: 10rem;
+}
