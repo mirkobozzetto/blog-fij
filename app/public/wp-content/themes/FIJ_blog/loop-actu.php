@@ -1,7 +1,7 @@
 <div id="actu" class="container-fluid">
   <div class="row mt10 mb-5">
     <div class="col-1 bg-bleu-tur"></div>
-    <div class="col-2 bg-bleu-tur   pt-1 pb-1 fontwhite">
+    <div class="col-2 bg-bleu-tur  pt-1 pb-1 fontwhite">
       <h3>
         <?php
         echo get_field('title');
@@ -12,7 +12,6 @@
 
   <div class="row mb-5">
     <div class="col-10 offset-1 d-flex justify-content-around">
-
       <!-- repetitions de posts -->
       <?php
       $args = array(
@@ -84,18 +83,22 @@ if ($query->have_posts()) {
     $query->the_post();
     if ($query->current_post % 2) {
       $colors = "bloc-blanc";
-      $order = "order-3";
+      $order = "order-1 offset-1";
+      $flip = "fa-flip-horizontal";
+      $side = "jutiify-item-end";
     } else {
       $colors = "bloc-vert";
-      $order = "order-1 offset-1";
+      $order = "order-3";
+      $flip = "";
+      $side = "jutify-item-start";
     }
     $post_actu = get_field("post_actu");
 ?>
     <div id="<?php echo $post->ID; ?>" class="container-fluid bg-bleu-tur padtop mt10 padbot <?php echo $colors; ?> ">
       <div class="row">
-        <div class="col-1 bg-white"></div>
-        <div class="col-3 bg-white   pt-1 pb-1 ">
-          <h3>
+        <div class="col-1 fond"></div>
+        <div class="col-8 ps-0">
+          <h3 class="pt-2 pb-1 ps-2 m-0  fond d-inline-block">
             <?php
             echo $post_actu["title"];
             ?>
@@ -103,10 +106,12 @@ if ($query->have_posts()) {
         </div>
       </div>
       <div class="row mb-5 mt10">
-        <div class="col-5 offset-1  fontwhite d-flex align-items-center order-2">
+        <div class="col-5 d-flex align-items-center offset-1 order-2 ">
+
+
+
           <div class="w80">
-            <h4 class=""><?php echo $post_actu["subtitle"]; ?>
-            </h4>
+            <h4 class=""><?php echo $post_actu["subtitle"]; ?> </h4>
             <?php echo $post_actu["text"]; ?>
           </div>
         </div>
