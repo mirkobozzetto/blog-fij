@@ -85,12 +85,12 @@ if ($query->have_posts()) {
       $colors = "bloc-blanc";
       $order = "order-1 offset-1";
       $flip = "fa-flip-horizontal";
-      $side = "jutiify-item-end";
+      $side = "align-items-start";
     } else {
       $colors = "bloc-vert";
       $order = "order-3";
       $flip = "";
-      $side = "jutify-item-start";
+      $side = "align-items-end";
     }
     $post_actu = get_field("post_actu");
 ?>
@@ -107,18 +107,15 @@ if ($query->have_posts()) {
       </div>
       <div class="row mb-5 mt10">
         <div class="col-5 d-flex align-items-center offset-1 order-2 ">
-
-
-
           <div class="w80">
             <h4 class=""><?php echo $post_actu["subtitle"]; ?> </h4>
             <?php echo $post_actu["text"]; ?>
           </div>
         </div>
         <div class="col-5 d-flex align-items-center justify-content-center <?php echo $order; ?>">
-          <div class="w-100 d-flex flex-column align-items-end justify-content-end">
+          <div class="w-100 d-flex flex-column <?php echo $side ?> justify-content-end">
             <img class="w-100" src="<?php echo $post_actu["img"]["url"]; ?>" alt="">
-            <a href="#actu"><i class="fa-solid fa-turn-up fontwhite  "></i></a>
+            <a href="#actu"><i class="fa-solid fa-turn-up fontwhite <?php echo $flip; ?>"> </i></a>
           </div>
         </div>
       </div>
