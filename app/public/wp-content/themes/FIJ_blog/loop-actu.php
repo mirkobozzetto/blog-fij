@@ -30,28 +30,28 @@
           // formatage de la date
           $date = DateTime::createFromFormat('Ymd', get_field('post_actu')['date']);
       ?>
-      <!--  -->
-      <?php
+          <!--  -->
+          <?php
           $post_actu = get_field("post_actu");
           ?>
 
-      <div class="w-25 text-centser">
-        <a href="#">
-          // <?php echo $post->ID; ?>
-          <img class="w-100" src="<?php echo $post_actu["thumbnail"]["url"]; ?> " alt=""></a>
-        <h5>
-          <?php
+          <div class="w-25 text-centser">
+            <a href="#<?php echo $post->ID; ?>">
+              // <?php echo $post->ID; ?>
+              <img class="w-100" src="<?php echo $post_actu["thumbnail"]["url"]; ?> " alt=""></a>
+            <h5>
+              <?php
               echo $post_actu["title"]
               ?>
-        </h5>
+            </h5>
 
-        <p class="date">
-          <?php
+            <p class="date">
+              <?php
               echo dateFR($date);
               ?>
-        </p>
+            </p>
 
-      </div>
+          </div>
       <?php
         }
       }
@@ -92,32 +92,32 @@ if ($query->have_posts()) {
     }
     $post_actu = get_field("post_actu");
 ?>
-<div id="<?php echo $post->ID; ?>" class="container-fluid bg-bleu-tur padtop mt10 padbot <?php echo $colors; ?> ">
-  <div class="row">
-    <div class="col-1 fond"></div>
-    <div class="col-8 ps-0">
-      <h3 class="pt-2 pb-1 ps-2 m-0  fond d-inline-block">
-        <?php
+    <div id="<?php echo $post->ID; ?>" class="container-fluid bg-bleu-tur padtop mt10 padbot <?php echo $colors; ?> ">
+      <div class="row">
+        <div class="col-1 fond"></div>
+        <div class="col-8 ps-0">
+          <h3 class="pt-2 pb-1 ps-2 m-0  fond d-inline-block">
+            <?php
             echo $post_actu["title"];
             ?>
-      </h3>
-    </div>
-  </div>
-  <div class="row mb-5 mt10">
-    <div class="col-5 d-flex align-items-center offset-1 order-2 ">
-      <div class="w80">
-        <h4 class=""><?php echo $post_actu["subtitle"]; ?> </h4>
-        <?php echo $post_actu["text"]; ?>
+          </h3>
+        </div>
+      </div>
+      <div class="row mb-5 mt10">
+        <div class="col-5 d-flex align-items-center offset-1 order-2 ">
+          <div class="w80">
+            <h4 class=""><?php echo $post_actu["subtitle"]; ?> </h4>
+            <?php echo $post_actu["text"]; ?>
+          </div>
+        </div>
+        <div class="col-5 d-flex align-items-center justify-content-center <?php echo $order; ?>">
+          <div class="w-100 d-flex flex-column <?php echo $side ?> justify-content-end">
+            <img class="w-100" src="<?php echo $post_actu["img"]["url"]; ?>" alt="">
+            <a href="#actu"><i class="fa-solid fa-turn-up fontwhite <?php echo $flip; ?>"> </i></a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-5 d-flex align-items-center justify-content-center <?php echo $order; ?>">
-      <div class="w-100 d-flex flex-column <?php echo $side ?> justify-content-end">
-        <img class="w-100" src="<?php echo $post_actu["img"]["url"]; ?>" alt="">
-        <a href="#actu"><i class="fa-solid fa-turn-up fontwhite <?php echo $flip; ?>"> </i></a>
-      </div>
-    </div>
-  </div>
-</div>
 <?php
   }
 }
