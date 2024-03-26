@@ -91,7 +91,7 @@
     </div>
   </div>
 
-  <div class="row mt10 mb10">
+  <div class="row mt10">
     <div class="col-8 offset-1  border bg-bleu-tur fontwhite p-5">
       <h3>Assistant Ressources Humaines - Sous-officier</h3>
       <h4>La défense Belgique<br>
@@ -108,3 +108,6 @@
     </div>
   </div>
 </div>
+
+<div class="mt10"></div>
+</main>
