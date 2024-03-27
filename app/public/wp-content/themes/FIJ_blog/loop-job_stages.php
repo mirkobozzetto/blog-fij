@@ -45,6 +45,7 @@
       <a class="btn bg-bluef fontwhite fs-5 mb-2" href="<?php echo $postuler['url']; ?>">
         <?php echo $postuler['title']; ?>
       </a>
+      <!-- <a href=""><button class="btn bg-bluef fontwhite fs-5 mb-2 "> postuler</button></a> -->
     </div>
   </div>
   <?php
