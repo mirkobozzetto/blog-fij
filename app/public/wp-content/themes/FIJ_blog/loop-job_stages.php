@@ -23,31 +23,31 @@
       $contrat = get_field('type_contrat', $value['job']);
     }
   ?>
-  <div class="row mt10 ">
-    <div class="col-8 offset-1  border bg-bleu-tur fontwhite p-5">
-      <h3>
-        <?php
+    <div class="row mt10 ">
+      <div class="col-8 offset-1  border bg-bleu-tur fontwhite p-5">
+        <h3>
+          <?php
           echo get_the_title($value['job']);
           ?>
-      </h3>
-      <h4>
-        <?php echo get_field('lieu', $value['job']); ?>
-        <br>
-        <?php echo get_field('regime', $value['job']); ?> , <?php echo $contrat; ?>
-      </h4>
-      <p>
-        <?php echo get_field('description', $value['job']); ?>
-      </p>
-      <?php
+        </h3>
+        <h4>
+          <?php echo get_field('lieu', $value['job']); ?>
+          <br>
+          <?php echo get_field('regime', $value['job']); ?> , <?php echo $contrat; ?>
+        </h4>
+        <p>
+          <?php echo get_field('description', $value['job']); ?>
+        </p>
+        <?php
         $postuler = get_field("postuler");
         // var_dumpj($postuler);
         ?>
-      <a class="btn bg-bluef fontwhite fs-5 mb-2" href="<?php echo $postuler['url']; ?>">
-        <?php echo $postuler['title']; ?>
-      </a>
-      <!-- <a href=""><button class="btn bg-bluef fontwhite fs-5 mb-2 "> postuler</button></a> -->
+        <a class="btn bg-bluef fontwhite fs-5 mb-2" href="<?php echo $postuler['url']; ?>">
+          <?php echo $postuler['title']; ?>
+        </a>
+        <!-- <a href=""><button class="btn bg-bluef fontwhite fs-5 mb-2 "> postuler</button></a> -->
+      </div>
     </div>
-  </div>
   <?php
   }
   ?>

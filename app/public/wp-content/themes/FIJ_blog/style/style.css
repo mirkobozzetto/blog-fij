@@ -325,7 +325,7 @@ a:active {
   background-color: grey;
 }
 .bg-bluef {
-  background-color: #333399;
+  background-color: #333399 !important;
 }
 
 /*font color*/
