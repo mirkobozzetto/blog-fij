@@ -1,8 +1,11 @@
 <div class="container-fluid">
-
+  <!-- <?php var_dumpj($job_stages); ?> -->
   <div class="row mt10 mb-5">
     <div class="col-1 bg-bleu-tur"></div>
     <div class="col-3 bg-bleu-tur   pt-1 pb-1 fontwhite">
+      <?php
+      var_dump(get_field("jobs"))
+      ?>
       <h3>Les jobs disponibles</h3>
     </div>
   </div>
