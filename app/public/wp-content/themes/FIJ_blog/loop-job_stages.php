@@ -10,65 +10,46 @@
       </h3>
     </div>
   </div>
+
+  <!--  -->
+
   <?php
-  // var_dumpj(get_field("jobs_posts"));
   $job_list = get_field("jobs_posts");
   foreach ($job_list as $key => $value) {
-    var_dumpj($value);
+    // var_dumpj($value);
     if (get_field('type_contrat', $value['job']) == "CDD") {
       $contrat = get_field('type_contrat', $value['job']) . " d'une durée de " . get_field('duree', $value['job']);
     } else {
       $contrat = get_field('type_contrat', $value['job']);
     }
   ?>
-    <div class="row mt10 ">
-      <div class="col-8 offset-1  border bg-bleu-tur fontwhite p-5">
-        <h3>Assistant(e) social(e) - Assistant(e) en psychologie</h3>
-        <h4>Anderlecht <br>
-          Temps plein, CDI</h4>
-        <p>
-          TRAVIE est une Entreprise de Travail Adapté (ETA) dont l’objet social vise l’épanouissement de la personne en
-          situation de handicap et sa structuration par le travail. La personne, sa formation, son encadrement, son
-          développement, sa sécurité et son bien-être au travail sont au centre des préoccupations de l’équipe de
-          gestion. Afin d’assurer la pérennité de cet objet social, une attention toute particulière est également
-          accordée à la rentabilité économique de l’entreprise, avec notamment un accent rigoureux sur la qualité
-          délivrée et sur la recherche constante de nouvelles activités
-        </p>
-        <a href=""><button class="btn bg-bluef fontwhite fs-5 mb-2 "> postuler</button></a>
-      </div>
+  <div class="row mt10 ">
+    <div class="col-8 offset-1  border bg-bleu-tur fontwhite p-5">
+      <h3>
+        <?php
+          echo get_the_title($value['job']);
+          ?>
+      </h3>
+      <h4>
+        <?php echo get_field('lieu', $value['job']); ?>
+        <br>
+        <?php echo get_field('regime', $value['job']); ?> , <?php echo $contrat; ?>
+      </h4>
+      <p>
+        <?php echo get_field('description', $value['job']); ?>
+      </p>
+      <?php
+        $postuler = get_field("postuler");
+        // var_dumpj($postuler);
+        ?>
+      <a class="btn bg-bluef fontwhite fs-5 mb-2" href="<?php echo $postuler['url']; ?>">
+        <?php echo $postuler['title']; ?>
+      </a>
     </div>
+  </div>
   <?php
   }
   ?>
-  <div class="row mt10 ">
-    <div class="col-8 offset-1  border bg-bleu-tur fontwhite p-5">
-      <h3>Office Assistant & Social Fund Officer</h3>
-      <h4>Schaerbeek <br>
-        Temps plein, CDI</h4>
-      <p>
-        Beantwoorden van vragen en verstrekken van informatie/assistentie.
-        Mailings organiseren om persoonlijke gegevens van werknemers te verzamelen.
-        Annonce sponsorisée·PostedOffre publiée il y a plus de 30 jours
-
-      </p>
-      <a href=""><button class="btn bg-bluef fontwhite fs-5 mb-2 "> postuler</button></a>
-    </div>
-  </div>
-
-  <div class="row mt10 ">
-    <div class="col-8 offset-1  border bg-bleu-tur fontwhite p-5">
-      <h3>ASSISTANTS SOCIAUX DE SECTEUR (F/H/X)</h3>
-      <h4>Bruxelles <br>
-        Temps plein, CDI</h4>
-      <p>
-        Bonne connaissance du réseau social Bruxellois.
-        Accompagné d’un assistant social de la cellule logement du CPAS, le TSR ira à la rencontre des personnes en
-        situation précaire
-
-      </p>
-      <a href=""><button class="btn bg-bluef fontwhite fs-5 mb-2 "> postuler</button></a>
-    </div>
-  </div>
 
   <div class="row mt10 mb-5">
     <div class="col-1 bg-bleu-tur"></div>
