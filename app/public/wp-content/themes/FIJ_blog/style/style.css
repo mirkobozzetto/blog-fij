@@ -328,6 +328,10 @@ a:active {
   background-color: #333399 !important;
 }
 
+.bg-bluef:hover {
+  background-color: transparent !important;
+}
+
 /*font color*/
 
 .fontg {
