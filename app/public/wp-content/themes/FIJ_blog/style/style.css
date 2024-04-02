@@ -393,3 +393,7 @@ a:active {
 .mb5 {
   margin-bottom: 5rem;
 }
+
+.unique-class > p {
+  font-size: inherit !important;
+}
