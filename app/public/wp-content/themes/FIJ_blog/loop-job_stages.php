@@ -40,11 +40,12 @@
       </p>
       <?php
         $postuler = get_field("postuler");
-        // var_dumpj($postuler);
+        var_dumpj($postuler);
         ?>
-      <a class="btn bg-bluef fontwhite fs-5 mb-2" href="<?php echo $postuler['url']; ?>">
-        <?php echo $postuler['title']; ?>
-      </a>
+      <form action="<?php echo  $postuler['url']; ?>" method="get">
+        <input type="hidden" name="reference" value="<?php echo $value['job']; ?>">
+        <button type="submit" class="btn bg-bluef fontwhite fs-5 mb-2"><?php echo $postuler['title']; ?></button>
+      </form>
       <!-- <a href=""><button class="btn bg-bluef fontwhite fs-5 mb-2 "> postuler</button></a> -->
     </div>
   </div>
