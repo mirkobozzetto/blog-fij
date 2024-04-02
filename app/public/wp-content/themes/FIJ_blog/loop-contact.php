@@ -49,13 +49,14 @@
         ?>
       </div>
     </div>
-    <?php var_dumpj(get_fields()) ?>
+    // <?php var_dumpj(get_fields()) ?>
 
     <div class="col-5 d-flex justify-content-center align-items-center">
       <div class="w80">
         <?php
         $map = get_field("map");
         ?>
+        <!-- utiliser mapBox plus tard ! avec latitude et longitude -->
         <img class="w-100" src="pics/plan.png" alt="">
       </div>
     </div>
