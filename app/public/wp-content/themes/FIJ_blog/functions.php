@@ -7,6 +7,10 @@ function jsingle_template()
     if (file_exists(TEMPLATEPATH . "/single-{$cat->slug}.php"))
       return TEMPLATEPATH . "/single-{$cat->slug}.php";
   }
+  // foreach ((array) get_the_category() as $cat) {
+  //   if (file_exists(get_template_directory() . "/single-{$cat->slug}.php"))
+  //     return get_template_directory() . "/single-{$cat->slug}.php";
+  // }
 }
 add_filter('single_template', 'jsingle_template');
 
@@ -44,6 +48,7 @@ add_image_size('galery', 300, 300, true);
 
 function remove_default_thumbs($sizes)
 {
+  // permet d'enlever les le tailles qui ne nous intéressent pas
   // unset( $sizes[ 'thumbnail' ] );
   unset($sizes['medium']);
   unset($sizes['large']);

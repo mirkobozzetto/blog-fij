@@ -6,10 +6,10 @@ $galery = get_field("galery");
 foreach ($galery as $key => $value) {
 ?>
   <!-- <img src="
-<?php echo $value['sizes']['big']; ?>
+<?php echo $value['sizes']['galery']; ?>
 " alt="galerie"> -->
   <a href="<?php echo $value['sizes']['big']; ?>" data-lightbox="galerie" data-title="Ma galerie">
-    <img src="<?php echo $value['sizes']['big']; ?>" alt="galerie">
+    <img src="<?php echo $value['sizes']['galery']; ?>" alt="galerie">
   </a>
 <?php
 }
