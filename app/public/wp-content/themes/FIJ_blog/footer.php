@@ -75,6 +75,7 @@ $social = get_field('adress', $contactID)['social'];
 
 <script src='<?php echo get_stylesheet_directory_uri(); ?>/js/jquery-3.7.0.min.js'></script>
 <script src='<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.bundle.min.js'></script>
+<script src='<?php echo get_stylesheet_directory_uri(); ?>/js/lightbox.min.js'></script>
 </body>
 
 </html>

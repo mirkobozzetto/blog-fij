@@ -20,6 +20,7 @@ Cela signifie que toutes les variables et fonctions définies dans myvars.php se
     <link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>\style/all.min.css'>
     <link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>\style/style.css'>
     <link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>\style/debug.css'>
+    <link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>\style/lightbox.min.css'>
 
     <link rel='preconnect' href='https://fonts.googleapis.com'>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
@@ -32,6 +33,7 @@ Cela signifie que toutes les variables et fonctions définies dans myvars.php se
   </head>
 
   <?php
+
   $headerID = get_page_by_path('header')->ID;
   ?>
 
@@ -73,7 +75,9 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
             </a>
           </div>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -102,7 +106,8 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
               ?>
 
               <li class='nav-item dropdown'>
-                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown'
+                  aria-expanded='false'>
                   langue
                 </a>
                 <ul class='dropdown-menu'>
@@ -123,8 +128,12 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
   </header>
 
   <main>
+    <?php
+    $hero_img = get_field('hero');
+    if ($hero_img) {
+      $hero_img
+    ?>
     <div class='container-fluid'>
-
       <div class='row relative'>
         <div class='col-12 mb-5 p-0'>
           <div class='absolute w30 txt-1 fontwhite '>
@@ -132,34 +141,24 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
 
             <!-- import dynamique depuis wordpress -->
             <h1>
-              <? echo get_field('title_header');
-              ?>
+              <?
+                echo get_field('title_header');
+                ?>
             </h1>
-
-            <!-- meme chose ... -->
-
-            <!-- <p class = 'fs-5'>L’asbl SASLS ( Service d’accompagnement social aux locataires sociaux ) assure un accompagnement
-social individuel et collectif des candidats et des locataires des Sociétés immobilières de service public
-( SISP ).</p> -->
-
             <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
             <!-- <? echo get_field('le_nom_de_ton_champ_ACF');
-                  ?> -->
+                    ?> -->
             <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-
             <p class='fs-5'>
               <? echo get_field('text_header');
-              ?>
+                ?>
             </p>
           </div>
           <div class='w-100'>
-            <!-- <img class = 'w-100' src = 'pics/accuiel-banniere.png' alt = ''> -->
-
-            <!-- appel de l img dans le backend -->
-            <!-- Grace au plugin ACF: get_field() -->
-            <?php $hero_img = get_field('hero');
-            ?>
-            <img class='w-100' src="<?php echo $hero_img['url']; ?>" alt="<?php echo $hero_img['alt']; ?>">
+            <img class='w-100' src="
+            <?php
+            echo $hero_img;
+            ?>" alt="<?php echo $hero_img['alt']; ?>">
           </div>
 
         </div>
@@ -167,14 +166,12 @@ social individuel et collectif des candidats et des locataires des Sociétés im
     </div>
     </div>
     </div>
-
+    <?php
+    }
+    ?>
     <!-- get_the_title() recupere les slugs -->
     <!--
 // echo get_the_title();
 // echo "$hero_img";
 // var_dump( $hero_img );
 -->
-
-    <!-- recuperer l'image dans le back -->
-    <!-- <img src = "<?php echo $hero_img['url'];
-                      ?>' alt = '"> -->
