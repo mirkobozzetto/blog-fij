@@ -37,6 +37,7 @@ function register_my_menu()
 add_action('init', 'register_my_menu');
 
 //tailles de thubnails
+add_image_size('big', 1920, 5000, false);
 add_image_size('galery', 300, 300, true);
 
 //enlever thumbnails par defaut
