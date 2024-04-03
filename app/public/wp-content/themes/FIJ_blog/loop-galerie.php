@@ -1,12 +1,12 @@
 <?php
 include locate_template('myvars.php');
 $galery = get_field("galery");
-var_dumpj($galery);
+// var_dumpj($galery);
 
 foreach ($galery as $key => $value) {
 ?>
 <img src="
-<?php echo $value['sizes']['thumbnail']; ?>
+<?php echo $value['sizes']['galery']; ?>
 " alt="galerie">
 <?php
 }
