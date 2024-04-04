@@ -67,8 +67,7 @@
       <form class="w-100 mt10 " method="" action="">
         <!--  -->
         <?php
-        $contact = get_field("form")["form_field"];
-        var_dumpj($contact);
+        $contact = get_field("form");
         ?>
         <div class="d-flex  ">
           <div class="d-flex colonne w-50 me-5">
