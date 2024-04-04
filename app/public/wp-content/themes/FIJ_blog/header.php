@@ -33,8 +33,8 @@ Cela signifie que toutes les variables et fonctions définies dans myvars.php se
   </head>
 
   <?php
-
   $headerID = get_page_by_path('header')->ID;
+  var_dumpj($headerID)
   ?>
 
   <!-- Ce code PHP est utilisé dans le contexte de WordPress. Il utilise la fonction get_page_by_path() pour récupérer une page spécifique de votre site WordPress.
@@ -46,38 +46,27 @@ get_page_by_path( 'header' ) : Cette fonction recherche une page dans votre site
 ->ID : C'est une propriété de l'objet de page retourné par get_page_by_path(). Chaque page dans WordPress a un identifiant unique, ou ID. Ce code récupère cet ID.
 
 $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
-
   <header class='container-fluid bg-bleu-tur'>
     <div class='row'>
       <div class='col-12'>
         <nav class='navbar navbar-expand-lg navbar-light ps-5 pe-5  '>
-
           <div class='d-flex w40'>
             <a class='navbar-brand ps-3 d-flex' href='index.html'>
               <div class='w20'>
                 <!-- <img class = 'w-100' src = '/pics/logo-sasls.png' alt = ''> -->
                 <img class='w-100' src="<?php echo get_field('logo', $headerID)['url']; ?>" alt=''>
-
                 <!--  -->
               </div>
-
               <!--  -->
-
               <!-- <p class = 'text-center titrelogo  '>Service d'accompagnement social aux locataires sociaux <br>Dienst voor
               maatschappelijke begeleiding van de sociale huurders</p> -->
               <p class="text-center titrelogo  ">
-
                 <?php echo get_field('text_asbl', $headerID); ?>
-
               </p>
-
               <!---->
             </a>
           </div>
-
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -106,8 +95,7 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
               ?>
 
               <li class='nav-item dropdown'>
-                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown'
-                  aria-expanded='false'>
+                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
                   langue
                 </a>
                 <ul class='dropdown-menu'>
@@ -130,42 +118,41 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
   <main>
     <?php
     $hero_img = get_field('hero');
+
     if ($hero_img) {
       $hero_img
     ?>
-    <div class='container-fluid'>
-      <div class='row relative'>
-        <div class='col-12 mb-5 p-0'>
-          <div class='absolute w30 txt-1 fontwhite '>
-            <!-- <h1>Bienvenue chez SASLS/DMBSH</h1> -->
-
-            <!-- import dynamique depuis wordpress -->
-            <h1>
-              <?
+      <div class='container-fluid'>
+        <div class='row relative'>
+          <div class='col-12 mb-5 p-0'>
+            <div class='absolute w30 txt-1 fontwhite '>
+              <!-- import dynamique depuis wordpress -->
+              <h1>
+                <?
                 echo get_field('title_header');
                 ?>
-            </h1>
-            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-            <!-- <? echo get_field('le_nom_de_ton_champ_ACF');
+              </h1>
+              <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+              <!-- <? echo get_field('le_nom_de_ton_champ_ACF');
                     ?> -->
-            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-            <p class='fs-5'>
-              <? echo get_field('text_header');
+              <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+              <p class='fs-5'>
+                <? echo get_field('text_header');
                 ?>
-            </p>
-          </div>
-          <div class='w-100'>
-            <img class='w-100' src="
+              </p>
+            </div>
+            <div class='w-100'>
+              <img class='w-100' src="
             <?php
             echo $hero_img;
             ?>" alt="<?php echo $hero_img['alt']; ?>">
-          </div>
+            </div>
 
+          </div>
         </div>
       </div>
-    </div>
-    </div>
-    </div>
+      </div>
+      </div>
     <?php
     }
     ?>
