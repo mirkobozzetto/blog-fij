@@ -66,9 +66,7 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
               <!---->
             </a>
           </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -97,8 +95,7 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
               ?>
 
               <li class='nav-item dropdown'>
-                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown'
-                  aria-expanded='false'>
+                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
                   langue
                 </a>
                 <ul class='dropdown-menu'>
@@ -126,37 +123,37 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
     if ($hero_img) {
       $hero_img
     ?>
-    <div class='container-fluid'>
-      <div class='row relative'>
-        <div class='col-12 mb-5 p-0'>
-          <div class='absolute w30 txt-1 fontwhite '>
-            <!-- import dynamique depuis wordpress -->
-            <h1>
-              <?
+      <div class='container-fluid'>
+        <div class='row relative'>
+          <div class='col-12 mb-5 p-0'>
+            <div class='absolute w30 txt-1 fontwhite '>
+              <!-- import dynamique depuis wordpress -->
+              <h1>
+                <?
                 echo get_field('title_header');
                 ?>
-            </h1>
-            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-            <!-- <? echo get_field('le_nom_de_ton_champ_ACF');
+              </h1>
+              <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+              <!-- <? echo get_field('le_nom_de_ton_champ_ACF');
                     ?> -->
-            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-            <p class='fs-5'>
-              <? echo get_field('text_header');
+              <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+              <p class='fs-5'>
+                <? echo get_field('text_header');
                 ?>
-            </p>
-          </div>
-          <div class='w-100'>
-            <img class='w-100' src="
+              </p>
+            </div>
+            <div class='w-100'>
+              <img class='w-100' src="
             <?php
             echo $hero_img['url'];
             ?>" alt="hero">
-          </div>
+            </div>
 
+          </div>
         </div>
       </div>
-    </div>
-    </div>
-    </div>
+      </div>
+      </div>
     <?php
     }
     ?>

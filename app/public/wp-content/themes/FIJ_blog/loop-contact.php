@@ -49,7 +49,6 @@
         ?>
       </div>
     </div>
-    // <?php var_dumpj(get_fields()) ?>
 
     <div class="col-5 d-flex justify-content-center align-items-center">
       <div class="w80">
@@ -64,8 +63,13 @@
 
   <div class="row">
     <div class="col-5 offset-1">
-      <form class="w-100 mt10 " action="">
-
+      <!--  -->
+      <form class="w-100 mt10 " method="" action="">
+        <!--  -->
+        <?php
+        $contact = get_field("form")["form_field"];
+        var_dumpj($contact);
+        ?>
         <div class="d-flex  ">
           <div class="d-flex colonne w-50 me-5">
             <label for="nom">nom *</label>
@@ -91,7 +95,7 @@
 
         <div class="d-flex colonne w100">
           <label for="commentaire">commentaire</label>
-          <textarea name="commentaire" id="commentaire" cols="30" rows="5">laissez un commentaire</textarea>
+          <textarea placeholder="laissez un commentaire" name="commentaire" id="commentaire" cols="30" rows="5"></textarea>
         </div>
 
         <button class="btn bg-bluef fontwhite fs-5 mt-3"> Envoyer</button>
