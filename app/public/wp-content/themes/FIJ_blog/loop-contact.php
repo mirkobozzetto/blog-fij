@@ -77,30 +77,44 @@
               <?php echo $contact["nom"]["nom"] ?>
             </label>
             <input type="text" id="<?php echo sanitize_title($contact["nom"]["nom"]); ?>" name="
-            <?php echo sanitize_title($contact["nom"]["nom"]); ?>" <?php if ($contact["nom"]["requis"] === 1) echo 'required'; ?>>
+            <?php echo sanitize_title($contact["nom"]["nom"]); ?>"
+              <?php if ($contact["nom"]["requis"] === 1) echo 'required'; ?>>
           </div>
 
           <div class="d-flex colonne marginl w-50">
             <label for="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>">
               <?php echo $contact["prenom"]["prenom"] ?>
             </label>
-            <input type="text" id="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>" name="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>" <?php if ($contact["prenom"]["requis"] === 1) echo 'required'; ?>>
+            <input type="text" id="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>"
+              name="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>"
+              <?php if ($contact["prenom"]["requis"] === 1) echo 'required'; ?>>
           </div>
         </div>
 
         <div class="d-flex colonne ">
-          <label for="<?php echo sanitize_title($contact["age"]["age"]); ?>"><?php echo $contact["age"]["age"] ?></label>
-          <input type="number" id="<?php echo sanitize_title($contact["age"]["age"]); ?>" name="<?php echo sanitize_title($contact["age"]["age"]); ?>" step="3" min="0" max="100" <?php if ($contact["prenom"]["requis"] === 1) echo 'required'; ?>>
+          <label
+            for="<?php echo sanitize_title($contact["age"]["age"]); ?>"><?php echo $contact["age"]["age"] ?></label>
+          <input type="number" id="<?php echo sanitize_title($contact["age"]["age"]); ?>"
+            name="<?php echo sanitize_title($contact["age"]["age"]); ?>" step="3" min="0" max="100"
+            <?php if ($contact["prenom"]["requis"] === 1) echo 'required'; ?>>
         </div>
 
         <div class="d-flex colonne w100">
-          <label for="<?php echo sanitize_title($contact["email"]["email"]); ?>"><?php echo $contact["email"]["email"] ?></label>
-          <input type="<?php echo sanitize_title($contact["email"]["email"]); ?>" id="<?php echo sanitize_title($contact["email"]["email"]); ?>" name="email" placeholder="<?php echo $contact["email"]["placeholder"] ?>" <?php if ($contact["email"]["requis"] === 1) echo 'required'; ?>>
+          <label
+            for="<?php echo sanitize_title($contact["email"]["email"]); ?>"><?php echo $contact["email"]["email"] ?></label>
+          <input type="<?php echo sanitize_title($contact["email"]["email"]); ?>"
+            id="<?php echo sanitize_title($contact["email"]["email"]); ?>" name="email"
+            placeholder="<?php echo $contact["email"]["placeholder"] ?>"
+            <?php if ($contact["email"]["requis"] === 1) echo 'required'; ?>>
         </div>
 
         <div class="d-flex colonne w100">
-          <label for="<?php echo sanitize_title($contact["commentaire"]["commentaire"]); ?>"><?php echo $contact["commentaire"]["commentaire"] ?></label>
-          <textarea placeholder="<?php echo $contact["commentaire"]["placeholder"] ?>" name="<?php echo sanitize_title($contact["commentaire"]["commentaire"]); ?>" id="<?php echo sanitize_title($contact["commentaire"]["commentaire"]); ?>" cols="30" rows="5" <?php if ($contact["commentaire"]["requis"] === 1) echo 'required'; ?>></textarea>
+          <label
+            for="<?php echo sanitize_title($contact["commentaire"]["commentaire"]); ?>"><?php echo $contact["commentaire"]["commentaire"] ?></label>
+          <textarea placeholder="<?php echo $contact["commentaire"]["placeholder"] ?>"
+            name="<?php echo sanitize_title($contact["commentaire"]["commentaire"]); ?>"
+            id="<?php echo sanitize_title($contact["commentaire"]["commentaire"]); ?>" cols="30" rows="5"
+            <?php if ($contact["commentaire"]["requis"] === 1) echo 'required'; ?>></textarea>
         </div>
 
         <button class="btn bg-bluef fontwhite fs-5 mt-3">
