@@ -68,38 +68,45 @@
         <!--  -->
         <?php
         $contact = get_field("form");
-        var_dumpj($contact);
+        // var_dumpj($contact);
         ?>
 
         <div class="d-flex  ">
           <div class="d-flex colonne w-50 me-5">
-            <label for="nom">nom *</label>
-            <input type="text" id="nom" name="nom" required>
+            <label for=" <?php echo sanitize_title($contact["nom"]["nom"]); ?>">
+              <?php echo $contact["nom"]["nom"] ?>
+            </label>
+            <input type="text" id="<?php echo sanitize_title($contact["nom"]["nom"]); ?>" name="
+            <?php echo sanitize_title($contact["nom"]["nom"]); ?>" <?php if ($contact["nom"]["requis"] === 1) echo 'required'; ?>>
           </div>
 
           <div class="d-flex colonne marginl w-50">
-            <label for="prenom">prenom *</label>
-            <input type="text" id="prenom" name="prenom" required>
+            <label for="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>">
+              <?php echo $contact["prenom"]["prenom"] ?>
+            </label>
+            <input type="text" id="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>" name="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>" <?php if ($contact["prenom"]["requis"] === 1) echo 'required'; ?>>
           </div>
         </div>
 
         <div class="d-flex colonne ">
-          <label for="age">age*</label>
-          <input type="number" id="age" name="age" step="3" min="0" max="100">
+          <label for="<?php echo sanitize_title($contact["age"]["age"]); ?>"><?php echo $contact["age"]["age"] ?></label>
+          <input type="number" id="<?php echo sanitize_title($contact["age"]["age"]); ?>" name="<?php echo sanitize_title($contact["age"]["age"]); ?>" step="3" min="0" max="100" <?php if ($contact["prenom"]["requis"] === 1) echo 'required'; ?>>
         </div>
 
         <div class="d-flex colonne w100">
-          <label for="email">email*</label>
-          <input type="email" id="email" name="email" placeholder="email@gmail.com">
+          <label for="<?php echo sanitize_title($contact["email"]["email"]); ?>"><?php echo $contact["email"]["email"] ?></label>
+          <input type="<?php echo sanitize_title($contact["email"]["email"]); ?>" id="<?php echo sanitize_title($contact["email"]["email"]); ?>" name="email" placeholder="<?php echo $contact["email"]["placeholder"] ?>" <?php if ($contact["email"]["requis"] === 1) echo 'required'; ?>>
         </div>
 
         <div class="d-flex colonne w100">
-          <label for="commentaire">commentaire</label>
-          <textarea placeholder="laissez un commentaire" name="commentaire" id="commentaire" cols="30"
-            rows="5"></textarea>
+          <label for="<?php echo sanitize_title($contact["commentaire"]["commentaire"]); ?>"><?php echo $contact["commentaire"]["commentaire"] ?></label>
+          <textarea placeholder="<?php echo $contact["commentaire"]["placeholder"] ?>" name="<?php echo sanitize_title($contact["commentaire"]["commentaire"]); ?>" id="<?php echo sanitize_title($contact["commentaire"]["commentaire"]); ?>" cols="30" rows="5" <?php if ($contact["commentaire"]["requis"] === 1) echo 'required'; ?>></textarea>
         </div>
 
-        <button class="btn bg-bluef fontwhite fs-5 mt-3"> Envoyer</button>
+        <button class="btn bg-bluef fontwhite fs-5 mt-3">
+
+          <?php echo $contact["envoyer"] ?>
+        </button>
 
 
       </form>
