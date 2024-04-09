@@ -2,121 +2,43 @@
   <div class="row mt10 mb-5 ">
     <div class="col-1 bg-bleu-tur"></div>
     <div class="col-5 bg-bleu-tur   pt-1 pb-1 fontwhite">
-      <h3>L’équipe des travailleurs sociaux répartie dans 16 SISP </h3>
+      <h3>
+        <?php
+echo get_field('title');
+?>
+      </h3>
     </div>
   </div>
-
-
-  <div class="row d-flex flex-wrap">
-    <!-- attention -->
-    <div class="col-10 offset-1 d-flex justify-content-between mt-5">
-
-      <div class="w20 ">
-        <a href="#binhome"><img class="w-100" src="pics/pastille-binhome.png" alt=""></a>
-        <h5 class="text-center">BINHOME </h5>
+  <?php
+$travailleurs_sociaux = get_field('travailleurs_sociaux');
+// var_dumpj($travailleurs_sociaux);
+?>
+  <!--  -->
+  <div class="row d-flex ">
+    <div class="col-10 offset-1 d-flex justify-content-between mt-5 flex-wrap">
+      <?php
+foreach ($travailleurs_sociaux as $key => $value) {
+    ?>
+      <div class="w22 justify-content">
+        <a href="#binhome"><img class="w-100" src="
+<?php
+echo $value['img']['url'];
+    ?>
+        " alt=""></a>
+        <h5 class="text-center text-uppercase">
+          <?php
+echo $value['name'];
+    ?>
+        </h5>
       </div>
-
-      <div class="w20">
-        <a href="#comensia"><img class="w-100" src="pics/pastille-comensia.png" alt=""></a>
-        <h5 class="text-center">COMENSIA</h5>
-      </div>
-
-      <div class="w20">
-        <a href="#anderlecht"><img class="w-100" src="pics/pastille-foyeranderlechtois.png" alt=""></a>
-        <h5 class="text-center">FOYER ANDERLECHTOIS </h5>
-      </div>
-
-      <div class="w20">
-        <a href="#ever"><img class="w-100" src="pics/pastille-ever.png" alt=""></a>
-        <h5 class="text-center">EVERECITY </h5>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="row mt-5 ">
-    <div class="col-10 offset-1 d-flex justify-content-between">
-
-      <div class="w20">
-        <a href="#laeken"><img class="w-100" src="pics/pastille-foyer-laeken.png" alt=""></a>
-        <h5 class="text-center">LE FOYER LAEKENOIS (FLH) </h5>
-      </div>
-
-      <div class="w20">
-        <a href="#stjosse"><img class="w-100" src="pics/pastille-foyer-stjosse.png" alt=""></a>
-        <h5 class="text-center">FOYER DE SAINT-JOSSE-TEN-NOODE (HBM) </h5>
-      </div>
-
-      <div class="w20">
-        <a href="#sud"><img class="w-100" src="pics/pastille-foyer-sud.png" alt=""></a>
-        <h5 class="text-center">FOYER DU SUD </h5>
-      </div>
-
-      <div class="w20">
-        <a href="#floreal"><img class="w-100" src="pics/pastille-logis-floreal.png" alt=""></a>
-        <h5 class="text-center">LE LOGIS FLOREAL </h5>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="row mt-5 ">
-    <div class="col-10 offset-1 d-flex justify-content-between">
-
-      <div class="w20">
-        <a href="#bxl"><img class="w-100" src="pics/pastille-logement-bruxelles.png" alt=""></a>
-        <h5 class="text-center">LOGEMENT BRUXELLOIS</h5>
-      </div>
-
-      <div class="w20">
-        <a href="#molen"><img class="w-100" src="pics/pastille-logement-molen.png" alt=""></a>
-        <h5 class="text-center">LOGEMENT MOLENBEEKOIS </h5>
-      </div>
-
-      <div class="w20">
-        <a href="#abc"><img class="w-100" src="pics/pastille-abc.png" alt=""></a>
-        <h5 class="text-center">ALLIANCE BRUXELLES COOPERATIVE (ABC)  </h5>
-      </div>
-
-      <div class="w20">
-        <a href="#lojega"><img class="w-100" src="pics/lojega.png" alt=""></a>
-        <h5 class="text-center">LOJEGA </h5>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="row mt-5 ">
-    <div class="col-10 offset-1 d-flex justify-content-between">
-
-      <div class="w20">
-        <a href="#shaerbeek"><img class="w-100" src="pics/foyer-shaerbeek.png" alt=""></a>
-        <h5 class="text-center">FOYER SCHAERBEEKOIS </h5>
-      </div>
-
-      <div class="w20">
-        <a href="#soignies"><img class="w-100" src="pics/pastille-bord-soignies.png" alt=""></a>
-        <h5 class="text-center">EN BORD DE SOIGNES </h5>
-      </div>
-
-      <div class="w20">
-        <a href="#logis"><img class="w-100" src="pics/pastille-log-iris.png" alt=""></a>
-        <h5 class="text-center">LOG’ IRIS </h5>
-      </div>
-
-      <div class="w20">
-        <a href="#modern"><img class="w-100" src="pics/pastille-habitatio-moderne.png" alt=""></a>
-        <h5 class="text-center">HABITATION MODERNE </h5>
-      </div>
-
+      <?php
+}
+?>
+      <!-- fermeture -->
     </div>
   </div>
 
 </div>
-
 
 
 
@@ -190,7 +112,7 @@
         <h4>Christine FATUMA</h4>
         <h4>Nadia MUHORAKEYE</h4>
         <h4>Laurent WATTIER </h4>
-         
+
 
 
 
@@ -223,7 +145,7 @@
         <h4>Miguel OTERO </h4>
         <h4>Audrey RENIER </h4>
         <h4>Anaïs COURJOL </h4>
-         
+
 
 
 
@@ -273,7 +195,7 @@
         <h4>Rody MAYUMA</h4>
         <h4>Richala MOHAMED</h4>
         <h4>Daniel DE LA GRANJA </h4>
-         
+
 
 
 
@@ -303,7 +225,7 @@
         <h4>Mégane GERARD </h4>
         <h4>Déborah VANDEKERCKHOVE </h4>
 
-         
+
 
 
 
@@ -357,7 +279,7 @@
         <h4>Mathilde HAYOT  </h4>
         <h4>Tom LENAERTS  </h4>
         <h4>David KY-MAKA </h4>
-         
+
 
 
 
@@ -387,7 +309,7 @@
         <h2 class="fw-bold">FOYER DE SAINT-JOSSE-TEN-NOODE (HBM) </h2>
         <h4>Annabelle Boyili  </h4>
 
-         
+
 
 
 
@@ -439,7 +361,7 @@
         <h4>Catherine UYTSLUYT</h4>
         <h4>Laetitia DEGOMME</h4>
 
-         
+
 
 
 
@@ -470,7 +392,7 @@
         <h4>Emmanuelle DELFOSSE  </h4>
         <h4>Carine SPILTOIR </h4>
 
-         
+
 
 
 
@@ -522,7 +444,7 @@
         <h4>Lin DELNESTE</h4>
         <h4>Pierre QUENON</h4>
 
-         
+
 
 
 
@@ -554,7 +476,7 @@
         <h4>Antoine VAN HOOREN</h4>
         <h4>Félicien COLLETTE</h4>
 
-         
+
 
 
 
@@ -606,7 +528,7 @@
         <h4>Grégory VAN BOCKSTAELE</h4>
 
 
-         
+
 
 
 
@@ -638,7 +560,7 @@
         <h4>Véronique VAN NIEUWENHOVE </h4>
 
 
-         
+
 
 
 
@@ -691,7 +613,7 @@
         <h4>Pierre Mwamba  </h4>
 
 
-         
+
 
 
 
@@ -723,7 +645,7 @@
         <h4>Coralie VAN NIEUWENBORGH </h4>
 
 
-         
+
 
 
 
@@ -775,7 +697,7 @@
 
 
 
-         
+
 
 
 
@@ -807,7 +729,7 @@
 
 
 
-         
+
 
 
 

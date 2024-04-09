@@ -1,5 +1,5 @@
 <?php
-include(locate_template('myvars.php'));
+include locate_template('myvars.php');
 $footerID = get_page_by_path('footer')->ID;
 ?>
 
@@ -33,9 +33,9 @@ Cela signifie que toutes les variables et fonctions définies dans myvars.php se
   </head>
 
   <?php
-  $headerID = get_page_by_path('header')->ID;
-  // var_dumpj($headerID)
-  ?>
+$headerID = get_page_by_path('header')->ID;
+// var_dumpj($headerID)
+?>
 
   <!-- Ce code PHP est utilisé dans le contexte de WordPress. Il utilise la fonction get_page_by_path() pour récupérer une page spécifique de votre site WordPress.
 
@@ -66,7 +66,9 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
               <!---->
             </a>
           </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -77,25 +79,26 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
               <!--  -->
               <!-- MENU DECLARATION -->
               <?php
-              $nomMenu = "top";
-              $argsM = array(
-                'theme_location' => $nomMenu,
-                'container' => false,
-                'echo' => false,
-                'fallback_cb' => false,
-                'items_wrap' => '%3$s',
-                'depth' => 0,
-              );
-              $menu = wp_nav_menu($argsM);
-              // ici par exemple on ajoute une classe a nos liens,
-              //  ca rempplace le <a par <a class="nav-link" dans $menu
-              $menu = str_replace('<a', '<a class = "nav-link"', $menu);
-              $menu = str_replace('class="menu-item', 'class="nav-item menu-item', $menu);
-              echo $menu;
-              ?>
+$nomMenu = "top";
+$argsM = array(
+    'theme_location' => $nomMenu,
+    'container' => false,
+    'echo' => false,
+    'fallback_cb' => false,
+    'items_wrap' => '%3$s',
+    'depth' => 0,
+);
+$menu = wp_nav_menu($argsM);
+// ici par exemple on ajoute une classe a nos liens,
+//  ca rempplace le <a par <a class="nav-link" dans $menu
+$menu = str_replace('<a', '<a class = "nav-link"', $menu);
+$menu = str_replace('class="menu-item', 'class="nav-item menu-item', $menu);
+echo $menu;
+?>
 
               <li class='nav-item dropdown'>
-                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown'
+                  aria-expanded='false'>
                   langue
                 </a>
                 <ul class='dropdown-menu'>
@@ -117,43 +120,42 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
 
   <main>
     <?php
-    $hero_img = get_field('hero');
+$hero_img = get_field('hero');
 
-
-    if ($hero_img) {
-      $hero_img
+if ($hero_img) {
+    $hero_img
     ?>
-      <div class='container-fluid'>
-        <div class='row relative'>
-          <div class='col-12 mb-5 p-0'>
-            <div class='absolute w30 txt-1 fontwhite '>
-              <!-- import dynamique depuis wordpress -->
-              <h1>
-                <?
+    <div class='container-fluid'>
+      <div class='row relative'>
+        <div class='col-12 mb-5 p-0'>
+          <div class='absolute w30 txt-1 fontwhite '>
+            <!-- import dynamique depuis wordpress -->
+            <h1>
+              <?
                 echo get_field('title_header');
                 ?>
-              </h1>
-              <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-              <!-- <? echo get_field('le_nom_de_ton_champ_ACF');
+            </h1>
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+            <!-- <? echo get_field('le_nom_de_ton_champ_ACF');
                     ?> -->
-              <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-              <p class='fs-5'>
-                <? echo get_field('text_header');
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+            <p class='fs-5'>
+              <? echo get_field('text_header');
                 ?>
-              </p>
-            </div>
-            <div class='w-100'>
-              <img class='w-100' src="
-            <?php
-            echo $hero_img['url'];
-            ?>" alt="hero">
-            </div>
-
+            </p>
           </div>
+          <div class='w-100'>
+            <img class='w-100' src="
+            <?php
+echo $hero_img['url'];
+    ?>" alt="hero">
+          </div>
+
         </div>
       </div>
-      </div>
-      </div>
+    </div>
+    </div>
+    </div>
     <?php
-    }
-    ?>
+}
+?>
