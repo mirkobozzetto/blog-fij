@@ -64,17 +64,18 @@
   <div class="row">
     <div class="col-5 offset-1">
       <!--  -->
-      <form class="w-100 mt10 " method="" action="">
+      <form class="w-100 mt10 " method="post" action="">
         <!--  -->
         <?php
         $contact = get_field("form");
+        var_dumpj($contact);
         ?>
+
         <div class="d-flex  ">
           <div class="d-flex colonne w-50 me-5">
             <label for="nom">nom *</label>
             <input type="text" id="nom" name="nom" required>
           </div>
-
 
           <div class="d-flex colonne marginl w-50">
             <label for="prenom">prenom *</label>
@@ -94,7 +95,8 @@
 
         <div class="d-flex colonne w100">
           <label for="commentaire">commentaire</label>
-          <textarea placeholder="laissez un commentaire" name="commentaire" id="commentaire" cols="30" rows="5"></textarea>
+          <textarea placeholder="laissez un commentaire" name="commentaire" id="commentaire" cols="30"
+            rows="5"></textarea>
         </div>
 
         <button class="btn bg-bluef fontwhite fs-5 mt-3"> Envoyer</button>
@@ -104,7 +106,9 @@
     </div>
 
     <div class="col-5 mt10 d-flex align-items-center justify-content-center">
-      <div class="w60 "><img class="w-100" src="pics/logo-sasls.png" alt=""></div>
+      <div class="w60 ">
+        <img class="w-100" src="<?php echo get_field("img")["url"] ?>" alt="">
+      </div>
     </div>
 
 
