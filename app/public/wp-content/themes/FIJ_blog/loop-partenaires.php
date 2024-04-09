@@ -20,7 +20,10 @@ $travailleurs_sociaux = get_field('travailleurs_sociaux');
 foreach ($travailleurs_sociaux as $key => $value) {
     ?>
       <div class="w22 justify-content">
-        <a href="#binhome"><img class="w-100" src="
+        <a href="#<?php
+echo sanitize_title($value['name']);
+    ?>">
+          <img class="w-100" src="
 <?php
 echo $value['img']['url'];
     ?>
@@ -40,7 +43,10 @@ echo $value['name'];
 
 </div>
 
-
+<?php
+$administration = get_field('administration');
+var_dumpj($administration);
+?>
 
 <div class="container-fluid bg-bleu-tur padtop mt10 padbot">
 
