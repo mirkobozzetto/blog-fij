@@ -95,7 +95,11 @@ echo $value['name'];
 
     <div class="col-5 d-flex align-items-center justify-content-center">
       <div class="w40">
-        <img class="w-100" src="pics/logo_slrb.png" alt="">
+        <img class="w-100" src="
+        <?php
+echo $administration['img']['url'];
+?>
+        " alt="">
       </div>
     </div>
   </div>
