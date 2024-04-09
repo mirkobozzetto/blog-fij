@@ -45,7 +45,6 @@ echo $value['name'];
 
 <?php
 $administration = get_field('administration');
-var_dumpj($administration);
 ?>
 
 <div class="container-fluid bg-bleu-tur padtop mt10 padbot">
@@ -53,7 +52,9 @@ var_dumpj($administration);
   <div class="row">
     <div class="col-1 bg-white"></div>
     <div class="col-3 bg-white   pt-1 pb-1 ">
-      <h3>Le conseil d'aministratrion</h3>
+      <h3><?php
+echo $administration['title'];
+?></h3>
     </div>
   </div>
 
@@ -61,20 +62,34 @@ var_dumpj($administration);
 
     <div class="col-5 offset-1  fontwhite d-flex align-items-center  ">
       <div class="w80">
-        <h4 class=""> Le conseil d’administration  </h4>
-        <p>Le Conseil d’administration est composé de membres représentant le Ministre du Logement, la SLRB ainsi que
-          de membres présentés par les Fédérations de sociétés immobilières de service public. </p>
-        <a href="https://slrb-bghm.brussels/fr/societes-immobilieres-de-service-public/toutes-les-sisp">
+        <h4 class="">
+          <?php
+echo $administration['subtitle'];
+?>
+        </h4>
+        <p>
+          <?php
+echo $administration['content'];
+?>
+        </p>
+        <?php
+var_dumpj($administration);
+?>
+        <?php
+foreach ($administration['links'] as $key => $value) {
+    ?>
+        <a href="
+        <?php
+echo $value['link']['url'];
+    ?>">
           <p class="fs-4">Les SISP :
-            https://slrb-bghm.brussels/fr/societes-immobilieres-de-service-public/toutes-les-sisp </p>
+            <?php
+echo $value['name'];
+    ?></p>
         </a>
-        <a href="https://slrb-bghm.brussels/fr/propos-de-la-slrb">
-          <p class="fs-4">La SLRB : https://slrb-bghm.brussels/fr/propos-de-la-slrb </p>
-        </a>
-
-
-
-
+        <?php
+}
+?>
       </div>
     </div>
 
