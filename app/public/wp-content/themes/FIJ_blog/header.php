@@ -7,6 +7,19 @@ $footerID = get_page_by_path('footer')->ID;
 Si le fichier myvars.php est trouvé, son chemin complet est retourné et le fichier est inclus dans le fichier header.php grâce à la fonction include().
 Cela signifie que toutes les variables et fonctions définies dans myvars.php seront disponibles dans header.php. -->
 
+
+<?php
+$cookie_name = "accept_cookies";
+$cookie_value = "true";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+if (!isset($_COOKIE[$cookie_name])) {
+    echo "Cookie named '" . $cookie_name . "' is not set!";
+} else {
+    echo "Cookie '" . $cookie_name . "' is set!<br>";
+    echo "Value is: " . $_COOKIE[$cookie_name];
+}
+?>
+
 <!DOCTYPE html>
 <html lang='en'>
 
