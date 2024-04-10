@@ -153,17 +153,17 @@ $contact = get_field("form");
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $champs = ['nom', 'age', 'email', 'commentaire'];
+    // $champs = ['nom', 'age', 'email', 'commentaire'];
 
-    foreach ($champs as $champ) {
-        $nom_champ = sanitize_title($contact[$champ][$champ]);
-        if (isset($_POST[$nom_champ])) {
-            $valeur = $_POST[$nom_champ];
-            var_dump($valeur);
-        } else {
-            echo "Le champ $nom_champ n'a pas été soumis.<br>";
-        }
-    }
+    // foreach ($champs as $champ) {
+    //     $nom_champ = sanitize_title($contact[$champ][$champ]);
+    //     if (isset($_POST[$nom_champ])) {
+    //         $valeur = $_POST[$nom_champ];
+    //         var_dump($valeur);
+    //     } else {
+    //         echo "Le champ $nom_champ n'a pas été soumis.<br>";
+    //     }
+    // }
 }
 ?>
 </main>
