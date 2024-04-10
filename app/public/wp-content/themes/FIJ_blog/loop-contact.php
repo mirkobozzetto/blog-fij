@@ -153,6 +153,7 @@ $contact = get_field("form");
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     // $champs = ['nom', 'age', 'email', 'commentaire'];
 
     // foreach ($champs as $champ) {
