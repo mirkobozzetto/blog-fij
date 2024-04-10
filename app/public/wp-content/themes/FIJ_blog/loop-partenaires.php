@@ -73,7 +73,7 @@ echo $administration['content'];
 ?>
         </p>
         <?php
-var_dumpj($administration);
+// var_dumpj($administration);
 ?>
         <?php
 foreach ($administration['links'] as $key => $value) {

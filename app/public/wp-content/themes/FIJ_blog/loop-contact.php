@@ -64,6 +64,10 @@ $map = get_field("map");
   <div class="row">
     <div class="col-5 offset-1">
       <!--  -->
+
+      <!--  -->
+
+
       <form class="w-100 mt10 " method="post" action="">
         <!--  -->
         <?php
@@ -99,7 +103,7 @@ $contact = get_field("form");
           <label for="<?php echo sanitize_title($contact["age"]["age"]); ?>"><?php echo $contact["age"]["age"] ?>
           </label>
           <input type="number" id="<?php echo sanitize_title($contact["age"]["age"]); ?>"
-            name="<?php echo sanitize_title($contact["age"]["age"]); ?>" step="3" min="0" max="100" <?php if ($contact["prenom"]["requis"] === 1) {
+            name="<?php echo sanitize_title($contact["age"]["age"]); ?>" step="1" min="0" max="100" <?php if ($contact["prenom"]["requis"] === 1) {
     echo 'required';
 }
 ?>>
@@ -147,4 +151,19 @@ $contact = get_field("form");
 
 </div>
 
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $champs = ['nom', 'age', 'email', 'commentaire'];
+
+    foreach ($champs as $champ) {
+        $nom_champ = sanitize_title($contact[$champ][$champ]);
+        if (isset($_POST[$nom_champ])) {
+            $valeur = $_POST[$nom_champ];
+            var_dump($valeur);
+        } else {
+            echo "Le champ $nom_champ n'a pas été soumis.<br>";
+        }
+    }
+}
+?>
 </main>
