@@ -10,14 +10,17 @@ Cela signifie que toutes les variables et fonctions définies dans myvars.php se
 
 <?php
 $cookie_name = "accept_cookies";
-$cookie_value = "true";
-setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+$cookie_value = ["Elvis" => "The King", "John" => "The Legend", "Tom" => "The Bomb"];
+$cookie_value_string = json_encode($cookie_value);
+
 if (!isset($_COOKIE[$cookie_name])) {
-    echo "Cookie named '" . $cookie_name . "' is not set!";
-} else {
-    echo "Cookie '" . $cookie_name . "' is set!<br>";
-    echo "Value is: " . $_COOKIE[$cookie_name];
+    setcookie($cookie_name, $cookie_value_string, time() + (86400 * 30), "/"); // 86400 = 1 day
 }
+
+$_COOKIE[$cookie_name] = $cookie_value_string;
+$json_string = $_COOKIE[$cookie_name];
+$decoded_array = json_decode(stripslashes($json_string), true);
+// var_dumpj($decoded_array);
 ?>
 
 <!DOCTYPE html>
@@ -108,7 +111,6 @@ $menu = str_replace('<a', '<a class = "nav-link"', $menu);
 $menu = str_replace('class="menu-item', 'class="nav-item menu-item', $menu);
 echo $menu;
 ?>
-
               <li class='nav-item dropdown'>
                 <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown'
                   aria-expanded='false'>
@@ -120,17 +122,12 @@ echo $menu;
                   <li><a class='dropdown-item' href='#'>English</a></li>
                 </ul>
               </li>
-
             </ul>
-
           </div>
-
         </nav>
       </div>
     </div>
-
   </header>
-
   <main>
     <?php
 $hero_img = get_field('hero');
