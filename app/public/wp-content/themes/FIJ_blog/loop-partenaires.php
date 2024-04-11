@@ -1,4 +1,4 @@
-<div id="partenaire" class="container-fluid padtop mt10 padbot">
+<div id="partenaire" class="container-fluid padtop padbot">
   <div class="row mt10 mb-5 ">
     <div class="col-1 bg-bleu-tur"></div>
     <div class="col-5 bg-bleu-tur   pt-1 pb-1 fontwhite">
