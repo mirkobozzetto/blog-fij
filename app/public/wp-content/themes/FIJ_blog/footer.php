@@ -1,8 +1,10 @@
 <?php
-include(locate_template('myvars.php'));
+include locate_template('myvars.php');
 $contactID = get_page_by_path('contact')->ID;
 $social = get_field('adress', $contactID)['social'];
 ?>
+
+<div style="width: 100%; height: 6rem;"></div>
 
 <footer>
   <div class='container-fluid'>
@@ -15,19 +17,19 @@ $social = get_field('adress', $contactID)['social'];
       <div class='col-2  pt-5 fontwhite'>
         <ul>
           <?php
-          $nomMenu = "top";
-          $argsM = array(
-            'theme_location' => $nomMenu,
-            'container' => false,
-            'echo' => false,
-            'fallback_cb' => false,
-            'items_wrap' => '%3$s',
-            'depth' => 0,
-          );
-          $menu = wp_nav_menu($argsM);
-          // var_dumpj($social);
-          echo $menu;
-          ?>
+$nomMenu = "top";
+$argsM = array(
+    'theme_location' => $nomMenu,
+    'container' => false,
+    'echo' => false,
+    'fallback_cb' => false,
+    'items_wrap' => '%3$s',
+    'depth' => 0,
+);
+$menu = wp_nav_menu($argsM);
+// var_dumpj($social);
+echo $menu;
+?>
         </ul>
       </div>
 
@@ -35,11 +37,11 @@ $social = get_field('adress', $contactID)['social'];
         <h3 class="pb-3">SASLS DMBSH</h3>
         <p>
           <?php
-          $adress = (get_field('adress', $contactID));
-          $mail = $adress['mail'];
-          $phone = $adress['phone'];
-          echo get_field('adress', $contactID)['adress'];
-          ?>
+$adress = (get_field('adress', $contactID));
+$mail = $adress['mail'];
+$phone = $adress['phone'];
+echo get_field('adress', $contactID)['adress'];
+?>
         </p>
         <p>
           <?php echo $phone; ?>
@@ -55,15 +57,15 @@ $social = get_field('adress', $contactID)['social'];
         <a href='contact.html'><button class='btn bg-bluef fontwhite fs-5 mb-2 w-50'> Contactez-nous</button></a>
         <div class='fontwhite w-50 fs-1 d-flex justify-content-around  '>
           <?php
-          // var_dumpj($social);
-          foreach ($social as $key => $value) {
-          ?>
+// var_dumpj($social);
+foreach ($social as $key => $value) {
+    ?>
           <a href=" <?php echo $value['link']['url']; ?>" target="_blank">
             <?php echo $value['social_icons']; ?>
           </a>
           <?php
-          }
-          ?>
+}
+?>
           <!-- <i class='fa-brands fa-facebook'></i>
           <i class='fa-brands fa-linkedin'></i>
           <i class='fa-brands fa-square-instagram'></i> -->

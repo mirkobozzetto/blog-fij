@@ -40,7 +40,6 @@ echo $value['name'];
       <!-- fermeture -->
     </div>
   </div>
-
 </div>
 
 <?php
@@ -82,10 +81,12 @@ foreach ($administration['links'] as $key => $value) {
         <?php
 echo $value['link']['url'];
     ?>">
-          <p class="fs-4">Les SISP :
+          <p class="fs-4">
+            Les SISP :
             <?php
 echo $value['name'];
-    ?></p>
+    ?>
+          </p>
         </a>
         <?php
 }
@@ -108,33 +109,46 @@ echo $administration['img']['url'];
 
 <?php
 foreach ($travailleurs_sociaux as $key => $value) {
+    if ($key % 2) {
+        $colors = "bloc-vert";
+        $order = "order-3";
+        $flip = "";
+        $side = "align-items-end";
+    } else {
+        $colors = "bloc-blanc";
+        $order = "order-1 offset-1";
+        $flip = "fa-flip-horizontal";
+        $side = "align-items-start";
+
+    }
     ?>
 
-<div id="<?php echo sanitize_title($value['name']); ?>" class="container-fluid padtop mt10 padbot">
+<div id="<?php echo sanitize_title($value['name']); ?>"
+  class="container-fluid padtop mt10 padbot <?php echo $colors; ?>">
   <div class="row">
-    <div class="col-1 bg-bleu-tur"></div>
-    <div class="col-4 bg-bleu-tur  fontwhite pt-1 pb-1 ">
-      <h3><?php echo $value['name']; ?></h3>
+    <div class="col-1 fond"></div>
+    <div class="col-4 ps-0 bg-bleu-tur  fontwhite  ">
+      <h3 class="pt-2 pb-1 ps-2 m-0  fond d-inline-block"><?php echo $value['name']; ?></h3>
     </div>
   </div>
 
   <div class="row mb-5 mt10">
-
     <div class="col-4 offset-2 font-black ">
-      <div class="w-100">
+      <div class="w-100 d-flex flex-column <?php echo $side ?> justify-content-end">
         <img class="w-100" src="
         <?php
 echo $value['img_large']['url'];
     ?>
         " alt="">
-        <a href="#partenaire"><i class="fa-solid fa-turn-up"></i></a>
+        <a href="#partenaire">
+          <i class="fa-solid fa-turn-up <?php echo $flip; ?>"> </i>
+        </a>
       </div>
     </div>
 
     <div class="col-5  d-flex align-items-center offset-1   ">
       <div class="w80">
         <h2 class="fw-bold"><?php echo $value['name']; ?></h2>
-
         <?php
 $members = $value['members'];
     foreach ($members as $key2 => $value2) {
@@ -151,11 +165,6 @@ $members = $value['members'];
 }
 ?>
 
-
-
 </div>
-
-
 </div>
-
 </main>
