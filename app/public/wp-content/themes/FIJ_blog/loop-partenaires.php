@@ -53,7 +53,8 @@ $administration = get_field('administration');
     <div class="col-3 bg-white   pt-1 pb-1 ">
       <h3><?php
 echo $administration['title'];
-?></h3>
+?>
+      </h3>
     </div>
   </div>
 
