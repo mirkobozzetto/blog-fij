@@ -69,40 +69,41 @@ $map = get_field("map");
 
 
       <form class="w-100 mt10 " method="post" action="">
-        <!--  -->
         <?php
 $contact = get_field("form");
+// var_dumpj(sanitize_title($contact["nom"]["nom"]));
 // var_dumpj($contact);
 ?>
-
         <div class="d-flex  ">
           <div class="d-flex colonne w-50 me-5">
             <label for=" <?php echo sanitize_title($contact["nom"]["nom"]); ?>">
               <?php echo $contact["nom"]["nom"] ?>
             </label>
-            <input type="text" id="<?php echo sanitize_title($contact["nom"]["nom"]); ?>" name="
-            <?php echo sanitize_title($contact["nom"]["nom"]); ?>" <?php if ($contact["nom"]["requis"] === 1) {
-    echo 'required';
-}
-?>>
+            <input value="<?php echo $_POST['nom']; ?>" type="text"
+              id="<?php echo sanitize_title($contact["nom"]["nom"]); ?>"
+              name="<?php echo sanitize_title($contact["nom"]["nom"]); ?>"
+              <?php if ($contact["nom"]["requis"] === 1) {echo 'required';}?>>
           </div>
 
           <div class="d-flex colonne marginl w-50">
             <label for="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>">
               <?php echo $contact["prenom"]["prenom"] ?>
             </label>
-            <input type="text" id="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>"
+            <input value="<?php echo $_POST['prenom']; ?>" type="text"
+              id="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>"
               name="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>" <?php if ($contact["prenom"]["requis"] === 1) {
     echo 'required';
 }
 ?>>
+
           </div>
         </div>
 
         <div class="d-flex colonne ">
           <label for="<?php echo sanitize_title($contact["age"]["age"]); ?>"><?php echo $contact["age"]["age"] ?>
           </label>
-          <input type="number" id="<?php echo sanitize_title($contact["age"]["age"]); ?>"
+          <input value="<?php echo $_POST['age']; ?>" type="number"
+            id="<?php echo sanitize_title($contact["age"]["age"]); ?>"
             name="<?php echo sanitize_title($contact["age"]["age"]); ?>" step="1" min="0" max="100" <?php if ($contact["prenom"]["requis"] === 1) {
     echo 'required';
 }
@@ -112,14 +113,13 @@ $contact = get_field("form");
         <div class="d-flex colonne w100">
           <label
             for="<?php echo sanitize_title($contact["email"]["email"]); ?>"><?php echo $contact["email"]["email"] ?></label>
-          <input type="<?php echo sanitize_title($contact["email"]["email"]); ?>"
+          <input value="<?php echo $_POST['email']; ?>" type="<?php echo sanitize_title($contact["email"]["email"]); ?>"
             id="<?php echo sanitize_title($contact["email"]["email"]); ?>" name="email"
             placeholder="<?php echo $contact["email"]["placeholder"] ?>" <?php if ($contact["email"]["requis"] === 1) {
     echo 'required';
 }
 ?>>
         </div>
-
         <div class="d-flex colonne w100">
           <label
             for="<?php echo sanitize_title($contact["commentaire"]["commentaire"]); ?>"><?php echo $contact["commentaire"]["commentaire"] ?></label>
@@ -128,9 +128,9 @@ $contact = get_field("form");
             id="<?php echo sanitize_title($contact["commentaire"]["commentaire"]); ?>" cols="30" rows="5" <?php if ($contact["commentaire"]["requis"] === 1) {
     echo 'required';
 }
-?>></textarea>
+?>><?php echo $_POST['commentaire']; ?></textarea>
         </div>
-
+        <!-- le bouton va submit -->
         <button class="btn bg-bluef fontwhite fs-5 mt-3">
 
           <?php echo $contact["envoyer"] ?>
@@ -151,20 +151,5 @@ $contact = get_field("form");
 
 </div>
 
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // $champs = ['nom', 'age', 'email', 'commentaire'];
-
-    // foreach ($champs as $champ) {
-    //     $nom_champ = sanitize_title($contact[$champ][$champ]);
-    //     if (isset($_POST[$nom_champ])) {
-    //         $valeur = $_POST[$nom_champ];
-    //         var_dump($valeur);
-    //     } else {
-    //         echo "Le champ $nom_champ n'a pas été soumis.<br>";
-    //     }
-    // }
-}
-?>
 </main>

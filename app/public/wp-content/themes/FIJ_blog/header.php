@@ -1,6 +1,19 @@
 <?php
 include locate_template('myvars.php');
-$footerID = get_page_by_path('footer')->ID;
+
+$form_content = "formulaire_de_contact";
+
+// if ($_POST) {
+//     $form_values = json_decode(stripslashes($_COOKIE[$form_content]), true);
+//     var_dumpj($form_values);
+// }
+
+if ($_POST) {
+    setcookie($form_content, json_encode($_POST), time() + (86400 * 30), "/");
+    // var_dumpj($_POST);
+}
+
+// $footerID = get_page_by_path('footer')->ID;
 ?>
 
 <!-- La fonction locate_template() est une fonction WordPress qui cherche un fichier de modèle dans le thème actuel ou dans le thème parent ( si le thème actuel est un thème enfant ).
@@ -8,20 +21,7 @@ Si le fichier myvars.php est trouvé, son chemin complet est retourné et le fic
 Cela signifie que toutes les variables et fonctions définies dans myvars.php seront disponibles dans header.php. -->
 
 
-<?php
-$cookie_name = "accept_cookies";
-$cookie_value = ["Elvis" => "The King", "John" => "The Legend", "Tom" => "The Bomb"];
-$cookie_value_string = json_encode($cookie_value);
-
-if (!isset($_COOKIE[$cookie_name])) {
-    setcookie($cookie_name, $cookie_value_string, time() + (86400 * 30), "/"); // 86400 = 1 day
-}
-
-$_COOKIE[$cookie_name] = $cookie_value_string;
-$json_string = $_COOKIE[$cookie_name];
-$decoded_array = json_decode(stripslashes($json_string), true);
-// var_dumpj($decoded_array);
-?>
+<!-- test cookie -->
 
 <!DOCTYPE html>
 <html lang='en'>
