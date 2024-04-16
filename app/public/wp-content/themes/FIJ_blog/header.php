@@ -3,15 +3,15 @@ include locate_template('myvars.php');
 
 $form_content = "formulaire_de_contact";
 
+if ($_POST) {
+    setcookie($form_content, json_encode($_POST), time() + (86400 * 30), "/");
+    var_dumpj($_POST);
+}
+
 // if ($_POST) {
 //     $form_values = json_decode(stripslashes($_COOKIE[$form_content]), true);
 //     var_dumpj($form_values);
 // }
-
-if ($_POST) {
-    setcookie($form_content, json_encode($_POST), time() + (86400 * 30), "/");
-    // var_dumpj($_POST);
-}
 
 // $footerID = get_page_by_path('footer')->ID;
 ?>
