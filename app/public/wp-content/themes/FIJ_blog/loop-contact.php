@@ -79,16 +79,19 @@ $contact = get_field("form");
             <label for=" <?php echo sanitize_title($contact["nom"]["nom"]); ?>">
               <?php echo $contact["nom"]["nom"] ?>
             </label>
-            <input value="" type="text" id="<?php echo sanitize_title($contact["nom"]["nom"]); ?>"
-              name="<?php echo sanitize_title($contact["nom"]["nom"]); ?>"
-              <?php if ($contact["nom"]["requis"] === 1) {echo 'required';}?>>
+            <input value="<?php echo isset($_POST['nom']) ? $_POST['nom'] : ''; ?>" type="text"
+              id="<?php echo sanitize_title($contact["nom"]["nom"]); ?>"
+              name="<?php echo sanitize_title($contact["nom"]["nom"]); ?>" <?php if ($contact["nom"]["requis"] === 1) {
+    echo 'required';
+}?>>
           </div>
 
           <div class="d-flex colonne marginl w-50">
             <label for="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>">
               <?php echo $contact["prenom"]["prenom"] ?>
             </label>
-            <input value="" type="text" id="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>"
+            <input value="<?php echo isset($_POST['prenom']) ? $_POST['prenom'] : ''; ?>" type="text"
+              id="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>"
               name="<?php echo sanitize_title($contact["prenom"]["prenom"]); ?>" <?php if ($contact["prenom"]["requis"] === 1) {
     echo 'required';
 }
@@ -100,7 +103,8 @@ $contact = get_field("form");
         <div class="d-flex colonne ">
           <label for="<?php echo sanitize_title($contact["age"]["age"]); ?>"><?php echo $contact["age"]["age"] ?>
           </label>
-          <input value="" type="number" id="<?php echo sanitize_title($contact["age"]["age"]); ?>"
+          <input value="<?php echo isset($_POST['age']) ? $_POST['age'] : ''; ?>" type="number"
+            id="<?php echo sanitize_title($contact["age"]["age"]); ?>"
             name="<?php echo sanitize_title($contact["age"]["age"]); ?>" step="1" min="0" max="100" <?php if ($contact["prenom"]["requis"] === 1) {
     echo 'required';
 }
@@ -110,7 +114,8 @@ $contact = get_field("form");
         <div class="d-flex colonne w100">
           <label
             for="<?php echo sanitize_title($contact["email"]["email"]); ?>"><?php echo $contact["email"]["email"] ?></label>
-          <input value="" type="<?php echo sanitize_title($contact["email"]["email"]); ?>"
+          <input value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>"
+            type="<?php echo sanitize_title($contact["email"]["email"]); ?>"
             id="<?php echo sanitize_title($contact["email"]["email"]); ?>" name="email"
             placeholder="<?php echo $contact["email"]["placeholder"] ?>" <?php if ($contact["email"]["requis"] === 1) {
     echo 'required';
@@ -124,16 +129,12 @@ $contact = get_field("form");
             name="<?php echo sanitize_title($contact["commentaire"]["commentaire"]); ?>"
             id="<?php echo sanitize_title($contact["commentaire"]["commentaire"]); ?>" cols="30" rows="5" <?php if ($contact["commentaire"]["requis"] === 1) {
     echo 'required';
-}
-?>></textarea>
+}?>></textarea>
         </div>
         <!-- le bouton va submit -->
         <button class="btn bg-bluef fontwhite fs-5 mt-3">
-
           <?php echo $contact["envoyer"] ?>
         </button>
-
-
       </form>
     </div>
 
@@ -142,11 +143,6 @@ $contact = get_field("form");
         <img class="w-100" src="<?php echo get_field("img")["url"] ?>" alt="">
       </div>
     </div>
-
-
   </div>
-
 </div>
-
-
 </main>
