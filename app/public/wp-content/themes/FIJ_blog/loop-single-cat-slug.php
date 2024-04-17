@@ -1,6 +1,6 @@
 <?php
 $posts = get_fields();
-var_dumpj($posts);
+// var_dumpj($posts);
 ?>
 
 <div class="row mt10 ">
