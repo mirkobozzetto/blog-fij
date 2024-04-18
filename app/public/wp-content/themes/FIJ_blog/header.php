@@ -1,19 +1,15 @@
 <?php
 include locate_template('myvars.php');
 
-$form_content = "formulaire_de_contact";
+// $form_content = "formulaire_de_contact";
+$cookie_langues = "langues";
 
 if ($_POST) {
-    setcookie($form_content, json_encode($_POST), time() + (86400 * 30), "/");
-    // var_dumpj($_POST);
+    setcookie($cookie_langues, $_POST['langue'], time() + (86400 * 30), "/");
 }
-
-$langues = get_field('langues', $headerID_fr);
-$codelang = [];
-foreach ($langues as $code) {
-    $codelang[] = $code['code'];
+if (isset($_COOKIE[$cookie_langues])) {
+    $choixLangue = $_COOKIE[$cookie_langues];
 }
-var_dumpj($codelang);
 
 // if ($_POST) {
 //     $form_values = json_decode(stripslashes($_COOKIE[$form_content]), true);
@@ -117,6 +113,9 @@ $menu = wp_nav_menu($argsM);
 $menu = str_replace('<a', '<a class = "nav-link"', $menu);
 $menu = str_replace('class="menu-item', 'class="nav-item menu-item', $menu);
 echo $menu;
+
+$langues = get_field('langues', $headerID_fr);
+var_dumpj($langues);
 ?>
               <li class='nav-item dropdown'>
                 <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown'
@@ -124,9 +123,27 @@ echo $menu;
                   langue
                 </a>
                 <ul class='dropdown-menu'>
-                  <li><a class='dropdown-item' href='#'>Français</a></li>
-                  <li><a class='dropdown-item' href='#'>Nederland</a></li>
-                  <li><a class='dropdown-item' href='#'>English</a></li>
+
+                  <?php
+foreach ($langues as $key => $value) {
+    ?>
+                  <li>
+                    <form action="#" method="post" class="my-0">
+                      <input type="hidden" value="
+                      <?php
+echo $value['code'];
+    ?>
+                      " name="langue">
+                      <input type="submit" value="
+                      <?php
+echo $value['langue'];
+    ?>
+                      ">
+                    </form>
+                  </li>
+                  <?php
+}
+?>
                 </ul>
               </li>
             </ul>
