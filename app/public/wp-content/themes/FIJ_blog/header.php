@@ -129,16 +129,9 @@ foreach ($langues as $key => $value) {
     ?>
                   <li>
                     <form action="#" method="post" class="my-0">
-                      <input type="hidden" value="
-                      <?php
-echo $value['code'];
-    ?>
+                      <input type="hidden" value="<?php echo $value['code']; ?>
                       " name="langue">
-                      <input type="submit" value="
-                      <?php
-echo $value['langue'];
-    ?>
-                      ">
+                      <input class="classdropdown-item" type="submit" value="<?php echo $value['langue']; ?> ">
                     </form>
                   </li>
                   <?php
