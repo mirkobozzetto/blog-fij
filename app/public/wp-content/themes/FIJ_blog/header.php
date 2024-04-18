@@ -1,11 +1,14 @@
 <?php
 include locate_template('myvars.php');
 
-$form_content = "formulaire_de_contact";
+// $form_content = "formulaire_de_contact";
+$cookie_langues = "langues";
 
 if ($_POST) {
-    setcookie($form_content, json_encode($_POST), time() + (86400 * 30), "/");
-    // var_dumpj($_POST);
+    setcookie($cookie_langues, $_POST['langue'], time() + (86400 * 30), "/");
+}
+if (isset($_COOKIE[$cookie_langues])) {
+    $choixLangue = $_COOKIE[$cookie_langues];
 }
 
 // if ($_POST) {
@@ -49,7 +52,7 @@ Cela signifie que toutes les variables et fonctions définies dans myvars.php se
   </head>
 
   <?php
-$headerID = get_page_by_path('header')->ID;
+$headerID_fr = get_page_by_path('header')->ID;
 // var_dumpj($headerID)
 ?>
 
@@ -61,7 +64,7 @@ get_page_by_path( 'header' ) : Cette fonction recherche une page dans votre site
 
 ->ID : C'est une propriété de l'objet de page retourné par get_page_by_path(). Chaque page dans WordPress a un identifiant unique, ou ID. Ce code récupère cet ID.
 
-$headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
+$headerID_fr = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
   <header class='container-fluid bg-bleu-tur'>
     <div class='row'>
       <div class='col-12'>
@@ -70,14 +73,14 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
             <a class='navbar-brand ps-3 d-flex' href='index.html'>
               <div class='w20'>
                 <!-- <img class = 'w-100' src = '/pics/logo-sasls.png' alt = ''> -->
-                <img class='w-100' src="<?php echo get_field('logo', $headerID)['url']; ?>" alt=''>
+                <img class='w-100' src="<?php echo get_field('logo', $headerID_fr)['url']; ?>" alt=''>
                 <!--  -->
               </div>
               <!--  -->
               <!-- <p class = 'text-center titrelogo  '>Service d'accompagnement social aux locataires sociaux <br>Dienst voor
               maatschappelijke begeleiding van de sociale huurders</p> -->
               <p class="text-center titrelogo  ">
-                <?php echo get_field('text_asbl', $headerID); ?>
+                <?php echo get_field('text_asbl', $headerID_fr); ?>
               </p>
               <!---->
             </a>
@@ -110,6 +113,9 @@ $menu = wp_nav_menu($argsM);
 $menu = str_replace('<a', '<a class = "nav-link"', $menu);
 $menu = str_replace('class="menu-item', 'class="nav-item menu-item', $menu);
 echo $menu;
+
+$langues = get_field('langues', $headerID_fr);
+var_dumpj($langues);
 ?>
               <li class='nav-item dropdown'>
                 <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown'
@@ -117,9 +123,27 @@ echo $menu;
                   langue
                 </a>
                 <ul class='dropdown-menu'>
-                  <li><a class='dropdown-item' href='#'>Français</a></li>
-                  <li><a class='dropdown-item' href='#'>Nederland</a></li>
-                  <li><a class='dropdown-item' href='#'>English</a></li>
+
+                  <?php
+foreach ($langues as $key => $value) {
+    ?>
+                  <li>
+                    <form action="#" method="post" class="my-0">
+                      <input type="hidden" value="
+                      <?php
+echo $value['code'];
+    ?>
+                      " name="langue">
+                      <input type="submit" value="
+                      <?php
+echo $value['langue'];
+    ?>
+                      ">
+                    </form>
+                  </li>
+                  <?php
+}
+?>
                 </ul>
               </li>
             </ul>
