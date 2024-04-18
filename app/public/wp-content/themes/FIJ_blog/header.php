@@ -8,6 +8,13 @@ if ($_POST) {
     // var_dumpj($_POST);
 }
 
+$langues = get_field('langues', $headerID_fr);
+$codelang = [];
+foreach ($langues as $code) {
+    $codelang[] = $code['code'];
+}
+var_dumpj($codelang);
+
 // if ($_POST) {
 //     $form_values = json_decode(stripslashes($_COOKIE[$form_content]), true);
 //     var_dumpj($form_values);
@@ -49,7 +56,7 @@ Cela signifie que toutes les variables et fonctions définies dans myvars.php se
   </head>
 
   <?php
-$headerID = get_page_by_path('header')->ID;
+$headerID_fr = get_page_by_path('header')->ID;
 // var_dumpj($headerID)
 ?>
 
@@ -61,7 +68,7 @@ get_page_by_path( 'header' ) : Cette fonction recherche une page dans votre site
 
 ->ID : C'est une propriété de l'objet de page retourné par get_page_by_path(). Chaque page dans WordPress a un identifiant unique, ou ID. Ce code récupère cet ID.
 
-$headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
+$headerID_fr = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
   <header class='container-fluid bg-bleu-tur'>
     <div class='row'>
       <div class='col-12'>
@@ -70,14 +77,14 @@ $headerID = ... : Cela stocke l'ID de la page dans la variable $headerID.  -->
             <a class='navbar-brand ps-3 d-flex' href='index.html'>
               <div class='w20'>
                 <!-- <img class = 'w-100' src = '/pics/logo-sasls.png' alt = ''> -->
-                <img class='w-100' src="<?php echo get_field('logo', $headerID)['url']; ?>" alt=''>
+                <img class='w-100' src="<?php echo get_field('logo', $headerID_fr)['url']; ?>" alt=''>
                 <!--  -->
               </div>
               <!--  -->
               <!-- <p class = 'text-center titrelogo  '>Service d'accompagnement social aux locataires sociaux <br>Dienst voor
               maatschappelijke begeleiding van de sociale huurders</p> -->
               <p class="text-center titrelogo  ">
-                <?php echo get_field('text_asbl', $headerID); ?>
+                <?php echo get_field('text_asbl', $headerID_fr); ?>
               </p>
               <!---->
             </a>

@@ -11,7 +11,7 @@ $social = get_field('adress', $contactID)['social'];
     <div class='row bg-bleu-tur'>
       <div class='col-3  pt-4 d-flex justify-content-center align-items-center'>
         <div class='w-50 '>
-          <img class='w-100' src='<?php echo get_field('logo', $headerID)['url']; ?>' alt=''>
+          <img class='w-100' src='<?php echo get_field('logo', $headerID_fr)['url']; ?>' alt=''>
         </div>
       </div>
       <div class='col-2  pt-5 fontwhite'>
