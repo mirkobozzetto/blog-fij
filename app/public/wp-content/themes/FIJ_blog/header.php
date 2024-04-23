@@ -10,13 +10,7 @@ if ($_POST) {
 if (isset($_COOKIE[$cookie_langues])) {
     $choixLangue = $_COOKIE[$cookie_langues];
 }
-
-// if ($_POST) {
-//     $form_values = json_decode(stripslashes($_COOKIE[$form_content]), true);
-//     var_dumpj($form_values);
-// }
-
-// $footerID = get_page_by_path('footer')->ID;
+; // if ($_POST) {; //     $form_values = json_decode(stripslashes($_COOKIE[$form_content]), true);; //     var_dumpj($form_values);; // }; // $footerID = get_page_by_path('footer')->ID;
 ?>
 
 <!-- La fonction locate_template() est une fonction WordPress qui cherche un fichier de modèle dans le thème actuel ou dans le thème parent ( si le thème actuel est un thème enfant ).
@@ -99,13 +93,13 @@ $headerID_fr = ... : Cela stocke l'ID de la page dans la variable $headerID.  --
               <!-- MENU DECLARATION -->
               <?php
 $nomMenu = "top";
-$argsM = array(
+$argsM   = array(
     'theme_location' => $nomMenu,
-    'container' => false,
-    'echo' => false,
-    'fallback_cb' => false,
-    'items_wrap' => '%3$s',
-    'depth' => 0,
+    'container'      => false,
+    'echo'           => false,
+    'fallback_cb'    => false,
+    'items_wrap'     => '%3$s',
+    'depth'          => 0,
 );
 $menu = wp_nav_menu($argsM);
 // ici par exemple on ajoute une classe a nos liens,
@@ -115,7 +109,7 @@ $menu = str_replace('class="menu-item', 'class="nav-item menu-item', $menu);
 echo $menu;
 
 $langues = get_field('langues', $headerID_fr);
-var_dumpj($langues);
+// var_dumpj($langues);
 ?>
               <li class='nav-item dropdown'>
                 <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown'
@@ -123,15 +117,14 @@ var_dumpj($langues);
                   langue
                 </a>
                 <ul class='dropdown-menu'>
-
                   <?php
 foreach ($langues as $key => $value) {
     ?>
-                  <li>
-                    <form action="#" method="post" class="my-0">
-                      <input type="hidden" value="<?php echo $value['code']; ?>
-                      " name="langue">
-                      <input class="classdropdown-item" type="submit" value="<?php echo $value['langue']; ?> ">
+                  <!-- class="classdropdown-item" -->
+                  <li class="dropdown-item">
+                    <form action="#" method="post">
+                      <input type="hidden" value="<?php echo $value['code']; ?>" name="langue">
+                      <input type="submit" class="btn  p-0 m-0 align-baseline" value="<?php echo $value['langue']; ?>">
                     </form>
                   </li>
                   <?php
@@ -151,7 +144,7 @@ $hero_img = get_field('hero');
 
 if ($hero_img) {
     $hero_img
-    ?>
+    ; ?>
     <div class='container-fluid'>
       <div class='row relative'>
         <div class='col-12 mb-5 p-0'>
