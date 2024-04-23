@@ -3,7 +3,7 @@
 
 function jsingle_template()
 {
-    foreach ((array) get_the_category() as $cat) {
+    foreach ((array)get_the_category() as $cat) {
         if (file_exists(TEMPLATEPATH . "/single-{$cat->slug}.php")) {
             return TEMPLATEPATH . "/single-{$cat->slug}.php";
         }
@@ -36,7 +36,9 @@ function var_dumpj($d, $e = null)
 function register_my_menu()
 {
     register_nav_menus(array(
-        'top' => 'Menu dessus', //'nom dans le code' => "nom dans l'interface admin"
+        'topfr' => 'Menu fr',
+        'topnl' => 'Menu nl',
+        'topen' => 'Menu en',
     ));
 }
 add_action('init', 'register_my_menu');
@@ -60,8 +62,8 @@ add_filter('intermediate_image_sizes_advanced', 'remove_default_thumbs');
 function dateFR($param)
 {
     $phraseDate = $param->format("F Y");
-    $moisEN = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
-    $moisFR = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
+    $moisEN     = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+    $moisFR     = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
     $phraseDate = str_replace($moisEN, $moisFR, $phraseDate);
     return $phraseDate;
 }
