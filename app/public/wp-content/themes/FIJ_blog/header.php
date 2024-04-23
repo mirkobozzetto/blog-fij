@@ -11,6 +11,7 @@ if (isset($_COOKIE[$cookie_langues])) {
     $choixLangue = $_COOKIE[$cookie_langues];
 }
 ; // if ($_POST) {; //     $form_values = json_decode(stripslashes($_COOKIE[$form_content]), true);; //     var_dumpj($form_values);; // }; // $footerID = get_page_by_path('footer')->ID;
+
 ?>
 
 <!-- La fonction locate_template() est une fonction WordPress qui cherche un fichier de modèle dans le thème actuel ou dans le thème parent ( si le thème actuel est un thème enfant ).
@@ -92,6 +93,7 @@ $headerID_fr = ... : Cela stocke l'ID de la page dans la variable $headerID.  --
               <!--  -->
               <!-- MENU DECLARATION -->
               <?php
+// $nomMenu = "top" . $choixLangue;
 $nomMenu = "top";
 $argsM   = array(
     'theme_location' => $nomMenu,
