@@ -6,11 +6,13 @@ $cookie_langues = "langues";
 
 if ($_POST) {
     setcookie($cookie_langues, $_POST['langue'], time() + (86400 * 30), "/");
+    $_COOKIE[$cookie_langues] = $_POST['langue'];
 }
+
 if (isset($_COOKIE[$cookie_langues])) {
     $choixLangue = $_COOKIE[$cookie_langues];
 }
-; // if ($_POST) {; //     $form_values = json_decode(stripslashes($_COOKIE[$form_content]), true);; //     var_dumpj($form_values);; // }; // $footerID = get_page_by_path('footer')->ID;
+; // var_dumpj($choixLangue);; // if ($_POST) {; //     $form_values = json_decode(stripslashes($_COOKIE[$form_content]), true);; //     var_dumpj($form_values);; // }; // $footerID = get_page_by_path('footer')->ID;
 
 ?>
 
