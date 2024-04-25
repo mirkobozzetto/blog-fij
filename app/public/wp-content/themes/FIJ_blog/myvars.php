@@ -1,4 +1,5 @@
 <?php
+
 // attention à la catégorie, doit correspondre au slug de la page
 $headerID_fr = get_page_by_path('header')->ID;
 $footerID    = get_page_by_path('footer')->ID;
@@ -18,11 +19,12 @@ $footerID_en = get_page_by_path('footer')->ID;
 $contactID_en = get_page_by_path('contact')->ID;
 // $actuID_en      = get_page_by_path('actualites')->ID;
 // $travail_asID = get_page_by_path('travail_as')->ID;
-$cookie_name = "langues";
 
+$cookie_name = "langues";
 if (isset($_COOKIE[$cookie_name])) {
     $choixLangue = $_COOKIE[$cookie_name];
 }
+
 ?>
 
 

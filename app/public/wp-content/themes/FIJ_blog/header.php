@@ -6,21 +6,18 @@ $cookie_name = "langues";
 
 if ($_POST) {
     setcookie($cookie_name, $_POST['langue'], time() + (86400 * 30), "/");
+    // toujours se refererer au form : le name="langue"
     $_COOKIE[$cookie_name] = $_POST['langue'];
 } else {
-    $_POST['langue'] = 'fr';
     if (!isset($_COOKIE[$cookie_name])) {
-        setcookie($cookie_name, $_POST['langue'], time() + (86400 * 30), "/");
-        $_COOKIE[$cookie_name] = $_POST['langue'];
+        setcookie($cookie_name, 'fr', time() + (86400 * 30), "/");
+        $_COOKIE[$cookie_name] = 'fr';
     }
 }
 
-if (isset($_COOKIE[$cookie_name])) {
-    $choixLangue = $_COOKIE[$cookie_name];
-}
+$choixLangue = $_COOKIE[$cookie_name];
 
-;
-var_dumpj($_POST);
+var_dumpj($_COOKIE[$cookie_name]);
 // if ($_POST) {; // $form_values = json_decode(stripslashes($_COOKIE[$form_content]), true);; //
 // var_dumpj($form_values); // }; // $footerID = get_page_by_path('footer')->ID;
 
