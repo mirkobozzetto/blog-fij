@@ -12,7 +12,10 @@ if ($_POST) {
 if (isset($_COOKIE[$cookie_langues])) {
     $choixLangue = $_COOKIE[$cookie_langues];
 }
-; // var_dumpj($choixLangue);; // if ($_POST) {; //     $form_values = json_decode(stripslashes($_COOKIE[$form_content]), true);; //     var_dumpj($form_values);; // }; // $footerID = get_page_by_path('footer')->ID;
+
+;
+var_dumpj($choixLangue);
+// if ($_POST) {; //     $form_values = json_decode(stripslashes($_COOKIE[$form_content]), true);; //     var_dumpj($form_values);; // }; // $footerID = get_page_by_path('footer')->ID;
 
 ?>
 
@@ -95,9 +98,9 @@ $headerID_fr = ... : Cela stocke l'ID de la page dans la variable $headerID.  --
               <!--  -->
               <!-- MENU DECLARATION -->
               <?php
-// $nomMenu = "top" . $choixLangue;
-$nomMenu = "top";
-$argsM   = array(
+$nomMenu = "top" . $choixLangue;
+// $nomMenu = "top";
+$argsM = array(
     'theme_location' => $nomMenu,
     'container'      => false,
     'echo'           => false,
