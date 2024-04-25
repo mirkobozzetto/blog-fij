@@ -90,7 +90,7 @@ $conflits = get_field('conflits');
 <div id="voisin" class="container-fluid bg-bleu-tur padtop mt10 padbot">
   <div class="row">
     <div class="col-1 bg-white"></div>
-    <div class="col-2 bg-white   pt-1 pb-1 ">
+    <div class="col-2 bg-white pt-1 pb-1 ">
       <h3>
         <?php
 echo $conflits['title'];
