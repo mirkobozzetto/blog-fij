@@ -6,7 +6,7 @@
       <h3>
         <?php
 echo get_field("jobs")
-?>
+; ?>
       </h3>
     </div>
   </div>
@@ -61,7 +61,7 @@ $postuler = get_field("postuler");
       <h3>
         <?php
 echo get_field("stages")
-?>
+; ?>
       </h3>
     </div>
   </div>
@@ -69,8 +69,6 @@ echo get_field("stages")
   <?php
 $stages_list = get_field("stages_posts");
 foreach ($stages_list as $key => $value) {
-    // var_dumpj($value);
-    // if (get_field('type_contrat', $value['stage']) == "") {
     if (get_field('duree', $value['stage']) == "") {
         $contrat_stage = get_field('type_contrat', $value['stage']);
     } else {
