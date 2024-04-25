@@ -17,7 +17,7 @@ if ($_POST) {
 
 $choixLangue = $_COOKIE[$cookie_name];
 
-var_dumpj($_COOKIE[$cookie_name]);
+// var_dumpj($_COOKIE[$cookie_name]);
 // if ($_POST) {; // $form_values = json_decode(stripslashes($_COOKIE[$form_content]), true);; //
 // var_dumpj($form_values); // }; // $footerID = get_page_by_path('footer')->ID;
 

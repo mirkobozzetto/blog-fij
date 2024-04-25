@@ -256,3 +256,7 @@
 [23-Apr-2024 12:40:05] NOTICE: exiting, bye-bye!
 [25-Apr-2024 09:09:23] NOTICE: fpm is running, pid 2388
 [25-Apr-2024 09:09:23] NOTICE: ready to handle connections
+[25-Apr-2024 12:37:22] NOTICE: Terminating ...
+[25-Apr-2024 12:37:22] NOTICE: exiting, bye-bye!
+[25-Apr-2024 22:12:41] NOTICE: fpm is running, pid 10437
+[25-Apr-2024 22:12:41] NOTICE: ready to handle connections

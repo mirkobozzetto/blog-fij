@@ -9,7 +9,7 @@ $actuID      = get_page_by_path('fr/actualites')->ID;
 
 $headerID_nl    = get_page_by_path('header')->ID;
 $footerID_nl    = get_page_by_path('footer')->ID;
-$notreasblID_nl = get_page_by_path('onze-vzw')->ID;
+$notreasblID_nl = get_page_by_path('nl/onze-vzw')->ID;
 $contactID_nl   = get_page_by_path('contact')->ID;
 // $actuID_nl      = get_page_by_path('actualites')->ID;
 
