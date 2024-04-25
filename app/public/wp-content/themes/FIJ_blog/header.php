@@ -2,15 +2,15 @@
 include locate_template('myvars.php');
 
 // $form_content = "formulaire_de_contact";
-$cookie_langues = "langues";
+$cookie_name = "langues";
 
 if ($_POST) {
-    setcookie($cookie_langues, $_POST['langue'], time() + (86400 * 30), "/");
-    $_COOKIE[$cookie_langues] = $_POST['langue'];
+    setcookie($cookie_name, $_POST['langue'], time() + (86400 * 30), "/");
+    $_COOKIE[$cookie_name] = $_POST['langue'];
 }
 
-if (isset($_COOKIE[$cookie_langues])) {
-    $choixLangue = $_COOKIE[$cookie_langues];
+if (isset($_COOKIE[$cookie_name])) {
+    $choixLangue = $_COOKIE[$cookie_name];
 }
 
 ;

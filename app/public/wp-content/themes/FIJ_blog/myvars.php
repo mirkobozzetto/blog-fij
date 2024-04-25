@@ -18,10 +18,10 @@ $footerID_en = get_page_by_path('footer')->ID;
 $contactID_en = get_page_by_path('contact')->ID;
 // $actuID_en      = get_page_by_path('actualites')->ID;
 // $travail_asID = get_page_by_path('travail_as')->ID;
-$cookie_langues = "langues";
+$cookie_name = "langues";
 
-if (isset($_COOKIE[$cookie_langues])) {
-    $choixLangue = $_COOKIE[$cookie_langues];
+if (isset($_COOKIE[$cookie_name])) {
+    $choixLangue = $_COOKIE[$cookie_name];
 }
 ?>
 

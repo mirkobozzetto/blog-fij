@@ -1,3 +1,7 @@
+<?php
+include 'myvars.php';
+?>
+
 <div id="actu" class="container-fluid">
   <div class="row mt10 mb-5">
     <div class="col-1 bg-bleu-tur"></div>
@@ -15,10 +19,11 @@ echo get_field('title');
       <!-- repetitions de posts -->
       <?php
 $args = array(
-    'category_name' => 'actualite',
-    'order' => 'ASC', // or DSC
+    // 'category_name' => 'actualite',
+    'category__and'  => array(get_category_by_path('actualite')->cat_ID, get_category_by_path($choixLangue)->cat_ID),
+    'order'          => 'ASC', // or DSC
     'orderby' => 'date',
-    'nopaging' => false,
+    'nopaging'       => false,
     'posts_per_page' => 4,
     //'paged' => 1,
 );
@@ -42,7 +47,7 @@ $post_actu = get_field("post_actu");
         <h5>
           <?php
 echo $post_actu["title"]
-        ?>
+        ; ?>
         </h5>
 
         <p class="date">
@@ -56,7 +61,7 @@ echo dateFR($date);
 }
 }
 wp_reset_postdata()
-?>
+; ?>
 
     </div>
   </div>
@@ -67,10 +72,11 @@ class="container-fluid bg-bleu-tur padtop mt10 padbot">
 -->
 <?php
 $args = array(
-    'category_name' => 'actualite',
-    'order' => 'ASC', // or DSC
+    // 'category_name'  => 'actualite',
+    'category__and'  => array(get_category_by_path('actualite')->cat_ID, get_category_by_path($choixLangue)->cat_ID),
+    'order'          => 'ASC', // or DSC
     'orderby' => 'date',
-    'nopaging' => false,
+    'nopaging'       => false,
     'posts_per_page' => 4,
     //'paged' => 1,
 );
@@ -81,14 +87,14 @@ if ($query->have_posts()) {
         $query->the_post();
         if ($query->current_post % 2) {
             $colors = "bloc-blanc";
-            $order = "order-1 offset-1";
-            $flip = "fa-flip-horizontal";
-            $side = "align-items-start";
+            $order  = "order-1 offset-1";
+            $flip   = "fa-flip-horizontal";
+            $side   = "align-items-start";
         } else {
             $colors = "bloc-vert";
-            $order = "order-3";
-            $flip = "";
-            $side = "align-items-end";
+            $order  = "order-3";
+            $flip   = "";
+            $side   = "align-items-end";
         }
         $post_actu = get_field("post_actu");
         ?>
@@ -113,7 +119,7 @@ echo $post_actu["title"];
       </div>
     </div>
     <div class="col-5 d-flex align-items-center justify-content-center <?php echo $order; ?>">
-      <div class="w-100 d-flex flex-column <?php echo $side ?> justify-content-end">
+      <div class="w-100 d-flex flex-column <?php echo $side; ?> justify-content-end">
         <img class="w-100" src="<?php echo $post_actu["img"]["url"]; ?>" alt="">
         <a href="#actu">
           <i class="fa-solid fa-turn-up fontwhite <?php echo $flip; ?>"> </i>
@@ -126,7 +132,7 @@ echo $post_actu["title"];
 }
 }
 wp_reset_postdata()
-?>
+; ?>
 
 <!--
 <!--
