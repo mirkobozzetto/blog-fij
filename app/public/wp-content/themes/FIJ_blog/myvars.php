@@ -27,5 +27,6 @@ if (isset($_COOKIE[$cookie_name])) {
 
 
 <!-- remplir les champs ACF  -->
-<!-- <?php echo get_field('', $headerID);
-?> -->
+<!-- <?php
+echo get_field('', $headerID);
+?>  -->
